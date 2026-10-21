@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%200%200%20854.000000%20842.000000%22%3E%3Crect%20width%3D%22854.000000%22%20height%3D%22842.000000%22%20rx%3D%2290%22%20fill%3D%22%23020617%22%2F%3E%3Cg%20fill%3D%22%23ffffff%22%20transform%3D%22translate%2894%2C93%29%20scale%280.780%29%22%3E%3Cg%20transform%3D%22translate%280.000000%2C842.000000%29%20scale%280.100000%2C-0.100000%29%22%20fill%3D%22%23ffffff%22%20stroke%3D%22none%22%3E%20%3Cpath%20d%3D%22M0%204210%20l0%20-4210%204270%200%204270%200%200%204210%200%204210%20-4270%200%20-4270%200%200%20-4210z%20m8260%200%20l0%20-3930%20-3990%200%20-3990%200%200%203930%200%203930%203990%200%203990%200%200%20-3930z%20M1400%207330%20l0%20-290%20-300%200%20-300%200%200%20-3120%200%20-3120%20300%200%20300%200%200%201766%200%201765%2014%2015%2015%2014%20645%200%20646%200%200%20290%200%20290%20290%200%20290%200%200%201340%200%201340%20-950%200%20-950%200%200%20-290z%20m1300%20-1340%20l0%20-1030%20-650%200%20-650%200%200%201030%200%201030%20650%200%20650%200%200%20-1030z%20M4220%207330%20l0%20-290%20-300%200%20-300%200%200%20-1340%200%20-1340%20300%200%20300%200%200%20690%200%20690%20420%200%20420%200%200%20-690%200%20-690%20300%200%20300%200%200%20690%200%20690%20-290%200%20-290%200%200%20290%200%20290%20290%200%20290%200%200%20650%200%20650%20-720%200%20-720%200%200%20-290z%20m840%20-650%20l0%20-340%20-420%200%20-420%200%200%20340%200%20340%20420%200%20420%200%200%20-340z%20M6140%206280%20l0%20-1340%20300%200%20300%200%200%20-290%200%20-290%20500%200%20500%200%200%20300%200%20300%20-500%200%20-500%200%200%20360%200%20360%20500%200%20500%200%200%20300%200%20300%20-500%200%20-500%200%200%20370%200%20370%20500%200%20500%200%200%20300%200%20300%20-800%200%20-800%200%200%20-1340z%20M1680%202390%20l0%20-1590%20290%200%20290%200%200%20946%200%20945%2014%2015%2015%2014%20271%200%20271%200%2015%20-14%2014%20-15%200%20-335%200%20-336%20300%200%20300%200%200%20350%200%20350%20290%200%20290%200%200%20-960%200%20-960%20300%200%20300%200%200%201590%200%201590%20-300%200%20-300%200%200%20-280%200%20-280%20-890%200%20-890%200%200%20280%200%20280%20-290%200%20-290%200%200%20-1590z%20M4900%202390%20l0%20-1590%20300%200%20300%200%200%201590%200%201590%20-300%200%20-300%200%200%20-1590z%20M6280%203680%20l0%20-300%20-300%200%20-300%200%200%20-650%200%20-650%20730%200%20730%200%200%20-340%200%20-340%20-730%200%20-730%200%200%20-300%200%20-300%201030%200%201030%200%200%20940%200%20940%20-716%200%20-715%200%20-15%2014%20-14%2015%200%20335%200%20336%20730%200%20730%200%200%20300%200%20300%20-730%200%20-730%200%200%20-300z%22%2F%3E%20%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+	<script>
+		if ( localStorage.theme === 'dark' || ! ( 'theme' in localStorage ) ) {
+			document.documentElement.classList.add( 'dark' );
+		} else {
+			document.documentElement.classList.remove( 'dark' );
+		}
+	</script>
+	<title>Body composition, read automatically from every abdominal CT &#8211; PREMIS lab</title>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<link rel='stylesheet' id='premis-fonts-css' href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&#038;family=Inter:wght@400;500;600;700&#038;family=IBM+Plex+Mono:wght@400;500&#038;display=swap' media='all' />
+<link rel='stylesheet' id='premis-main-css' href='/assets/css/main.css' media='all' />
+<link rel="canonical" href="https://premis-lab.github.io/news/body-composition-at-population-scale/" />
+</head>
+
+<body class="wp-singular post-template-default single single-post postid-7 single-format-standard wp-theme-premis bg-white dark:bg-slate-950 font-sans text-slate-900 dark:text-slate-100 selection:bg-purple-100 selection:text-purple-900">
+
+    <!-- Brand icons as inline SVG (Bootstrap Icons, MIT): Lucide no longer ships logos -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="hidden" aria-hidden="true">
+        <symbol id="icon-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></symbol>
+        <symbol id="icon-linkedin" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></symbol>
+        <symbol id="icon-instagram" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></symbol>
+    </svg>
+
+    <!-- HEADER -->
+    <header
+        class="border-b border-purple-100 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 backdrop-blur-sm sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <a href="/#home" class="flex items-center gap-3">
+                    <span class="lockup text-slate-900 dark:text-white">
+                    <svg viewBox="0 0 854.000000 842.000000" class="mark h-10 md:h-12" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g transform="translate(0.000000,842.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none"> <path d="M0 4210 l0 -4210 4270 0 4270 0 0 4210 0 4210 -4270 0 -4270 0 0 -4210z m8260 0 l0 -3930 -3990 0 -3990 0 0 3930 0 3930 3990 0 3990 0 0 -3930z M1400 7330 l0 -290 -300 0 -300 0 0 -3120 0 -3120 300 0 300 0 0 1766 0 1765 14 15 15 14 645 0 646 0 0 290 0 290 290 0 290 0 0 1340 0 1340 -950 0 -950 0 0 -290z m1300 -1340 l0 -1030 -650 0 -650 0 0 1030 0 1030 650 0 650 0 0 -1030z M4220 7330 l0 -290 -300 0 -300 0 0 -1340 0 -1340 300 0 300 0 0 690 0 690 420 0 420 0 0 -690 0 -690 300 0 300 0 0 690 0 690 -290 0 -290 0 0 290 0 290 290 0 290 0 0 650 0 650 -720 0 -720 0 0 -290z m840 -650 l0 -340 -420 0 -420 0 0 340 0 340 420 0 420 0 0 -340z M6140 6280 l0 -1340 300 0 300 0 0 -290 0 -290 500 0 500 0 0 300 0 300 -500 0 -500 0 0 360 0 360 500 0 500 0 0 300 0 300 -500 0 -500 0 0 370 0 370 500 0 500 0 0 300 0 300 -800 0 -800 0 0 -1340z M1680 2390 l0 -1590 290 0 290 0 0 946 0 945 14 15 15 14 271 0 271 0 15 -14 14 -15 0 -335 0 -336 300 0 300 0 0 350 0 350 290 0 290 0 0 -960 0 -960 300 0 300 0 0 1590 0 1590 -300 0 -300 0 0 -280 0 -280 -890 0 -890 0 0 280 0 280 -290 0 -290 0 0 -1590z M4900 2390 l0 -1590 300 0 300 0 0 1590 0 1590 -300 0 -300 0 0 -1590z M6280 3680 l0 -300 -300 0 -300 0 0 -650 0 -650 730 0 730 0 0 -340 0 -340 -730 0 -730 0 0 -300 0 -300 1030 0 1030 0 0 940 0 940 -716 0 -715 0 -15 14 -14 15 0 335 0 336 730 0 730 0 0 300 0 300 -730 0 -730 0 0 -300z"/> </g></svg>
+                    <span class="tagline text-[8.5px] leading-[1.7] tracking-[0.14em] text-slate-500 dark:text-slate-400 hidden sm:block">
+                        <span class="hl">PRE</span>cision<br>
+                        <span class="hl">M</span>edicine with<br>
+                        <span class="hl">I</span>ntelligent <span class="hl">S</span>ystems
+                    </span>
+                </span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-5 lg:space-x-8 items-center">
+                    <a href="/#home"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Home</a>
+                    <a href="/#about"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">About</a>
+                    <a href="/#research"
+                        class="hidden lg:inline text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Research</a>
+                    <a href="/#news"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">News</a>
+                    <a href="/#publications"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Papers</a>
+                    <a href="/#team"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Team</a>
+                    <a href="/#software"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Software</a>
+                    <a href="/#contact"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Contact</a>
+
+                    <a href="https://github.com/QTIM-Lab" target="_blank" rel="noreferrer"
+                        class="text-slate-400 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-400 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" aria-hidden="true"><use href="#icon-github"></use></svg>
+                    </a>
+
+                    <!-- Dark Mode Toggle (Desktop) -->
+                    <button id="theme-toggle"
+                        class="text-slate-400 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-400 transition-colors focus:outline-none">
+                        <i id="theme-toggle-icon" data-lucide="moon" class="w-5 h-5"></i>
+                    </button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-4">
+                    <!-- Dark Mode Toggle (Mobile) -->
+                    <button id="theme-toggle-mobile"
+                        class="text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 focus:outline-none">
+                        <i id="theme-toggle-icon-mobile" data-lucide="moon" class="w-5 h-5"></i>
+                    </button>
+
+                    <button id="mobile-menu-btn"
+                        class="text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 focus:outline-none p-2">
+                        <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown (Hidden by default) -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-b border-purple-100 shadow-lg absolute w-full left-0">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="/#home"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Home</a>
+                <a href="/#about"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">About</a>
+                <a href="/#research"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Research</a>
+                <a href="/#news"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">News</a>
+                <a href="/#publications"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Papers</a>
+                <a href="/#team"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Team</a>
+                <a href="/#software"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Software</a>
+                <a href="/#contact"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+	<article class="py-16 md:py-20">
+		<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+			<a href="/news/"
+				class="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-slate-500 hover:text-purple-700 dark:hover:text-purple-400 transition-colors">
+				<i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> All news
+			</a>
+
+			<div class="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[11px] uppercase tracking-[0.2em]">
+				<span class="text-purple-700 dark:text-purple-400">Radiology · AI at scale</span>
+				<span class="text-slate-300 dark:text-slate-700">&middot;</span>
+				<time datetime="2026-09-01T09:00:00+00:00"
+					class="text-slate-400 dark:text-slate-500">September 1, 2026</time>
+			</div>
+
+			<h1 class="mt-4 text-3xl md:text-4xl font-bold leading-tight text-slate-900 dark:text-white">Body composition, read automatically from every abdominal CT</h1>
+
+							<p class="mt-5 text-xl leading-relaxed text-slate-600 dark:text-slate-300">A fully automated deep learning pipeline applied to 12,128 outpatient CT examinations, and the age-, sex- and race-adjusted reference curves derived from them.</p>
+			
+							<figure class="mt-10">
+					<div class="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-white">
+						<img width="754" height="657" src="/assets/uploads/2026/09/body-composition.jpg" class="w-full wp-post-image" alt="" loading="lazy" decoding="async" srcset="/assets/uploads/2026/09/body-composition.jpg 754w, /assets/uploads/2026/09/body-composition-300x261.jpg 300w" sizes="auto, (max-width: 754px) 100vw, 754px" />					</div>
+											<figcaption class="mt-3 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+							Figure 2. Automated body composition segmentation on abdominal CT: skeletal muscle, subcutaneous fat and visceral fat areas derived by the deep learning pipeline.							<span class="text-slate-400 dark:text-slate-600">&mdash; from the paper, Radiology.</span>
+						</figcaption>
+									</figure>
+			
+			<div class="mt-12 h-px w-full bg-slate-200 dark:bg-slate-800"></div>
+			<p class="mt-8 font-mono text-[10px] uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">Abstract</p>
+			<div class="premis-abstract mt-5 space-y-5 leading-relaxed text-slate-600 dark:text-slate-300">
+				<p><strong class="premis-label">Background</strong><br />Although CT-based body composition (BC) metrics may inform disease risk and outcomes, obtaining these metrics has been too resource intensive for large-scale use. Thus, population-wide distributions of BC remain uncertain.</p>
+<p><strong class="premis-label">Purpose</strong><br />To demonstrate the validity of fully automated, deep learning BC analysis from abdominal CT examinations, to define demographically adjusted BC reference curves, and to illustrate the advantage of use of these curves compared with standard methods, along with their biologic significance in predicting survival.</p>
+<p><strong class="premis-label">Materials and Methods</strong><br />After external validation and equivalency testing with manual segmentation, a fully automated deep learning BC analysis pipeline was applied to a cross-sectional population cohort that included any outpatient without a cardiovascular disease or cancer who underwent abdominal CT examination at one of three hospitals in 2012. Demographically adjusted population reference curves were generated for each BC area. The z scores derived from these curves were compared with sex-specific thresholds for sarcopenia by using χ2 tests and used to predict 2-year survival in multivariable Cox proportional hazards models that included weight and body mass index (BMI).</p>
+<p><strong class="premis-label">Results</strong><br />External validation showed excellent correlation (R = 0.99) and equivalency (P < .001) of the fully automated deep learning BC analysis method with manual segmentation. With use of the fully automated BC data from 12 128 outpatients (mean age, 52 years; 6936 [57%] women), age-, race-, and sex-normalized BC reference curves were generated. All BC areas varied significantly with these variables (P < .001 except for subcutaneous fat area vs age [P = .003]). Sex-specific thresholds for sarcopenia demonstrated that age and race bias were not present if z scores derived from the reference curves were used (P < .001). Skeletal muscle area z scores were significantly predictive of 2-year survival (P = .04) in combined models that included BMI.</p>
+<p><strong class="premis-label">Conclusion</strong><br />Fully automated body composition (BC) metrics vary significantly by age, race, and sex. The z scores derived from reference curves for BC parameters better capture the demographic distribution of BC compared with standard methods and can help predict survival. © RSNA, 2020 Online supplemental material is available for this article. See also the editorial by Summers in this issue.</p>
+			</div>
+
+				<aside class="mt-12 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 p-6">
+		<p class="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">The paper</p>
+		<h2 class="mt-3 text-base font-bold text-slate-900 dark:text-white leading-snug">Population-Scale CT-based Body Composition Analysis of a Large Outpatient Population Using Deep Learning to Derive Age-, Sex-, and Race-specific Reference Curves</h2>
+		<p class="mt-2 text-sm italic text-slate-500 dark:text-slate-400" style="font-family: Georgia, 'Times New Roman', serif">
+			Radiology. 2021 Feb;298(2):319-329.</p>
+					<p class="mt-3 text-sm text-slate-600 dark:text-slate-400">From the lab:
+				<span class="font-semibold text-purple-700 dark:text-purple-400">Bridge CP</span></p>
+				<div class="mt-5 flex flex-wrap items-center gap-3">
+			<a href="https://pubmed.ncbi.nlm.nih.gov/33231527/" target="_blank" rel="noreferrer"
+				class="inline-flex items-center gap-2 rounded-lg bg-purple-700 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-600 transition-colors">
+				Read on PubMed <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+			</a>
+							<a href="https://doi.org/10.1148/radiol.2020201640" target="_blank" rel="noreferrer"
+					class="font-mono text-[11px] text-slate-500 hover:text-purple-700 dark:hover:text-purple-400 transition-colors">doi:10.1148/radiol.2020201640</a>
+					</div>
+	</aside>
+			</div>
+	</article>
+	    <!-- FOOTER -->
+    <footer id="contact" class="on-dark bg-[#020617] text-slate-400 py-16 text-sm border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="col-span-1 sm:col-span-2">
+                    <div class="flex flex-col gap-3 mb-6">
+                        <span class="lockup text-white">
+                    <svg viewBox="0 0 854.000000 842.000000" class="mark h-14" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g transform="translate(0.000000,842.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none"> <path d="M0 4210 l0 -4210 4270 0 4270 0 0 4210 0 4210 -4270 0 -4270 0 0 -4210z m8260 0 l0 -3930 -3990 0 -3990 0 0 3930 0 3930 3990 0 3990 0 0 -3930z M1400 7330 l0 -290 -300 0 -300 0 0 -3120 0 -3120 300 0 300 0 0 1766 0 1765 14 15 15 14 645 0 646 0 0 290 0 290 290 0 290 0 0 1340 0 1340 -950 0 -950 0 0 -290z m1300 -1340 l0 -1030 -650 0 -650 0 0 1030 0 1030 650 0 650 0 0 -1030z M4220 7330 l0 -290 -300 0 -300 0 0 -1340 0 -1340 300 0 300 0 0 690 0 690 420 0 420 0 0 -690 0 -690 300 0 300 0 0 690 0 690 -290 0 -290 0 0 290 0 290 290 0 290 0 0 650 0 650 -720 0 -720 0 0 -290z m840 -650 l0 -340 -420 0 -420 0 0 340 0 340 420 0 420 0 0 -340z M6140 6280 l0 -1340 300 0 300 0 0 -290 0 -290 500 0 500 0 0 300 0 300 -500 0 -500 0 0 360 0 360 500 0 500 0 0 300 0 300 -500 0 -500 0 0 370 0 370 500 0 500 0 0 300 0 300 -800 0 -800 0 0 -1340z M1680 2390 l0 -1590 290 0 290 0 0 946 0 945 14 15 15 14 271 0 271 0 15 -14 14 -15 0 -335 0 -336 300 0 300 0 0 350 0 350 290 0 290 0 0 -960 0 -960 300 0 300 0 0 1590 0 1590 -300 0 -300 0 0 -280 0 -280 -890 0 -890 0 0 280 0 280 -290 0 -290 0 0 -1590z M4900 2390 l0 -1590 300 0 300 0 0 1590 0 1590 -300 0 -300 0 0 -1590z M6280 3680 l0 -300 -300 0 -300 0 0 -650 0 -650 730 0 730 0 0 -340 0 -340 -730 0 -730 0 0 -300 0 -300 1030 0 1030 0 0 940 0 940 -716 0 -715 0 -15 14 -14 15 0 335 0 336 730 0 730 0 0 300 0 300 -730 0 -730 0 0 -300z"/> </g></svg>
+                </span>
+                    </div>
+                    <p class="mb-6 leading-relaxed max-w-sm">
+                        Martinos Center for Biomedical Imaging<br />
+                        149 13th Street, Charlestown, MA 02129
+                    </p>
+                    <a href="mailto:contact@premis-lab.org"
+                        class="text-purple-400 hover:text-purple-300 font-medium flex items-center gap-2">
+                        <i data-lucide="mail" class="w-4 h-4"></i> contact@premis-lab.org
+                    </a>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Affiliations</h3>
+                    <ul class="space-y-6">
+                        <li>
+                            <a href="https://www.massgeneral.org" target="_blank" rel="noreferrer"
+                                class="block text-slate-500 hover:text-white transition-colors">
+                                <img src="/assets/img/logos/mgh.svg" alt="" aria-hidden="true" class="affil affil-mgh">
+                                <span class="sr-only">Massachusetts General Hospital</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://hms.harvard.edu" target="_blank" rel="noreferrer"
+                                class="flex items-center gap-3 text-slate-500 hover:text-white transition-colors">
+                                <img src="/assets/img/logos/hms.svg" alt="" aria-hidden="true" class="affil affil-hms">
+                                <span class="text-[11px] font-semibold uppercase tracking-wider leading-tight">Harvard<br>Medical
+                                    School</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.martinos.org" target="_blank" rel="noreferrer"
+                                class="block text-slate-500 hover:text-white transition-colors">
+                                <img src="/assets/img/logos/martinos.svg" alt="" aria-hidden="true" class="affil affil-martinos">
+                                <span class="sr-only">Athinoula A. Martinos Center for Biomedical Imaging</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Connect</h3>
+                    <div class="flex gap-4">
+                        <a href="#" aria-label="PREMIS lab on LinkedIn"
+                            class="bg-slate-800 p-2 rounded-full hover:bg-purple-600 hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                        <a href="#" aria-label="PREMIS lab on GitHub"
+                            class="bg-slate-800 p-2 rounded-full hover:bg-purple-600 hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" aria-hidden="true"><use href="#icon-github"></use></svg>
+                        </a>
+                        <a href="#" aria-label="PREMIS lab on Instagram"
+                            class="bg-slate-800 p-2 rounded-full hover:bg-purple-600 hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" aria-hidden="true"><use href="#icon-instagram"></use></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 mt-16 pt-8 text-center text-slate-600 text-xs">
+                &copy;
+                <script>document.write(new Date().getFullYear())</script> PREMIS lab. All rights reserved.
+                <br class="hidden sm:block">
+                <span class="text-slate-700">Imaging: histopathology and chest radiograph, CC0, via Wikimedia
+                    Commons.</span>
+            </div>
+        </div>
+    </footer>
+
+<script id="lucide-js" src="https://unpkg.com/lucide@latest"></script>
+<script id="premis-site-js" src="/assets/js/site.js"></script>
+</body>
+
+</html>

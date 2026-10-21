@@ -1,18 +1,906 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en-US">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PREMIS Lab</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%200%200%20854.000000%20842.000000%22%3E%3Crect%20width%3D%22854.000000%22%20height%3D%22842.000000%22%20rx%3D%2290%22%20fill%3D%22%23020617%22%2F%3E%3Cg%20fill%3D%22%23ffffff%22%20transform%3D%22translate%2894%2C93%29%20scale%280.780%29%22%3E%3Cg%20transform%3D%22translate%280.000000%2C842.000000%29%20scale%280.100000%2C-0.100000%29%22%20fill%3D%22%23ffffff%22%20stroke%3D%22none%22%3E%20%3Cpath%20d%3D%22M0%204210%20l0%20-4210%204270%200%204270%200%200%204210%200%204210%20-4270%200%20-4270%200%200%20-4210z%20m8260%200%20l0%20-3930%20-3990%200%20-3990%200%200%203930%200%203930%203990%200%203990%200%200%20-3930z%20M1400%207330%20l0%20-290%20-300%200%20-300%200%200%20-3120%200%20-3120%20300%200%20300%200%200%201766%200%201765%2014%2015%2015%2014%20645%200%20646%200%200%20290%200%20290%20290%200%20290%200%200%201340%200%201340%20-950%200%20-950%200%200%20-290z%20m1300%20-1340%20l0%20-1030%20-650%200%20-650%200%200%201030%200%201030%20650%200%20650%200%200%20-1030z%20M4220%207330%20l0%20-290%20-300%200%20-300%200%200%20-1340%200%20-1340%20300%200%20300%200%200%20690%200%20690%20420%200%20420%200%200%20-690%200%20-690%20300%200%20300%200%200%20690%200%20690%20-290%200%20-290%200%200%20290%200%20290%20290%200%20290%200%200%20650%200%20650%20-720%200%20-720%200%200%20-290z%20m840%20-650%20l0%20-340%20-420%200%20-420%200%200%20340%200%20340%20420%200%20420%200%200%20-340z%20M6140%206280%20l0%20-1340%20300%200%20300%200%200%20-290%200%20-290%20500%200%20500%200%200%20300%200%20300%20-500%200%20-500%200%200%20360%200%20360%20500%200%20500%200%200%20300%200%20300%20-500%200%20-500%200%200%20370%200%20370%20500%200%20500%200%200%20300%200%20300%20-800%200%20-800%200%200%20-1340z%20M1680%202390%20l0%20-1590%20290%200%20290%200%200%20946%200%20945%2014%2015%2015%2014%20271%200%20271%200%2015%20-14%2014%20-15%200%20-335%200%20-336%20300%200%20300%200%200%20350%200%20350%20290%200%20290%200%200%20-960%200%20-960%20300%200%20300%200%200%201590%200%201590%20-300%200%20-300%200%200%20-280%200%20-280%20-890%200%20-890%200%200%20280%200%20280%20-290%200%20-290%200%200%20-1590z%20M4900%202390%20l0%20-1590%20300%200%20300%200%200%201590%200%201590%20-300%200%20-300%200%200%20-1590z%20M6280%203680%20l0%20-300%20-300%200%20-300%200%200%20-650%200%20-650%20730%200%20730%200%200%20-340%200%20-340%20-730%200%20-730%200%200%20-300%200%20-300%201030%200%201030%200%200%20940%200%20940%20-716%200%20-715%200%20-15%2014%20-14%2015%200%20335%200%20336%20730%200%20730%200%200%20300%200%20300%20-730%200%20-730%200%200%20-300z%22%2F%3E%20%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+	<script>
+		if ( localStorage.theme === 'dark' || ! ( 'theme' in localStorage ) ) {
+			document.documentElement.classList.add( 'dark' );
+		} else {
+			document.documentElement.classList.remove( 'dark' );
+		}
+	</script>
+	<title>PREMIS lab</title>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<link rel='stylesheet' id='premis-fonts-css' href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&#038;family=Inter:wght@400;500;600;700&#038;family=IBM+Plex+Mono:wght@400;500&#038;display=swap' media='all' />
+<link rel='stylesheet' id='premis-main-css' href='/assets/css/main.css' media='all' />
+<link rel="canonical" href="https://premis-lab.github.io/" />
 </head>
-<body>
-  <h1>PREMIS Lab</h1>
-  <p>Texto de ejemplo. Esta es la pagina web del laboratorio PREMIS.</p>
-  <h2>Investigacion</h2>
-  <p>Aqui ira una descripcion de las lineas de investigacion.</p>
-  <h2>Equipo</h2>
-  <p>Aqui iran los miembros del laboratorio.</p>
-  <h2>Contacto</h2>
-  <p>Aqui ira la informacion de contacto.</p>
+
+<body class="home wp-singular page-template-default page page-id-5 wp-theme-premis bg-white dark:bg-slate-950 font-sans text-slate-900 dark:text-slate-100 selection:bg-purple-100 selection:text-purple-900">
+
+    <!-- Brand icons as inline SVG (Bootstrap Icons, MIT): Lucide no longer ships logos -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="hidden" aria-hidden="true">
+        <symbol id="icon-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></symbol>
+        <symbol id="icon-linkedin" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></symbol>
+        <symbol id="icon-instagram" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></symbol>
+    </svg>
+
+    <!-- HEADER -->
+    <header
+        class="border-b border-purple-100 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 backdrop-blur-sm sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3">
+                    <span class="lockup text-slate-900 dark:text-white">
+                    <svg viewBox="0 0 854.000000 842.000000" class="mark h-10 md:h-12" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g transform="translate(0.000000,842.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none"> <path d="M0 4210 l0 -4210 4270 0 4270 0 0 4210 0 4210 -4270 0 -4270 0 0 -4210z m8260 0 l0 -3930 -3990 0 -3990 0 0 3930 0 3930 3990 0 3990 0 0 -3930z M1400 7330 l0 -290 -300 0 -300 0 0 -3120 0 -3120 300 0 300 0 0 1766 0 1765 14 15 15 14 645 0 646 0 0 290 0 290 290 0 290 0 0 1340 0 1340 -950 0 -950 0 0 -290z m1300 -1340 l0 -1030 -650 0 -650 0 0 1030 0 1030 650 0 650 0 0 -1030z M4220 7330 l0 -290 -300 0 -300 0 0 -1340 0 -1340 300 0 300 0 0 690 0 690 420 0 420 0 0 -690 0 -690 300 0 300 0 0 690 0 690 -290 0 -290 0 0 290 0 290 290 0 290 0 0 650 0 650 -720 0 -720 0 0 -290z m840 -650 l0 -340 -420 0 -420 0 0 340 0 340 420 0 420 0 0 -340z M6140 6280 l0 -1340 300 0 300 0 0 -290 0 -290 500 0 500 0 0 300 0 300 -500 0 -500 0 0 360 0 360 500 0 500 0 0 300 0 300 -500 0 -500 0 0 370 0 370 500 0 500 0 0 300 0 300 -800 0 -800 0 0 -1340z M1680 2390 l0 -1590 290 0 290 0 0 946 0 945 14 15 15 14 271 0 271 0 15 -14 14 -15 0 -335 0 -336 300 0 300 0 0 350 0 350 290 0 290 0 0 -960 0 -960 300 0 300 0 0 1590 0 1590 -300 0 -300 0 0 -280 0 -280 -890 0 -890 0 0 280 0 280 -290 0 -290 0 0 -1590z M4900 2390 l0 -1590 300 0 300 0 0 1590 0 1590 -300 0 -300 0 0 -1590z M6280 3680 l0 -300 -300 0 -300 0 0 -650 0 -650 730 0 730 0 0 -340 0 -340 -730 0 -730 0 0 -300 0 -300 1030 0 1030 0 0 940 0 940 -716 0 -715 0 -15 14 -14 15 0 335 0 336 730 0 730 0 0 300 0 300 -730 0 -730 0 0 -300z"/> </g></svg>
+                    <span class="tagline text-[8.5px] leading-[1.7] tracking-[0.14em] text-slate-500 dark:text-slate-400 hidden sm:block">
+                        <span class="hl">PRE</span>cision<br>
+                        <span class="hl">M</span>edicine with<br>
+                        <span class="hl">I</span>ntelligent <span class="hl">S</span>ystems
+                    </span>
+                </span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-5 lg:space-x-8 items-center">
+                    <a href="#home"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Home</a>
+                    <a href="#about"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">About</a>
+                    <a href="#research"
+                        class="hidden lg:inline text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Research</a>
+                    <a href="#news"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">News</a>
+                    <a href="#publications"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Papers</a>
+                    <a href="#team"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Team</a>
+                    <a href="#software"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Software</a>
+                    <a href="#contact"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Contact</a>
+
+                    <a href="https://github.com/QTIM-Lab" target="_blank" rel="noreferrer"
+                        class="text-slate-400 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-400 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" aria-hidden="true"><use href="#icon-github"></use></svg>
+                    </a>
+
+                    <!-- Dark Mode Toggle (Desktop) -->
+                    <button id="theme-toggle"
+                        class="text-slate-400 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-400 transition-colors focus:outline-none">
+                        <i id="theme-toggle-icon" data-lucide="moon" class="w-5 h-5"></i>
+                    </button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-4">
+                    <!-- Dark Mode Toggle (Mobile) -->
+                    <button id="theme-toggle-mobile"
+                        class="text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 focus:outline-none">
+                        <i id="theme-toggle-icon-mobile" data-lucide="moon" class="w-5 h-5"></i>
+                    </button>
+
+                    <button id="mobile-menu-btn"
+                        class="text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 focus:outline-none p-2">
+                        <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown (Hidden by default) -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-b border-purple-100 shadow-lg absolute w-full left-0">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Home</a>
+                <a href="#about"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">About</a>
+                <a href="#research"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Research</a>
+                <a href="#news"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">News</a>
+                <a href="#publications"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Papers</a>
+                <a href="#team"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Team</a>
+                <a href="#software"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Software</a>
+                <a href="#contact"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+    <!-- HERO SECTION -->
+    <section id="hero" class="on-dark relative overflow-hidden bg-[#020617] border-b border-slate-900">
+        <!-- Background Effects (Abstract) -->
+        <div class="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+            <!-- Deep atmospheric base -->
+            <div
+                class="absolute top-[-50%] left-[-20%] w-[150%] h-[150%] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-900/50 via-slate-950 to-black z-0">
+            </div>
+
+            <!-- Major Gradient Orbs (Darkened) -->
+            <div
+                class="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] bg-purple-950/20 rounded-full blur-[120px] mix-blend-screen animate-pulse duration-[8000ms]">
+            </div>
+            <div
+                class="absolute bottom-[-10%] left-[-10%] w-[900px] h-[900px] bg-slate-950/40 rounded-full blur-[130px] mix-blend-screen">
+            </div>
+
+            <!-- Vibrant Accents (Subtle) -->
+            <div
+                class="absolute top-[20%] left-[10%] w-[600px] h-[600px] bg-fuchsia-950/10 rounded-full blur-[100px] mix-blend-screen animate-pulse duration-[12000ms]">
+            </div>
+            <div
+                class="absolute bottom-[20%] right-[20%] w-[500px] h-[500px] bg-indigo-950/20 rounded-full blur-[90px] mix-blend-screen">
+            </div>
+
+            <!-- Dynamic Light Streaks (Very Faint) -->
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[400px] bg-purple-900/5 rotate-[-15deg] blur-[80px] mix-blend-screen">
+            </div>
+            <div
+                class="absolute top-[30%] right-[10%] w-[300px] h-[300px] bg-pink-950/5 rounded-full blur-[60px] mix-blend-overlay">
+            </div>
+        </div>
+
+        <!-- Pixel Canvas -->
+        <canvas id="hero-canvas" class="absolute inset-0 w-full h-full z-[1]"></canvas>
+
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-4 lg:pt-28 lg:pb-6 relative z-10 pointer-events-none">
+            <div class="max-w-3xl pointer-events-auto">
+                <div class="mb-8">
+                    <span
+                        class="inline-block font-mono text-[10px] tracking-[0.18em] uppercase text-teal-300 border border-teal-800/70 px-3 py-1.5 rounded-full">
+                        Martinos Center · MGH · Harvard
+                    </span>
+                </div>
+                <h1 class="mb-6">
+                    <span class="lockup text-white">
+                    <svg viewBox="0 0 854.000000 842.000000" class="mark h-24 md:h-32" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g transform="translate(0.000000,842.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none"> <path d="M0 4210 l0 -4210 4270 0 4270 0 0 4210 0 4210 -4270 0 -4270 0 0 -4210z m8260 0 l0 -3930 -3990 0 -3990 0 0 3930 0 3930 3990 0 3990 0 0 -3930z M1400 7330 l0 -290 -300 0 -300 0 0 -3120 0 -3120 300 0 300 0 0 1766 0 1765 14 15 15 14 645 0 646 0 0 290 0 290 290 0 290 0 0 1340 0 1340 -950 0 -950 0 0 -290z m1300 -1340 l0 -1030 -650 0 -650 0 0 1030 0 1030 650 0 650 0 0 -1030z M4220 7330 l0 -290 -300 0 -300 0 0 -1340 0 -1340 300 0 300 0 0 690 0 690 420 0 420 0 0 -690 0 -690 300 0 300 0 0 690 0 690 -290 0 -290 0 0 290 0 290 290 0 290 0 0 650 0 650 -720 0 -720 0 0 -290z m840 -650 l0 -340 -420 0 -420 0 0 340 0 340 420 0 420 0 0 -340z M6140 6280 l0 -1340 300 0 300 0 0 -290 0 -290 500 0 500 0 0 300 0 300 -500 0 -500 0 0 360 0 360 500 0 500 0 0 300 0 300 -500 0 -500 0 0 370 0 370 500 0 500 0 0 300 0 300 -800 0 -800 0 0 -1340z M1680 2390 l0 -1590 290 0 290 0 0 946 0 945 14 15 15 14 271 0 271 0 15 -14 14 -15 0 -335 0 -336 300 0 300 0 0 350 0 350 290 0 290 0 0 -960 0 -960 300 0 300 0 0 1590 0 1590 -300 0 -300 0 0 -280 0 -280 -890 0 -890 0 0 280 0 280 -290 0 -290 0 0 -1590z M4900 2390 l0 -1590 300 0 300 0 0 1590 0 1590 -300 0 -300 0 0 -1590z M6280 3680 l0 -300 -300 0 -300 0 0 -650 0 -650 730 0 730 0 0 -340 0 -340 -730 0 -730 0 0 -300 0 -300 1030 0 1030 0 0 940 0 940 -716 0 -715 0 -15 14 -14 15 0 335 0 336 730 0 730 0 0 300 0 300 -730 0 -730 0 0 -300z"/> </g></svg>
+                    <span class="tagline text-[11px] md:text-[14px] leading-[1.85] tracking-[0.14em] text-slate-300 ">
+                        <span class="hl">PRE</span>cision<br>
+                        <span class="hl">M</span>edicine with<br>
+                        <span class="hl">I</span>ntelligent <span class="hl">S</span>ystems
+                    </span>
+                </span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed font-light max-w-2xl">
+                    We develop quantitative imaging and machine learning tools to decode complex medical data and
+                    improve clinical decision-making in oncology.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#research"
+                        class="px-8 py-3 bg-purple-700 text-white font-semibold rounded-lg hover:bg-purple-600 transition-all shadow-lg shadow-purple-900/20 text-center border border-transparent">
+                        Explore Research
+                    </a>
+                    <a href="#contact"
+                        class="px-8 py-3 bg-white/5 backdrop-blur-sm border border-white/10 text-white font-semibold rounded-lg hover:bg-white/10 hover:border-white/20 transition-all text-center">
+                        Contact Lab
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Discreet note about the animated background -->
+        <div class="hidden sm:block absolute bottom-5 right-4 sm:right-6 lg:right-8 z-10 max-w-md text-right">
+            <p class="font-mono text-[9px] leading-relaxed tracking-[0.08em] text-slate-500">
+                Background: Conway's Game of Life<br>
+                <a href="https://doi.org/10.1038/scientificamerican1070-120" target="_blank" rel="noreferrer"
+                    class="hover:text-purple-400 transition-colors">Gardner M. Sci Am. 1970;223(4):120&ndash;123</a>
+            </p>
+        </div>
+    </section>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 bg-white dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-6">About the Laboratory</h2>
+                <div class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed space-y-6">
+                    <p>
+                        The <span class="font-semibold">PREMIS lab</span> is dedicated to the development and clinical
+                        translation of computational tools for medical imaging. We operate at the intersection of
+                        computer science, radiology and oncology.
+                    </p>
+                    <p id="research">
+                        Three threads run through that work: <span class="font-semibold text-purple-700 dark:text-purple-400">radiology</span>, where we build quantitative image analysis
+                        across MRI and CT; <span class="font-semibold text-purple-700 dark:text-purple-400">computational pathology</span>, applying deep learning to whole-slide images to characterize
+                        tumor and immune phenotypes; and <span class="font-semibold text-purple-700 dark:text-purple-400">therapeutic discovery</span>, where AI systems link imaging with omics to
+                        uncover new targets.
+                    </p>
+                    <p>
+                        Across all three, we extract quantitative biomarkers from standard-of-care imaging to predict
+                        patient outcomes, monitor treatment response and stratify patients for clinical trials. By
+                        integrating these imaging features with genomic data, we aim to advance the field of precision
+                        medicine.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PUBLICATIONS SECTION -->
+    <section id="publications"
+        class="relative overflow-hidden py-24 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+
+        <!-- Background texture: two modalities on a diagonal, dissolved with a curved fade -->
+        <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+            <!-- radiology, top right -->
+            <div class="absolute right-0 top-0 h-3/4 w-1/2">
+                <img src="/assets/img/decor/xray-chest.jpg" alt="" loading="lazy"
+                    class="h-full w-full object-cover grayscale contrast-125 opacity-[0.21] dark:opacity-[0.25]">
+                <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,transparent_32%,#ffffff_78%)] dark:bg-[radial-gradient(ellipse_at_center,transparent_0%,transparent_32%,#020617_78%)]"></div>
+            </div>
+
+            <!-- pathology, bottom left -->
+            <div class="absolute bottom-0 left-0 h-3/4 w-1/2">
+                <img src="/assets/img/decor/pathology-2.jpg" alt="" loading="lazy"
+                    class="h-full w-full object-cover grayscale contrast-125 opacity-[0.23] dark:opacity-[0.27]">
+                <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,transparent_32%,#ffffff_78%)] dark:bg-[radial-gradient(ellipse_at_center,transparent_0%,transparent_32%,#020617_78%)]"></div>
+            </div>
+
+            <!-- brand tint, dark theme only -->
+            <div
+                class="absolute inset-0 dark:bg-gradient-to-tr dark:from-purple-900/30 dark:via-transparent dark:to-teal-900/25 mix-blend-screen">
+            </div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">Featured Publications</h2>
+                    <p class="text-slate-600 dark:text-slate-400">Selected work with two or more lab members as
+                        co-authors, newest first.</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button id="pub-prev" type="button" aria-label="Previous publications"
+                        class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:border-purple-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors flex items-center justify-center disabled:opacity-30 disabled:hover:border-slate-200 dark:disabled:hover:border-slate-700">
+                        <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                    </button>
+                    <button id="pub-next" type="button" aria-label="More publications"
+                        class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:border-purple-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors flex items-center justify-center disabled:opacity-30 disabled:hover:border-slate-200 dark:disabled:hover:border-slate-700">
+                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </button>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/?term=%28Kim%20AE%5Bau%5D%20AND%20Bridge%20CP%5Bau%5D%29%20OR%20%28Kim%20AE%5Bau%5D%20AND%20Cleveland%20MC%5Bau%5D%29%20OR%20%28Kim%20AE%5Bau%5D%20AND%20Pulido-Arias%20D%5Bau%5D%29%20OR%20%28Kim%20AE%5Bau%5D%20AND%20Mindroc-Filimon%20D%5Bau%5D%29%20OR%20%28Bridge%20CP%5Bau%5D%20AND%20Cleveland%20MC%5Bau%5D%29%20OR%20%28Bridge%20CP%5Bau%5D%20AND%20Pulido-Arias%20D%5Bau%5D%29%20OR%20%28Bridge%20CP%5Bau%5D%20AND%20Mindroc-Filimon%20D%5Bau%5D%29%20OR%20%28Cleveland%20MC%5Bau%5D%20AND%20Pulido-Arias%20D%5Bau%5D%29%20OR%20%28Cleveland%20MC%5Bau%5D%20AND%20Mindroc-Filimon%20D%5Bau%5D%29%20OR%20%28Pulido-Arias%20D%5Bau%5D%20AND%20Mindroc-Filimon%20D%5Bau%5D%29" target="_blank" rel="noreferrer"
+                        class="ml-2 px-5 py-2.5 bg-slate-900 dark:bg-slate-800 text-white rounded-lg hover:bg-slate-800 dark:hover:bg-slate-700 transition-colors text-sm font-medium flex items-center shadow-lg shadow-slate-900/20">
+                        <i data-lucide="search" class="w-4 h-4 mr-2"></i>
+                        All on PubMed
+                    </a>
+                </div>
+            </div>
+
+            <!-- Carousel. The baseline list is hand-checked; the script refreshes it from PubMed -->
+            <div id="publication-list"
+                class="no-scrollbar flex gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-2">
+                    <article class="snap-start flex-none w-[320px] sm:w-[370px]">
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/42550018/" target="_blank" rel="noreferrer"
+                            class="group flex h-[520px] flex-col overflow-hidden rounded-md bg-white ring-1 ring-slate-200 dark:ring-slate-700 shadow-lg shadow-slate-900/10 transition-all hover:-translate-y-1 hover:shadow-xl hover:ring-purple-300">
+
+                            <!-- Simulated cover built from the PubMed metadata -->
+                            <div class="relative flex-1 overflow-hidden px-6 pt-6">
+                                <div class="flex items-start justify-between gap-3">
+                                    <span></span>
+                                    <span class="mt-1 h-2.5 w-5 flex-none rounded-sm bg-purple-700/80"></span>
+                                </div>
+                                <div class="mt-3 h-px w-full bg-slate-300"></div>
+                                <p class="paper-serif mt-3 text-[11px] italic leading-snug text-slate-500">Radiology. 2026 Aug;320(2):e254034.</p>
+                                <h4 class="paper-serif mt-3 text-[17px] font-bold leading-[1.28] text-slate-900 line-clamp-4">DBT-DINO: Toward Foundation Model-Based Analysis of Digital Breast Tomosynthesis</h4>
+                                <p class="paper-serif mt-2.5 text-[10.5px] leading-relaxed text-slate-600">Dorfner FJ, Dorster MA, Connolly R, …, <span class="font-semibold text-purple-700">Kim AE</span>, <span class="font-semibold text-purple-700">Bridge CP</span></p>
+                                <p class="mt-4 font-mono text-[8px] uppercase tracking-[0.2em] text-slate-400">Abstract</p>
+                                <p class="paper-serif mt-1.5 text-[10px] leading-[1.6] text-slate-600">Background Foundation models show promise in medical imaging but remain underexplored in three-dimensional modalities. Despite the adoption of digital breast tomosynthesis (DBT) in breast cancer screening, no dedicated foundation model currently exists for this modality. Purpose To develop and evaluate a foundation model for DBT (DBT-DINO) and assess the impact of domain-specific pretraining across multiple clinical tasks. Materials and Methods This retrospective study used DBT images from Mass General Brigham acquired between March 2011 and February 2024. Self-supervised pretraining was performed using Meta AI's DINOv2 methodology on more than 25 million two-dimensional sections from 487 975 DBT volumes from 27 990 patients. Three downstream tasks were evaluated: (a) breast density classification using 5000 screening examinations, (b) 5-year risk of developing biopsy-proven breast…</p>
+                            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white to-transparent"></div>
+                            </div>
+
+                            <div class="flex items-center justify-between border-t border-slate-100 px-6 py-2 font-mono text-[8.5px] text-slate-400">
+                                <span class="truncate">doi:10.1148/radiol.254034</span><span class="flex-none pl-2">PMID 42550018</span>
+                            </div>
+                            <div class="flex items-center justify-between border-t border-slate-200 bg-slate-50 px-6 py-3">
+                                <span
+                                    class="font-mono text-[10px] uppercase tracking-[0.14em] text-slate-500 group-hover:text-purple-700 transition-colors">Read
+                                    paper</span>
+                                <i data-lucide="arrow-up-right"
+                                    class="w-4 h-4 flex-none text-slate-400 group-hover:text-purple-600 transition-colors"></i>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="snap-start flex-none w-[320px] sm:w-[370px]">
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/42414708/" target="_blank" rel="noreferrer"
+                            class="group flex h-[520px] flex-col overflow-hidden rounded-md bg-white ring-1 ring-slate-200 dark:ring-slate-700 shadow-lg shadow-slate-900/10 transition-all hover:-translate-y-1 hover:shadow-xl hover:ring-purple-300">
+
+                            <!-- Simulated cover built from the PubMed metadata -->
+                            <div class="relative flex-1 overflow-hidden px-6 pt-6">
+                                <div class="flex items-start justify-between gap-3">
+                                    <span></span>
+                                    <span class="mt-1 h-2.5 w-5 flex-none rounded-sm bg-purple-700/80"></span>
+                                </div>
+                                <div class="mt-3 h-px w-full bg-slate-300"></div>
+                                <p class="paper-serif mt-3 text-[11px] italic leading-snug text-slate-500">J Imaging Inform Med. 2026 Jul 7:10.1007/s10278-026-02082-z.</p>
+                                <h4 class="paper-serif mt-3 text-[17px] font-bold leading-[1.28] text-slate-900 line-clamp-4">Domain Generalization Mitigates Scanner-Induced Domain Shift in Medical Imaging</h4>
+                                <p class="paper-serif mt-2.5 text-[10.5px] leading-relaxed text-slate-600"><span class="font-semibold text-purple-700">Pulido-Arias D</span>, <span class="font-semibold text-purple-700">Cleveland MC</span>, Patel J, …, <span class="font-semibold text-purple-700">Kim AE</span>, <span class="font-semibold text-purple-700">Bridge CP</span></p>
+                                <p class="mt-4 font-mono text-[8px] uppercase tracking-[0.2em] text-slate-400">Abstract</p>
+                                <p class="paper-serif mt-1.5 text-[10px] leading-[1.6] text-slate-600">Deep learning models for medical image analysis often fail in clinical deployment due to domain shift from varied acquisition hardware and protocols. We present a comprehensive evaluation of various domain generalization (DG) techniques to mitigate this performance degradation. We evaluate six DG algorithms against a baseline on two distinct tasks using large, multi-institutional datasets: grading prostate cancer aggressiveness from MRI using the ProstateNet dataset and assessing breast density from mammograms using the DMIST dataset, using a leave-one-domain-out protocol. Our results show that DG methods, particularly those that explicitly regularize the learning process, improve out-of-domain generalization, but do not fully close the gap with in-domain performance. On the ProstateNet dataset, the FISH algorithm achieved the highest average out-of-domain AUROC (0.678), a statistically…</p>
+                            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white to-transparent"></div>
+                            </div>
+
+                            <div class="flex items-center justify-between border-t border-slate-100 px-6 py-2 font-mono text-[8.5px] text-slate-400">
+                                <span class="truncate">doi:10.1007/s10278-026-02082-z</span><span class="flex-none pl-2">PMID 42414708</span>
+                            </div>
+                            <div class="flex items-center justify-between border-t border-slate-200 bg-slate-50 px-6 py-3">
+                                <span
+                                    class="font-mono text-[10px] uppercase tracking-[0.14em] text-slate-500 group-hover:text-purple-700 transition-colors">Read
+                                    paper</span>
+                                <i data-lucide="arrow-up-right"
+                                    class="w-4 h-4 flex-none text-slate-400 group-hover:text-purple-600 transition-colors"></i>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="snap-start flex-none w-[320px] sm:w-[370px]">
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/42487903/" target="_blank" rel="noreferrer"
+                            class="group flex h-[520px] flex-col overflow-hidden rounded-md bg-white ring-1 ring-slate-200 dark:ring-slate-700 shadow-lg shadow-slate-900/10 transition-all hover:-translate-y-1 hover:shadow-xl hover:ring-purple-300">
+
+                            <!-- Simulated cover built from the PubMed metadata -->
+                            <div class="relative flex-1 overflow-hidden px-6 pt-6">
+                                <div class="flex items-start justify-between gap-3">
+                                    <span></span>
+                                    <span class="mt-1 h-2.5 w-5 flex-none rounded-sm bg-purple-700/80"></span>
+                                </div>
+                                <div class="mt-3 h-px w-full bg-slate-300"></div>
+                                <p class="paper-serif mt-3 text-[11px] italic leading-snug text-slate-500">Neurooncol Adv. 2026 Jan-Dec;8(1):vdag137.</p>
+                                <h4 class="paper-serif mt-3 text-[17px] font-bold leading-[1.28] text-slate-900 line-clamp-4">A deep learning algorithm for fully automated volumetric measurement of meningioma burden</h4>
+                                <p class="paper-serif mt-2.5 text-[10.5px] leading-relaxed text-slate-600"><span class="font-semibold text-purple-700">Cleveland MC</span>, <span class="font-semibold text-purple-700">Kim AE</span>, McNeal TN, …, <span class="font-semibold text-purple-700">Pulido-Arias D</span>, <span class="font-semibold text-purple-700">Bridge CP</span></p>
+                                <p class="mt-4 font-mono text-[8px] uppercase tracking-[0.2em] text-slate-400">Abstract</p>
+                                <p class="paper-serif mt-1.5 text-[10px] leading-[1.6] text-slate-600">BACKGROUND: We sought to develop a deep learning (DL) model to enable fully automated 3D segmentation and volumetric assessment of meningioma burden with a specific emphasis on generalizing to high-grade and posttreatment meningiomas to improve interobserver variability and decrease reader time investment in tumor response assessment. METHODS: In total, 450 postcontrast T1-weighted brain MRIs from 104 patients with meningiomas were obtained from Massachusetts General Hospital and Dana-Farber Cancer Institute. The cohort was unique among prior DL segmentation models in that it encompassed meningiomas of all grades, postoperative, and postradiated meningiomas. Preprocessed MRIs and manually generated tumor segmentations were used to train a U-Net with a joint Dice-cross entropy loss function. RESULTS: When tested on internal data, our model achieved a median Dice of 0.741 and a median…</p>
+                            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white to-transparent"></div>
+                            </div>
+
+                            <div class="flex items-center justify-between border-t border-slate-100 px-6 py-2 font-mono text-[8.5px] text-slate-400">
+                                <span class="truncate">doi:10.1093/noajnl/vdag137</span><span class="flex-none pl-2">PMID 42487903</span>
+                            </div>
+                            <div class="flex items-center justify-between border-t border-slate-200 bg-slate-50 px-6 py-3">
+                                <span
+                                    class="font-mono text-[10px] uppercase tracking-[0.14em] text-slate-500 group-hover:text-purple-700 transition-colors">Read
+                                    paper</span>
+                                <i data-lucide="arrow-up-right"
+                                    class="w-4 h-4 flex-none text-slate-400 group-hover:text-purple-600 transition-colors"></i>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="snap-start flex-none w-[320px] sm:w-[370px]">
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/42146619/" target="_blank" rel="noreferrer"
+                            class="group flex h-[520px] flex-col overflow-hidden rounded-md bg-white ring-1 ring-slate-200 dark:ring-slate-700 shadow-lg shadow-slate-900/10 transition-all hover:-translate-y-1 hover:shadow-xl hover:ring-purple-300">
+
+                            <!-- Simulated cover built from the PubMed metadata -->
+                            <div class="relative flex-1 overflow-hidden px-6 pt-6">
+                                <div class="flex items-start justify-between gap-3">
+                                    <span class="rounded-sm bg-amber-100 px-1.5 py-0.5 font-mono text-[8.5px] uppercase tracking-[0.16em] text-amber-700">Preprint · not peer reviewed</span>
+                                    <span class="mt-1 h-2.5 w-5 flex-none rounded-sm bg-purple-700/80"></span>
+                                </div>
+                                <div class="mt-3 h-px w-full bg-slate-300"></div>
+                                <p class="paper-serif mt-3 text-[11px] italic leading-snug text-slate-500">bioRxiv. 2026 May 19:pii: 2026.05.05.723013. 10.64898/2026.05.05.723013.</p>
+                                <h4 class="paper-serif mt-3 text-[17px] font-bold leading-[1.28] text-slate-900 line-clamp-4">Weak supervision of H&amp;E slides reveals systems-level biology and functional states that govern therapeutic resistance</h4>
+                                <p class="paper-serif mt-2.5 text-[10.5px] leading-relaxed text-slate-600">Goncalves T, <span class="font-semibold text-purple-700">Pulido D</span>, Perrino CM, …, <span class="font-semibold text-purple-700">Cleveland M</span>, <span class="font-semibold text-purple-700">Bridge CP</span>, <span class="font-semibold text-purple-700">Kim AE</span></p>
+                                <p class="mt-4 font-mono text-[8px] uppercase tracking-[0.2em] text-slate-400">Abstract</p>
+                                <p class="paper-serif mt-1.5 text-[10px] leading-[1.6] text-slate-600">Precision oncology lacks scalable tools to assess, at the patient level, systems-level tumor microenvironment (TME) programs driving therapeutic resistance. To address this gap, we trained a weakly-supervised deep learning model, using routine H&amp;E slides as input, to derive quantitative activity for therapeutically-relevant TME phenotypes, spanning immune, metabolic, and tumor cell-intrinsic programs. Using 3111 breast cancer H&amp;E WSIs with matched bulk transcriptomics, our model accurately infers these biological states (AUROC&gt;0.80; PCC&gt;0.64). Validation spanned three levels: (i) tissue-matched multiplexed immunofluorescence, showing concordance between inferred functional states and immune cell fractions (p=0.006-0.106), (ii) blinded reader assessments, confirming localization of phenotype-specific morphology (p&lt;3×10-5), and (iii) multi-institutional patient cohorts, where…</p>
+                            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white to-transparent"></div>
+                            </div>
+
+                            <div class="flex items-center justify-between border-t border-slate-100 px-6 py-2 font-mono text-[8.5px] text-slate-400">
+                                <span class="truncate">doi:10.64898/2026.05.05.723013</span><span class="flex-none pl-2">PMID 42146619</span>
+                            </div>
+                            <div class="flex items-center justify-between border-t border-slate-200 bg-slate-50 px-6 py-3">
+                                <span
+                                    class="font-mono text-[10px] uppercase tracking-[0.14em] text-slate-500 group-hover:text-purple-700 transition-colors">Read
+                                    paper</span>
+                                <i data-lucide="arrow-up-right"
+                                    class="w-4 h-4 flex-none text-slate-400 group-hover:text-purple-600 transition-colors"></i>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="snap-start flex-none w-[320px] sm:w-[370px]">
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/39470431/" target="_blank" rel="noreferrer"
+                            class="group flex h-[520px] flex-col overflow-hidden rounded-md bg-white ring-1 ring-slate-200 dark:ring-slate-700 shadow-lg shadow-slate-900/10 transition-all hover:-translate-y-1 hover:shadow-xl hover:ring-purple-300">
+
+                            <!-- Simulated cover built from the PubMed metadata -->
+                            <div class="relative flex-1 overflow-hidden px-6 pt-6">
+                                <div class="flex items-start justify-between gap-3">
+                                    <span></span>
+                                    <span class="mt-1 h-2.5 w-5 flex-none rounded-sm bg-purple-700/80"></span>
+                                </div>
+                                <div class="mt-3 h-px w-full bg-slate-300"></div>
+                                <p class="paper-serif mt-3 text-[11px] italic leading-snug text-slate-500">Radiology. 2024 Oct;313(1):e241139.</p>
+                                <h4 class="paper-serif mt-3 text-[17px] font-bold leading-[1.28] text-slate-900 line-clamp-4">Comparing Commercial and Open-Source Large Language Models for Labeling Chest Radiograph Reports</h4>
+                                <p class="paper-serif mt-2.5 text-[10.5px] leading-relaxed text-slate-600">Dorfner FJ, Jürgensen L, Donle L, …, <span class="font-semibold text-purple-700">Cleveland MC</span>, <span class="font-semibold text-purple-700">Kim AE</span>, <span class="font-semibold text-purple-700">Bridge CP</span></p>
+                                <p class="mt-4 font-mono text-[8px] uppercase tracking-[0.2em] text-slate-400">Abstract</p>
+                                <p class="paper-serif mt-1.5 text-[10px] leading-[1.6] text-slate-600">Background Rapid advances in large language models (LLMs) have led to the development of numerous commercial and open-source models. While recent publications have explored OpenAI's GPT-4 to extract information of interest from radiology reports, there has not been a real-world comparison of GPT-4 to leading open-source models. Purpose To compare different leading open-source LLMs to GPT-4 on the task of extracting relevant findings from chest radiograph reports. Materials and Methods Two independent datasets of free-text radiology reports from chest radiograph examinations were used in this retrospective study performed between February 2, 2024, and February 14, 2024. The first dataset consisted of reports from the ImaGenome dataset, providing reference standard annotations from the MIMIC-CXR database acquired between 2011 and 2016. The second dataset consisted of randomly selected…</p>
+                            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white to-transparent"></div>
+                            </div>
+
+                            <div class="flex items-center justify-between border-t border-slate-100 px-6 py-2 font-mono text-[8.5px] text-slate-400">
+                                <span class="truncate">doi:10.1148/radiol.241139</span><span class="flex-none pl-2">PMID 39470431</span>
+                            </div>
+                            <div class="flex items-center justify-between border-t border-slate-200 bg-slate-50 px-6 py-3">
+                                <span
+                                    class="font-mono text-[10px] uppercase tracking-[0.14em] text-slate-500 group-hover:text-purple-700 transition-colors">Read
+                                    paper</span>
+                                <i data-lucide="arrow-up-right"
+                                    class="w-4 h-4 flex-none text-slate-400 group-hover:text-purple-600 transition-colors"></i>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="snap-start flex-none w-[320px] sm:w-[370px]">
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/38070147/" target="_blank" rel="noreferrer"
+                            class="group flex h-[520px] flex-col overflow-hidden rounded-md bg-white ring-1 ring-slate-200 dark:ring-slate-700 shadow-lg shadow-slate-900/10 transition-all hover:-translate-y-1 hover:shadow-xl hover:ring-purple-300">
+
+                            <!-- Simulated cover built from the PubMed metadata -->
+                            <div class="relative flex-1 overflow-hidden px-6 pt-6">
+                                <div class="flex items-start justify-between gap-3">
+                                    <span></span>
+                                    <span class="mt-1 h-2.5 w-5 flex-none rounded-sm bg-purple-700/80"></span>
+                                </div>
+                                <div class="mt-3 h-px w-full bg-slate-300"></div>
+                                <p class="paper-serif mt-3 text-[11px] italic leading-snug text-slate-500">Neuro Oncol. 2024 May 3;26(5):965-974.</p>
+                                <h4 class="paper-serif mt-3 text-[17px] font-bold leading-[1.28] text-slate-900 line-clamp-4">Abnormal vascular structure and function within brain metastases is linked to pembrolizumab resistance</h4>
+                                <p class="paper-serif mt-2.5 text-[10.5px] leading-relaxed text-slate-600"><span class="font-semibold text-purple-700">Kim AE</span>, Lou KW, Giobbie-Hurder A, …, <span class="font-semibold text-purple-700">Cleveland MC</span>, <span class="font-semibold text-purple-700">Bridge CP</span></p>
+                                <p class="mt-4 font-mono text-[8px] uppercase tracking-[0.2em] text-slate-400">Abstract</p>
+                                <p class="paper-serif mt-1.5 text-[10px] leading-[1.6] text-slate-600">BACKGROUND: We recently conducted a phase 2 trial (NCT028865685) evaluating intracranial efficacy of pembrolizumab for brain metastases (BM) of diverse histologies. Our study met its primary efficacy endpoint and illustrates that pembrolizumab exerts promising activity in a select group of patients with BM. Given the importance of aberrant vasculature in mediating immunosuppression, we explored the relationship between immune checkpoint inhibitor (ICI) efficacy and vascular architecture in the hopes of identifying potential mechanisms of intracranial ICI response or resistance for BM. METHODS: Using Vessel Architectural Imaging, a histologically validated quantitative metric for in vivo tumor vascular physiology, we analyzed dual-echo DSC/DCE MRI for 44 patients on trial. Tumor and peri-tumor cerebral blood volume/flow, vessel size, arterial and venous dominance, and vascular…</p>
+                            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white to-transparent"></div>
+                            </div>
+
+                            <div class="flex items-center justify-between border-t border-slate-100 px-6 py-2 font-mono text-[8.5px] text-slate-400">
+                                <span class="truncate">doi:10.1093/neuonc/noad236</span><span class="flex-none pl-2">PMID 38070147</span>
+                            </div>
+                            <div class="flex items-center justify-between border-t border-slate-200 bg-slate-50 px-6 py-3">
+                                <span
+                                    class="font-mono text-[10px] uppercase tracking-[0.14em] text-slate-500 group-hover:text-purple-700 transition-colors">Read
+                                    paper</span>
+                                <i data-lucide="arrow-up-right"
+                                    class="w-4 h-4 flex-none text-slate-400 group-hover:text-purple-600 transition-colors"></i>
+                            </div>
+                        </a>
+                    </article>
+            </div>
+
+            <p id="publication-status" class="mt-6 font-mono text-[11px] text-slate-400 dark:text-slate-600"></p>
+        </div>
+    </section>
+    <!-- NEWS SECTION -->
+    <section id="news" class="py-24 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">News</h2>
+                    <p class="text-slate-600 dark:text-slate-400">Longer reads on the papers, datasets and tools that
+                        shaped the lab.</p>
+                </div>
+                <a href="/news/"
+                    class="px-5 py-2.5 bg-slate-900 dark:bg-slate-800 text-white rounded-lg hover:bg-slate-800 dark:hover:bg-slate-700 transition-colors text-sm font-medium flex items-center shadow-lg shadow-slate-900/20">
+                    <i data-lucide="newspaper" class="w-4 h-4 mr-2"></i>
+                    All news
+                </a>
+            </div>
+
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                	<a href="/news/body-composition-at-population-scale/"
+		class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-purple-400 dark:hover:border-purple-500 hover:shadow-lg transition-all">
+					<div class="aspect-[16/9] overflow-hidden bg-white border-b border-slate-100 dark:border-slate-800">
+				<img src="/assets/uploads/2026/09/body-composition.jpg" alt="" loading="lazy"
+					class="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-[1.03]">
+			</div>
+				<div class="flex flex-1 flex-col p-6">
+			<p class="font-mono text-[10px] uppercase tracking-[0.18em] text-purple-700 dark:text-purple-400">
+				Radiology · AI at scale</p>
+			<h3
+				class="mt-3 text-lg font-bold leading-snug text-slate-900 dark:text-white group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors">
+				Body composition, read automatically from every abdominal CT</h3>
+			<p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+				A fully automated deep learning pipeline applied to 12,128 outpatient CT examinations, and the age-, sex- and race-adjusted reference curves derived from them.</p>
+			<div
+				class="mt-5 flex items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
+				<time datetime="2026-09-01T09:00:00+00:00">September 1, 2026</time>
+				<span
+					class="inline-flex items-center gap-1.5 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+					Read <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+				</span>
+			</div>
+		</div>
+	</a>
+		<a href="/news/immunotherapy-for-brain-metastases/"
+		class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-purple-400 dark:hover:border-purple-500 hover:shadow-lg transition-all">
+					<div class="aspect-[16/9] overflow-hidden bg-white border-b border-slate-100 dark:border-slate-800">
+				<img src="/assets/uploads/2026/08/brain-metastases-1024x892.jpg" alt="" loading="lazy"
+					class="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-[1.03]">
+			</div>
+				<div class="flex flex-1 flex-col p-6">
+			<p class="font-mono text-[10px] uppercase tracking-[0.18em] text-purple-700 dark:text-purple-400">
+				Neuro-oncology · Clinical trial</p>
+			<h3
+				class="mt-3 text-lg font-bold leading-snug text-slate-900 dark:text-white group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors">
+				Immunotherapy tested where trials usually do not go: the brain</h3>
+			<p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+				A phase 2 trial of pembrolizumab in 57 patients with brain metastases across histologies, which met its primary endpoint of intracranial benefit.</p>
+			<div
+				class="mt-5 flex items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
+				<time datetime="2026-08-25T09:00:00+00:00">August 25, 2026</time>
+				<span
+					class="inline-flex items-center gap-1.5 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+					Read <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+				</span>
+			</div>
+		</div>
+	</a>
+		<a href="/news/making-model-outputs-speak-dicom/"
+		class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-purple-400 dark:hover:border-purple-500 hover:shadow-lg transition-all">
+					<div class="aspect-[16/9] overflow-hidden bg-white border-b border-slate-100 dark:border-slate-800">
+				<img src="/assets/uploads/2026/08/highdicom-1024x494.jpg" alt="" loading="lazy"
+					class="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-[1.03]">
+			</div>
+				<div class="flex flex-1 flex-col p-6">
+			<p class="font-mono text-[10px] uppercase tracking-[0.18em] text-purple-700 dark:text-purple-400">
+				Infrastructure · Open source</p>
+			<h3
+				class="mt-3 text-lg font-bold leading-snug text-slate-900 dark:text-white group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors">
+				Making machine learning outputs speak DICOM</h3>
+			<p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+				highdicom encodes annotations and model outputs as standard DICOM objects, so a model trained in research can be read by the systems that hold the images.</p>
+			<div
+				class="mt-5 flex items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
+				<time datetime="2026-08-18T09:00:00+00:00">August 18, 2026</time>
+				<span
+					class="inline-flex items-center gap-1.5 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+					Read <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+				</span>
+			</div>
+		</div>
+	</a>
+	            </div>
+        </div>
+    </section>
+<!-- TEAM SECTION -->
+<section id="team" class="py-24 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="text-center max-w-2xl mx-auto mb-16">
+			<h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Principal Investigators</h2>
+			<p class="text-slate-600 dark:text-slate-400">Leading multidisciplinary teams to solve the hardest
+				problems in cancer imaging.</p>
+		</div>
+
+		<div class="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
+							<div
+					class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-purple-200 dark:hover:border-purple-700 transition-all">
+					<div class="flex flex-col sm:flex-row items-start gap-6">
+						<div class="flex-shrink-0">
+							<img src="/assets/uploads/2026/09/albert-kim-300x300.jpg" alt="Albert E. Kim, MD" loading="lazy" class="w-24 h-24 rounded-full object-cover border-4 border-white dark:border-slate-700 shadow-sm">						</div>
+						<div>
+							<h3 class="text-xl font-bold text-slate-900 dark:text-white">Albert E. Kim, MD</h3>
+							<p class="text-purple-700 dark:text-purple-400 font-semibold text-sm mb-1">Co-Director</p>
+							<p class="text-slate-500 dark:text-slate-400 text-xs mb-4 uppercase tracking-wide font-medium">
+								Instructor in Neurology, Harvard Medical School · MGH Cancer Center</p>
+							<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+								Dr. Kim is a physician-scientist and neuro-oncologist at the Mass General Cancer Center and the MGH Brain Tumor Research Center. He combines omics-based techniques (single-cell genomics, transcriptomics, cell-free DNA) with medical imaging and machine learning to define and target the genomic and metabolic vulnerabilities of central nervous system metastases, and to uncover the mechanisms behind therapeutic resistance.</p>
+															<p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed mb-6">
+									MD, Medical College of Georgia · Neurology residency, Washington University · Fellowship, MGH and Dana-Farber Cancer Institute · Damon Runyon William G. Kaelin, Jr., MD Physician-Scientist Award.</p>
+														<div class="flex gap-4">
+																	<a href="mailto:akim46@mgh.harvard.edu"
+										aria-label="Email Albert E. Kim, MD"
+										class="text-slate-400 hover:text-purple-700 transition-colors"><i data-lucide="mail"
+											class="w-5 h-5"></i></a>
+																									<a href="https://www.martinos.org/faculty/kim-albert/" target="_blank" rel="noreferrer"
+										aria-label="Albert E. Kim, MD profile"
+										class="text-slate-400 hover:text-purple-700 transition-colors"><i data-lucide="external-link"
+											class="w-5 h-5"></i></a>
+															</div>
+						</div>
+					</div>
+				</div>
+							<div
+					class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-purple-200 dark:hover:border-purple-700 transition-all">
+					<div class="flex flex-col sm:flex-row items-start gap-6">
+						<div class="flex-shrink-0">
+							<img src="/assets/uploads/2026/09/chris-bridge.jpg" alt="Christopher P. Bridge, DPhil" loading="lazy" class="w-24 h-24 rounded-full object-cover border-4 border-white dark:border-slate-700 shadow-sm">						</div>
+						<div>
+							<h3 class="text-xl font-bold text-slate-900 dark:text-white">Christopher P. Bridge, DPhil</h3>
+							<p class="text-purple-700 dark:text-purple-400 font-semibold text-sm mb-1">Co-Director</p>
+							<p class="text-slate-500 dark:text-slate-400 text-xs mb-4 uppercase tracking-wide font-medium">
+								Assistant Professor of Radiology, Harvard Medical School</p>
+							<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+								Dr. Bridge works on machine learning for cancer imaging biomarkers across radiology, pathology and ophthalmology, and on the infrastructure required to move those models into clinical practice. He is the lead developer of highdicom and a contributor to the NCI Imaging Data Commons, with a long-standing focus on DICOM standards and interoperability for AI.</p>
+															<p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed mb-6">
+									MEng, University of Cambridge · DPhil in Biomedical Engineering, University of Oxford · Formerly Director of Machine Learning at Mass General Brigham AI (2017–2022).</p>
+														<div class="flex gap-4">
+																	<a href="mailto:cbridge@mgh.harvard.edu"
+										aria-label="Email Christopher P. Bridge, DPhil"
+										class="text-slate-400 hover:text-purple-700 transition-colors"><i data-lucide="mail"
+											class="w-5 h-5"></i></a>
+																									<a href="https://chrisbridge.science/" target="_blank" rel="noreferrer"
+										aria-label="Christopher P. Bridge, DPhil profile"
+										class="text-slate-400 hover:text-purple-700 transition-colors"><i data-lucide="external-link"
+											class="w-5 h-5"></i></a>
+															</div>
+						</div>
+					</div>
+				</div>
+					</div>
+
+		<div class="text-center max-w-2xl mx-auto mb-10">
+			<h3 class="text-2xl font-bold text-slate-900 dark:text-white">Research Team</h3>
+		</div>
+
+		<div class="grid lg:grid-cols-2 gap-6">
+							<div
+					class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:border-purple-200 dark:hover:border-purple-700 transition-all flex items-start gap-5">
+					<div class="flex-shrink-0">
+						<div class="w-16 h-16 bg-gradient-to-br from-slate-100 to-purple-50 rounded-full flex items-center justify-center text-lg text-purple-400 font-bold border-2 border-white dark:border-slate-600 shadow-sm">DM</div>					</div>
+					<div>
+						<h4 class="text-lg font-bold text-slate-900 dark:text-white">Diana Mindroc, PhD</h4>
+						<p class="text-purple-700 dark:text-purple-400 font-semibold text-xs mb-2">Postdoctoral Researcher</p>
+						<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+							Works on surgical data science and computational imaging. Her previous research at the German Cancer Research Center (DKFZ) in Heidelberg covered spectral and hyperspectral imaging for contrast agent–free monitoring of tissue perfusion and ischemia, together with benchmark datasets and validation studies for surgical instrument segmentation in endoscopy.</p>
+					</div>
+				</div>
+							<div
+					class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:border-purple-200 dark:hover:border-purple-700 transition-all flex items-start gap-5">
+					<div class="flex-shrink-0">
+						<img src="/assets/uploads/2026/09/mason-cleveland-300x300.jpg" alt="Mason C. Cleveland, BS" loading="lazy" class="w-16 h-16 rounded-full object-cover border-2 border-white dark:border-slate-600 shadow-sm">					</div>
+					<div>
+						<h4 class="text-lg font-bold text-slate-900 dark:text-white">Mason C. Cleveland, BS</h4>
+						<p class="text-purple-700 dark:text-purple-400 font-semibold text-xs mb-2">Software Engineer</p>
+						<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+							Builds and maintains the lab&#8217;s deep learning pipelines and clinical tooling. Lead author of an algorithm for fully automated volumetric measurement of meningioma burden, and a contributor to work on digital pathology prediction of breast cancer tumor and immune phenotypes. BS, University of Michigan.</p>
+					</div>
+				</div>
+							<div
+					class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:border-purple-200 dark:hover:border-purple-700 transition-all flex items-start gap-5">
+					<div class="flex-shrink-0">
+						<img src="/assets/uploads/2026/09/dagoberto-pulido-300x300.jpg" alt="Dagoberto Pulido-Arias, PhD" loading="lazy" class="w-16 h-16 rounded-full object-cover border-2 border-white dark:border-slate-600 shadow-sm">					</div>
+					<div>
+						<h4 class="text-lg font-bold text-slate-900 dark:text-white">Dagoberto Pulido-Arias, PhD</h4>
+						<p class="text-purple-700 dark:text-purple-400 font-semibold text-xs mb-2">Research Scientist</p>
+						<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+							Studies the robustness and generalization of deep learning models in medical imaging, including domain generalization methods that mitigate scanner-induced domain shift. Also develops computational pathology tools, such as deep learning models for precision-based use of endocrine therapy in resource-limited settings. Background in computer vision, remote sensing and quantitative image analysis.</p>
+					</div>
+				</div>
+					</div>
+
+		<!-- Alumni -->
+		<div class="mt-20 border-t border-slate-200 dark:border-slate-800 pt-14">
+			<div class="text-center max-w-2xl mx-auto mb-10">
+				<h3 class="text-2xl font-bold text-slate-900 dark:text-white">Alumni</h3>
+				<p class="mt-3 text-slate-600 dark:text-slate-400">People who built part of this work and have
+					moved on.</p>
+			</div>
+
+			<div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+									<div
+						class="bg-white dark:bg-slate-800/60 p-5 rounded-xl border border-slate-200 dark:border-slate-700/70 hover:border-purple-200 dark:hover:border-purple-700 transition-all flex items-start gap-4">
+						<img src="/assets/uploads/2026/09/jay-patel-300x300.jpg" alt="Jay B. Patel" loading="lazy" class="w-14 h-14 flex-none rounded-full object-cover border-2 border-white dark:border-slate-600 shadow-sm">						<div>
+							<h4 class="text-base font-bold text-slate-900 dark:text-white">Jay B. Patel</h4>
+							<p class="font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400 dark:text-slate-500 mb-2">
+								Senior Data Scientist</p>
+							<p class="text-slate-600 dark:text-slate-400 text-[13px] leading-relaxed">
+								Worked on the reliability of deep learning in neuro-imaging: the trustworthiness of saliency maps for localizing abnormalities, radiomics repeatability in scan&ndash;rescan glioblastoma MRI, and automated tumor burden assessment in pediatric high-grade glioma.</p>
+						</div>
+					</div>
+									<div
+						class="bg-white dark:bg-slate-800/60 p-5 rounded-xl border border-slate-200 dark:border-slate-700/70 hover:border-purple-200 dark:hover:border-purple-700 transition-all flex items-start gap-4">
+						<img src="/assets/uploads/2026/09/felix-dorfner-300x300.jpg" alt="Felix J. Dorfner" loading="lazy" class="w-14 h-14 flex-none rounded-full object-cover border-2 border-white dark:border-slate-600 shadow-sm">						<div>
+							<h4 class="text-base font-bold text-slate-900 dark:text-white">Felix J. Dorfner</h4>
+							<p class="font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400 dark:text-slate-500 mb-2">
+								Medical Student</p>
+							<p class="text-slate-600 dark:text-slate-400 text-[13px] leading-relaxed">
+								Led the lab&#8217;s work on language models in radiology, benchmarking commercial and open-source LLMs for labeling chest radiograph reports and evaluating biomedical fine-tuning. First author of DBT-DINO, a foundation model for digital breast tomosynthesis.</p>
+						</div>
+					</div>
+									<div
+						class="bg-white dark:bg-slate-800/60 p-5 rounded-xl border border-slate-200 dark:border-slate-700/70 hover:border-purple-200 dark:hover:border-purple-700 transition-all flex items-start gap-4">
+						<img src="/assets/uploads/2026/09/melisa-guelen-300x300.jpg" alt="Melisa S. Güelen" loading="lazy" class="w-14 h-14 flex-none rounded-full object-cover border-2 border-white dark:border-slate-600 shadow-sm">						<div>
+							<h4 class="text-base font-bold text-slate-900 dark:text-white">Melisa S. Güelen</h4>
+							<p class="font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400 dark:text-slate-500 mb-2">
+								MD-PhD Student</p>
+							<p class="text-slate-600 dark:text-slate-400 text-[13px] leading-relaxed">
+								Studied intracranial hemorrhage in patients with brain tumors, first-authoring work on outcomes and risk factors of hemorrhage after resection of brain metastases. Now at the Department of Neurosurgery, Charité &ndash; Universitätsmedizin Berlin.</p>
+						</div>
+					</div>
+							</div>
+		</div>
+	</div>
+</section>
+<!-- SOFTWARE SECTION -->
+<section id="software" class="py-24 bg-white dark:bg-slate-950">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+			<div>
+				<h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">Open Source Software</h2>
+				<p class="text-slate-600 dark:text-slate-400">Public code behind our recent papers.</p>
+			</div>
+			<a href="https://github.com/QTIM-Lab" target="_blank" rel="noreferrer"
+				class="px-5 py-2.5 bg-slate-900 dark:bg-slate-800 text-white rounded-lg hover:bg-slate-800 dark:hover:bg-slate-700 transition-colors text-sm font-medium flex items-center shadow-lg shadow-slate-900/20">
+				<svg class="w-4 h-4 mr-2" fill="currentColor" aria-hidden="true">
+					<use href="#icon-github"></use>
+				</svg>
+				GitHub Organization
+			</a>
+		</div>
+
+		<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+							<a href="https://github.com/QTIM-Lab" target="_blank" rel="noreferrer"
+					class="group flex flex-col border border-slate-200 dark:border-slate-800 p-7 rounded-2xl hover:border-purple-400 dark:hover:border-purple-500 hover:shadow-lg transition-all bg-white dark:bg-slate-900">
+					<div class="flex items-start justify-between">
+						<div
+							class="w-10 h-10 bg-purple-50 dark:bg-purple-900/30 rounded-lg flex items-center justify-center group-hover:bg-purple-600 transition-colors">
+							<i data-lucide="database"
+								class="w-5 h-5 text-purple-700 dark:text-purple-400 group-hover:text-white"></i>
+						</div>
+						<i data-lucide="arrow-up-right"
+							class="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors"></i>
+					</div>
+					<h3
+						class="font-bold text-slate-900 dark:text-white mt-6 mb-3 text-lg group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors">
+						highdicom</h3>
+					<p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed flex-1">
+						High-level DICOM abstractions for Python. Encodes image annotations and machine learning outputs as standard DICOM objects, so models interoperate with clinical systems.</p>
+					<div class="flex items-center gap-2">
+						<span class="w-2 h-2 rounded-full bg-purple-500"></span>
+						<span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Python · J Digit Imaging 2022</span>
+					</div>
+				</a>
+							<a href="https://github.com/QTIM-Lab/DBT-DINO" target="_blank" rel="noreferrer"
+					class="group flex flex-col border border-slate-200 dark:border-slate-800 p-7 rounded-2xl hover:border-purple-400 dark:hover:border-purple-500 hover:shadow-lg transition-all bg-white dark:bg-slate-900">
+					<div class="flex items-start justify-between">
+						<div
+							class="w-10 h-10 bg-purple-50 dark:bg-purple-900/30 rounded-lg flex items-center justify-center group-hover:bg-purple-600 transition-colors">
+							<i data-lucide="scan"
+								class="w-5 h-5 text-purple-700 dark:text-purple-400 group-hover:text-white"></i>
+						</div>
+						<i data-lucide="arrow-up-right"
+							class="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors"></i>
+					</div>
+					<h3
+						class="font-bold text-slate-900 dark:text-white mt-6 mb-3 text-lg group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors">
+						DBT-DINO</h3>
+					<p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed flex-1">
+						Self-supervised foundation model for digital breast tomosynthesis, pretrained with DINOv2 on more than 25 million sections from 487,975 DBT volumes.</p>
+					<div class="flex items-center gap-2">
+						<span class="w-2 h-2 rounded-full bg-blue-500"></span>
+						<span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Python · Radiology 2026</span>
+					</div>
+				</a>
+							<a href="https://github.com/QTIM-Lab/Brain-Mets-Seg" target="_blank" rel="noreferrer"
+					class="group flex flex-col border border-slate-200 dark:border-slate-800 p-7 rounded-2xl hover:border-purple-400 dark:hover:border-purple-500 hover:shadow-lg transition-all bg-white dark:bg-slate-900">
+					<div class="flex items-start justify-between">
+						<div
+							class="w-10 h-10 bg-purple-50 dark:bg-purple-900/30 rounded-lg flex items-center justify-center group-hover:bg-purple-600 transition-colors">
+							<i data-lucide="brain"
+								class="w-5 h-5 text-purple-700 dark:text-purple-400 group-hover:text-white"></i>
+						</div>
+						<i data-lucide="arrow-up-right"
+							class="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors"></i>
+					</div>
+					<h3
+						class="font-bold text-slate-900 dark:text-white mt-6 mb-3 text-lg group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors">
+						Brain-Mets-Seg</h3>
+					<p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed flex-1">
+						3D U-Net for automatic segmentation of brain metastases on contrast-enhanced T1 MRI, trained on 1,546 scans from eight sources and evaluated on 885.</p>
+					<div class="flex items-center gap-2">
+						<span class="w-2 h-2 rounded-full bg-teal-500"></span>
+						<span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Python · Neuro-oncology</span>
+					</div>
+				</a>
+							<a href="https://github.com/QTIM-Lab/tme-wsi" target="_blank" rel="noreferrer"
+					class="group flex flex-col border border-slate-200 dark:border-slate-800 p-7 rounded-2xl hover:border-purple-400 dark:hover:border-purple-500 hover:shadow-lg transition-all bg-white dark:bg-slate-900">
+					<div class="flex items-start justify-between">
+						<div
+							class="w-10 h-10 bg-purple-50 dark:bg-purple-900/30 rounded-lg flex items-center justify-center group-hover:bg-purple-600 transition-colors">
+							<i data-lucide="microscope"
+								class="w-5 h-5 text-purple-700 dark:text-purple-400 group-hover:text-white"></i>
+						</div>
+						<i data-lucide="arrow-up-right"
+							class="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors"></i>
+					</div>
+					<h3
+						class="font-bold text-slate-900 dark:text-white mt-6 mb-3 text-lg group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors">
+						tme-wsi</h3>
+					<p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed flex-1">
+						Multiple-instance learning models that predict breast cancer tumor and immune phenotypes from whole-slide histopathology images.</p>
+					<div class="flex items-center gap-2">
+						<span class="w-2 h-2 rounded-full bg-green-500"></span>
+						<span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Python · Computational pathology</span>
+					</div>
+				</a>
+					</div>
+	</div>
+</section>
+    <!-- FOOTER -->
+    <footer id="contact" class="on-dark bg-[#020617] text-slate-400 py-16 text-sm border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="col-span-1 sm:col-span-2">
+                    <div class="flex flex-col gap-3 mb-6">
+                        <span class="lockup text-white">
+                    <svg viewBox="0 0 854.000000 842.000000" class="mark h-14" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g transform="translate(0.000000,842.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none"> <path d="M0 4210 l0 -4210 4270 0 4270 0 0 4210 0 4210 -4270 0 -4270 0 0 -4210z m8260 0 l0 -3930 -3990 0 -3990 0 0 3930 0 3930 3990 0 3990 0 0 -3930z M1400 7330 l0 -290 -300 0 -300 0 0 -3120 0 -3120 300 0 300 0 0 1766 0 1765 14 15 15 14 645 0 646 0 0 290 0 290 290 0 290 0 0 1340 0 1340 -950 0 -950 0 0 -290z m1300 -1340 l0 -1030 -650 0 -650 0 0 1030 0 1030 650 0 650 0 0 -1030z M4220 7330 l0 -290 -300 0 -300 0 0 -1340 0 -1340 300 0 300 0 0 690 0 690 420 0 420 0 0 -690 0 -690 300 0 300 0 0 690 0 690 -290 0 -290 0 0 290 0 290 290 0 290 0 0 650 0 650 -720 0 -720 0 0 -290z m840 -650 l0 -340 -420 0 -420 0 0 340 0 340 420 0 420 0 0 -340z M6140 6280 l0 -1340 300 0 300 0 0 -290 0 -290 500 0 500 0 0 300 0 300 -500 0 -500 0 0 360 0 360 500 0 500 0 0 300 0 300 -500 0 -500 0 0 370 0 370 500 0 500 0 0 300 0 300 -800 0 -800 0 0 -1340z M1680 2390 l0 -1590 290 0 290 0 0 946 0 945 14 15 15 14 271 0 271 0 15 -14 14 -15 0 -335 0 -336 300 0 300 0 0 350 0 350 290 0 290 0 0 -960 0 -960 300 0 300 0 0 1590 0 1590 -300 0 -300 0 0 -280 0 -280 -890 0 -890 0 0 280 0 280 -290 0 -290 0 0 -1590z M4900 2390 l0 -1590 300 0 300 0 0 1590 0 1590 -300 0 -300 0 0 -1590z M6280 3680 l0 -300 -300 0 -300 0 0 -650 0 -650 730 0 730 0 0 -340 0 -340 -730 0 -730 0 0 -300 0 -300 1030 0 1030 0 0 940 0 940 -716 0 -715 0 -15 14 -14 15 0 335 0 336 730 0 730 0 0 300 0 300 -730 0 -730 0 0 -300z"/> </g></svg>
+                </span>
+                    </div>
+                    <p class="mb-6 leading-relaxed max-w-sm">
+                        Martinos Center for Biomedical Imaging<br />
+                        149 13th Street, Charlestown, MA 02129
+                    </p>
+                    <a href="mailto:contact@premis-lab.org"
+                        class="text-purple-400 hover:text-purple-300 font-medium flex items-center gap-2">
+                        <i data-lucide="mail" class="w-4 h-4"></i> contact@premis-lab.org
+                    </a>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Affiliations</h3>
+                    <ul class="space-y-6">
+                        <li>
+                            <a href="https://www.massgeneral.org" target="_blank" rel="noreferrer"
+                                class="block text-slate-500 hover:text-white transition-colors">
+                                <img src="/assets/img/logos/mgh.svg" alt="" aria-hidden="true" class="affil affil-mgh">
+                                <span class="sr-only">Massachusetts General Hospital</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://hms.harvard.edu" target="_blank" rel="noreferrer"
+                                class="flex items-center gap-3 text-slate-500 hover:text-white transition-colors">
+                                <img src="/assets/img/logos/hms.svg" alt="" aria-hidden="true" class="affil affil-hms">
+                                <span class="text-[11px] font-semibold uppercase tracking-wider leading-tight">Harvard<br>Medical
+                                    School</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.martinos.org" target="_blank" rel="noreferrer"
+                                class="block text-slate-500 hover:text-white transition-colors">
+                                <img src="/assets/img/logos/martinos.svg" alt="" aria-hidden="true" class="affil affil-martinos">
+                                <span class="sr-only">Athinoula A. Martinos Center for Biomedical Imaging</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Connect</h3>
+                    <div class="flex gap-4">
+                        <a href="#" aria-label="PREMIS lab on LinkedIn"
+                            class="bg-slate-800 p-2 rounded-full hover:bg-purple-600 hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                        <a href="#" aria-label="PREMIS lab on GitHub"
+                            class="bg-slate-800 p-2 rounded-full hover:bg-purple-600 hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" aria-hidden="true"><use href="#icon-github"></use></svg>
+                        </a>
+                        <a href="#" aria-label="PREMIS lab on Instagram"
+                            class="bg-slate-800 p-2 rounded-full hover:bg-purple-600 hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" aria-hidden="true"><use href="#icon-instagram"></use></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 mt-16 pt-8 text-center text-slate-600 text-xs">
+                &copy;
+                <script>document.write(new Date().getFullYear())</script> PREMIS lab. All rights reserved.
+                <br class="hidden sm:block">
+                <span class="text-slate-700">Imaging: histopathology and chest radiograph, CC0, via Wikimedia
+                    Commons.</span>
+            </div>
+        </div>
+    </footer>
+
+<script id="lucide-js" src="https://unpkg.com/lucide@latest"></script>
+<script id="premis-site-js" src="/assets/js/site.js"></script>
 </body>
+
 </html>
