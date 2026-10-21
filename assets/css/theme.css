@@ -37,8 +37,8 @@ h3.font-bold {
     border-bottom-color: #1e293b;
 }
 
-/* Backdrop images stay faint on the dark background, where they read stronger */
-.dark .hero-backdrop { opacity: 0.1; }
+/* Backdrop images (hero and publications) stay faint on the dark background, where they read stronger */
+.dark .backdrop-img { opacity: 0.1; }
 
 /* Fades each backdrop image fully into the page by its edges, so no box outline shows */
 .hero-fade {
