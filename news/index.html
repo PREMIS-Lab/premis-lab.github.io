@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%200%200%20854.000000%20842.000000%22%3E%3Crect%20width%3D%22854.000000%22%20height%3D%22842.000000%22%20rx%3D%2290%22%20fill%3D%22%23020617%22%2F%3E%3Cg%20fill%3D%22%23ffffff%22%20transform%3D%22translate%2894%2C93%29%20scale%280.780%29%22%3E%3Cg%20transform%3D%22translate%280.000000%2C842.000000%29%20scale%280.100000%2C-0.100000%29%22%20fill%3D%22%23ffffff%22%20stroke%3D%22none%22%3E%20%3Cpath%20d%3D%22M0%204210%20l0%20-4210%204270%200%204270%200%200%204210%200%204210%20-4270%200%20-4270%200%200%20-4210z%20m8260%200%20l0%20-3930%20-3990%200%20-3990%200%200%203930%200%203930%203990%200%203990%200%200%20-3930z%20M1400%207330%20l0%20-290%20-300%200%20-300%200%200%20-3120%200%20-3120%20300%200%20300%200%200%201766%200%201765%2014%2015%2015%2014%20645%200%20646%200%200%20290%200%20290%20290%200%20290%200%200%201340%200%201340%20-950%200%20-950%200%200%20-290z%20m1300%20-1340%20l0%20-1030%20-650%200%20-650%200%200%201030%200%201030%20650%200%20650%200%200%20-1030z%20M4220%207330%20l0%20-290%20-300%200%20-300%200%200%20-1340%200%20-1340%20300%200%20300%200%200%20690%200%20690%20420%200%20420%200%200%20-690%200%20-690%20300%200%20300%200%200%20690%200%20690%20-290%200%20-290%200%200%20290%200%20290%20290%200%20290%200%200%20650%200%20650%20-720%200%20-720%200%200%20-290z%20m840%20-650%20l0%20-340%20-420%200%20-420%200%200%20340%200%20340%20420%200%20420%200%200%20-340z%20M6140%206280%20l0%20-1340%20300%200%20300%200%200%20-290%200%20-290%20500%200%20500%200%200%20300%200%20300%20-500%200%20-500%200%200%20360%200%20360%20500%200%20500%200%200%20300%200%20300%20-500%200%20-500%200%200%20370%200%20370%20500%200%20500%200%200%20300%200%20300%20-800%200%20-800%200%200%20-1340z%20M1680%202390%20l0%20-1590%20290%200%20290%200%200%20946%200%20945%2014%2015%2015%2014%20271%200%20271%200%2015%20-14%2014%20-15%200%20-335%200%20-336%20300%200%20300%200%200%20350%200%20350%20290%200%20290%200%200%20-960%200%20-960%20300%200%20300%200%200%201590%200%201590%20-300%200%20-300%200%200%20-280%200%20-280%20-890%200%20-890%200%200%20280%200%20280%20-290%200%20-290%200%200%20-1590z%20M4900%202390%20l0%20-1590%20300%200%20300%200%200%201590%200%201590%20-300%200%20-300%200%200%20-1590z%20M6280%203680%20l0%20-300%20-300%200%20-300%200%200%20-650%200%20-650%20730%200%20730%200%200%20-340%200%20-340%20-730%200%20-730%200%200%20-300%200%20-300%201030%200%201030%200%200%20940%200%20940%20-716%200%20-715%200%20-15%2014%20-14%2015%200%20335%200%20336%20730%200%20730%200%200%20300%200%20300%20-730%200%20-730%200%200%20-300z%22%2F%3E%20%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E">
 	<script>
-		if ( localStorage.theme === 'dark' || ! ( 'theme' in localStorage ) ) {
+		if ( localStorage.theme === 'dark' ) {
 			document.documentElement.classList.add( 'dark' );
 		} else {
 			document.documentElement.classList.remove( 'dark' );
@@ -18,8 +18,9 @@
 
 /*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
 </style>
-<link rel='stylesheet' id='premis-fonts-css' href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&#038;family=Inter:wght@400;500;600;700&#038;family=IBM+Plex+Mono:wght@400;500&#038;display=swap' media='all' />
+<link rel='stylesheet' id='premis-fonts-css' href='https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&#038;family=Inter:wght@400;500;600;700&#038;family=IBM+Plex+Mono:wght@400;500&#038;display=swap' media='all' />
 <link rel='stylesheet' id='premis-main-css' href='/assets/css/main.css' media='all' />
+<link rel='stylesheet' id='premis-theme-css' href='/assets/css/theme.css' media='all' />
 <link rel="canonical" href="https://premis-lab.github.io/news/" />
 </head>
 
@@ -161,7 +162,7 @@
 					class="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-[1.03]">
 			</div>
 				<div class="flex flex-1 flex-col p-6">
-			<p class="font-mono text-[10px] uppercase tracking-[0.18em] text-purple-700 dark:text-purple-400">
+			<p class="font-mono text-[10px] uppercase tracking-[0.18em] text-accent-pink">
 				Neuro-oncology · Clinical trial</p>
 			<h3
 				class="mt-3 text-lg font-bold leading-snug text-slate-900 dark:text-white group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors">
@@ -185,7 +186,7 @@
 					class="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-[1.03]">
 			</div>
 				<div class="flex flex-1 flex-col p-6">
-			<p class="font-mono text-[10px] uppercase tracking-[0.18em] text-purple-700 dark:text-purple-400">
+			<p class="font-mono text-[10px] uppercase tracking-[0.18em] text-accent-orange">
 				Infrastructure · Open source</p>
 			<h3
 				class="mt-3 text-lg font-bold leading-snug text-slate-900 dark:text-white group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors">

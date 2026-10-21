@@ -200,12 +200,15 @@
             }
 
             // Simulated cover built from the PubMed metadata (same markup as the baseline HTML)
-            function card(p) {
+            // Accent bar on each cover cycles purple, pink, orange
+            const BARS = ['bg-purple-700/80', 'bg-accent-pink', 'bg-accent-orange'];
+
+            function card(p, i) {
                 // link to PubMed: the DOI resolves to the publisher, which often puts up a bot wall
                 const href = 'https://pubmed.ncbi.nlm.nih.gov/' + p.pmid + '/';
                 const ident = p.doi ? 'doi:' + p.doi : 'PubMed';
                 const badge = isPreprint(p.source)
-                    ? '<span class="rounded-sm bg-amber-100 px-1.5 py-0.5 font-mono text-[8.5px] uppercase tracking-[0.16em] text-amber-700">Preprint · not peer reviewed</span>'
+                    ? '<span class="rounded-sm badge-preprint px-1.5 py-0.5 font-mono text-[8.5px] uppercase tracking-[0.16em]">Preprint · not peer reviewed</span>'
                     : '<span></span>';
                 const abstract = p.abstract
                     ? '<p class="paper-serif mt-1.5 text-[10px] leading-[1.6] text-slate-600">' + esc(p.abstract) + '</p>'
@@ -215,7 +218,7 @@
                     ' class="group flex h-[520px] flex-col overflow-hidden rounded-md bg-white ring-1 ring-slate-200 dark:ring-slate-700 shadow-lg shadow-slate-900/10 transition-all hover:-translate-y-1 hover:shadow-xl hover:ring-purple-300">' +
                     '<div class="relative flex-1 overflow-hidden px-6 pt-6">' +
                     '<div class="flex items-start justify-between gap-3">' + badge +
-                    '<span class="mt-1 h-2.5 w-5 flex-none rounded-sm bg-purple-700/80"></span></div>' +
+                    '<span class="mt-1 h-2.5 w-5 flex-none rounded-sm ' + BARS[i % BARS.length] + '"></span></div>' +
                     '<div class="mt-3 h-px w-full bg-slate-300"></div>' +
                     '<p class="paper-serif mt-3 text-[11px] italic leading-snug text-slate-500">' + esc(citation(p)) + '</p>' +
                     '<h4 class="paper-serif mt-3 text-[17px] font-bold leading-[1.28] text-slate-900 line-clamp-4">' + esc(p.title) + '</h4>' +
@@ -352,12 +355,17 @@
             function draw() {
                 ctx.clearRect(0, 0, width, height);
 
-                // Draw live cells
-                ctx.fillStyle = 'rgba(168, 85, 247, 0.4)'; // Purple
+                // Draw live cells: mostly purple, some pink and orange, fixed per position so cells don't flicker
+                const dark = document.documentElement.classList.contains('dark');
+                const palette = dark
+                    ? ['rgba(168, 85, 247, 0.4)', 'rgba(236, 72, 153, 0.35)', 'rgba(249, 115, 22, 0.35)']
+                    : ['rgba(126, 34, 206, 0.16)', 'rgba(236, 72, 153, 0.18)', 'rgba(249, 115, 22, 0.18)'];
 
                 for (let i = 0; i < cols; i++) {
                     for (let j = 0; j < rows; j++) {
                         if (grid[i][j] === 1) {
+                            const h = (i * 7 + j * 13) % 10;
+                            ctx.fillStyle = palette[h < 7 ? 0 : h < 9 ? 1 : 2];
                             ctx.fillRect(i * cellSize, j * cellSize, cellSize - 1, cellSize - 1);
                         }
                     }

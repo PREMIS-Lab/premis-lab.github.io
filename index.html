@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%200%200%20854.000000%20842.000000%22%3E%3Crect%20width%3D%22854.000000%22%20height%3D%22842.000000%22%20rx%3D%2290%22%20fill%3D%22%23020617%22%2F%3E%3Cg%20fill%3D%22%23ffffff%22%20transform%3D%22translate%2894%2C93%29%20scale%280.780%29%22%3E%3Cg%20transform%3D%22translate%280.000000%2C842.000000%29%20scale%280.100000%2C-0.100000%29%22%20fill%3D%22%23ffffff%22%20stroke%3D%22none%22%3E%20%3Cpath%20d%3D%22M0%204210%20l0%20-4210%204270%200%204270%200%200%204210%200%204210%20-4270%200%20-4270%200%200%20-4210z%20m8260%200%20l0%20-3930%20-3990%200%20-3990%200%200%203930%200%203930%203990%200%203990%200%200%20-3930z%20M1400%207330%20l0%20-290%20-300%200%20-300%200%200%20-3120%200%20-3120%20300%200%20300%200%200%201766%200%201765%2014%2015%2015%2014%20645%200%20646%200%200%20290%200%20290%20290%200%20290%200%200%201340%200%201340%20-950%200%20-950%200%200%20-290z%20m1300%20-1340%20l0%20-1030%20-650%200%20-650%200%200%201030%200%201030%20650%200%20650%200%200%20-1030z%20M4220%207330%20l0%20-290%20-300%200%20-300%200%200%20-1340%200%20-1340%20300%200%20300%200%200%20690%200%20690%20420%200%20420%200%200%20-690%200%20-690%20300%200%20300%200%200%20690%200%20690%20-290%200%20-290%200%200%20290%200%20290%20290%200%20290%200%200%20650%200%20650%20-720%200%20-720%200%200%20-290z%20m840%20-650%20l0%20-340%20-420%200%20-420%200%200%20340%200%20340%20420%200%20420%200%200%20-340z%20M6140%206280%20l0%20-1340%20300%200%20300%200%200%20-290%200%20-290%20500%200%20500%200%200%20300%200%20300%20-500%200%20-500%200%200%20360%200%20360%20500%200%20500%200%200%20300%200%20300%20-500%200%20-500%200%200%20370%200%20370%20500%200%20500%200%200%20300%200%20300%20-800%200%20-800%200%200%20-1340z%20M1680%202390%20l0%20-1590%20290%200%20290%200%200%20946%200%20945%2014%2015%2015%2014%20271%200%20271%200%2015%20-14%2014%20-15%200%20-335%200%20-336%20300%200%20300%200%200%20350%200%20350%20290%200%20290%200%200%20-960%200%20-960%20300%200%20300%200%200%201590%200%201590%20-300%200%20-300%200%200%20-280%200%20-280%20-890%200%20-890%200%200%20280%200%20280%20-290%200%20-290%200%200%20-1590z%20M4900%202390%20l0%20-1590%20300%200%20300%200%200%201590%200%201590%20-300%200%20-300%200%200%20-1590z%20M6280%203680%20l0%20-300%20-300%200%20-300%200%200%20-650%200%20-650%20730%200%20730%200%200%20-340%200%20-340%20-730%200%20-730%200%200%20-300%200%20-300%201030%200%201030%200%200%20940%200%20940%20-716%200%20-715%200%20-15%2014%20-14%2015%200%20335%200%20336%20730%200%20730%200%200%20300%200%20300%20-730%200%20-730%200%200%20-300z%22%2F%3E%20%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E">
 	<script>
-		if ( localStorage.theme === 'dark' || ! ( 'theme' in localStorage ) ) {
+		if ( localStorage.theme === 'dark' ) {
 			document.documentElement.classList.add( 'dark' );
 		} else {
 			document.documentElement.classList.remove( 'dark' );
@@ -18,8 +18,9 @@
 
 /*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
 </style>
-<link rel='stylesheet' id='premis-fonts-css' href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&#038;family=Inter:wght@400;500;600;700&#038;family=IBM+Plex+Mono:wght@400;500&#038;display=swap' media='all' />
+<link rel='stylesheet' id='premis-fonts-css' href='https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&#038;family=Inter:wght@400;500;600;700&#038;family=IBM+Plex+Mono:wght@400;500&#038;display=swap' media='all' />
 <link rel='stylesheet' id='premis-main-css' href='/assets/css/main.css' media='all' />
+<link rel='stylesheet' id='premis-theme-css' href='/assets/css/theme.css' media='all' />
 <link rel="canonical" href="https://premis-lab.github.io/" />
 </head>
 
@@ -120,9 +121,9 @@
         </div>
     </header>
     <!-- HERO SECTION -->
-    <section id="hero" class="on-dark relative overflow-hidden bg-[#020617] border-b border-slate-900">
-        <!-- Background Effects (Abstract) -->
-        <div class="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+    <section id="hero" class="hero relative overflow-hidden">
+        <!-- Background Effects (Abstract), dark theme only -->
+        <div class="hero-glow absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
             <!-- Deep atmospheric base -->
             <div
                 class="absolute top-[-50%] left-[-20%] w-[150%] h-[150%] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-900/50 via-slate-950 to-black z-0">
@@ -161,21 +162,21 @@
             <div class="max-w-3xl pointer-events-auto">
                 <div class="mb-8">
                     <span
-                        class="inline-block font-mono text-[10px] tracking-[0.18em] uppercase text-teal-300 border border-teal-800/70 px-3 py-1.5 rounded-full">
+                        class="hero-eyebrow inline-block font-mono text-[10px] tracking-[0.18em] uppercase px-3 py-1.5 rounded-full">
                         Martinos Center · MGH · Harvard
                     </span>
                 </div>
                 <h1 class="mb-6">
-                    <span class="lockup text-white">
+                    <span class="lockup">
                     <svg viewBox="0 0 854.000000 842.000000" class="mark h-24 md:h-32" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g transform="translate(0.000000,842.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none"> <path d="M0 4210 l0 -4210 4270 0 4270 0 0 4210 0 4210 -4270 0 -4270 0 0 -4210z m8260 0 l0 -3930 -3990 0 -3990 0 0 3930 0 3930 3990 0 3990 0 0 -3930z M1400 7330 l0 -290 -300 0 -300 0 0 -3120 0 -3120 300 0 300 0 0 1766 0 1765 14 15 15 14 645 0 646 0 0 290 0 290 290 0 290 0 0 1340 0 1340 -950 0 -950 0 0 -290z m1300 -1340 l0 -1030 -650 0 -650 0 0 1030 0 1030 650 0 650 0 0 -1030z M4220 7330 l0 -290 -300 0 -300 0 0 -1340 0 -1340 300 0 300 0 0 690 0 690 420 0 420 0 0 -690 0 -690 300 0 300 0 0 690 0 690 -290 0 -290 0 0 290 0 290 290 0 290 0 0 650 0 650 -720 0 -720 0 0 -290z m840 -650 l0 -340 -420 0 -420 0 0 340 0 340 420 0 420 0 0 -340z M6140 6280 l0 -1340 300 0 300 0 0 -290 0 -290 500 0 500 0 0 300 0 300 -500 0 -500 0 0 360 0 360 500 0 500 0 0 300 0 300 -500 0 -500 0 0 370 0 370 500 0 500 0 0 300 0 300 -800 0 -800 0 0 -1340z M1680 2390 l0 -1590 290 0 290 0 0 946 0 945 14 15 15 14 271 0 271 0 15 -14 14 -15 0 -335 0 -336 300 0 300 0 0 350 0 350 290 0 290 0 0 -960 0 -960 300 0 300 0 0 1590 0 1590 -300 0 -300 0 0 -280 0 -280 -890 0 -890 0 0 280 0 280 -290 0 -290 0 0 -1590z M4900 2390 l0 -1590 300 0 300 0 0 1590 0 1590 -300 0 -300 0 0 -1590z M6280 3680 l0 -300 -300 0 -300 0 0 -650 0 -650 730 0 730 0 0 -340 0 -340 -730 0 -730 0 0 -300 0 -300 1030 0 1030 0 0 940 0 940 -716 0 -715 0 -15 14 -14 15 0 335 0 336 730 0 730 0 0 300 0 300 -730 0 -730 0 0 -300z"/> </g></svg>
-                    <span class="tagline text-[11px] md:text-[14px] leading-[1.85] tracking-[0.14em] text-slate-300 ">
+                    <span class="tagline text-[11px] md:text-[14px] leading-[1.85] tracking-[0.14em]">
                         <span class="hl">PRE</span>cision<br>
                         <span class="hl">M</span>edicine with<br>
                         <span class="hl">I</span>ntelligent <span class="hl">S</span>ystems
                     </span>
                 </span>
                 </h1>
-                <p class="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed font-light max-w-2xl">
+                <p class="hero-lead text-lg md:text-xl mb-10 leading-relaxed font-light max-w-2xl">
                     We develop quantitative imaging and machine learning tools to decode complex medical data and
                     improve clinical decision-making in oncology.
                 </p>
@@ -185,7 +186,7 @@
                         Explore Research
                     </a>
                     <a href="#contact"
-                        class="px-8 py-3 bg-white/5 backdrop-blur-sm border border-white/10 text-white font-semibold rounded-lg hover:bg-white/10 hover:border-white/20 transition-all text-center">
+                        class="btn-secondary px-8 py-3 backdrop-blur-sm border font-semibold rounded-lg transition-all text-center">
                         Contact Lab
                     </a>
                 </div>
@@ -214,8 +215,8 @@
                     </p>
                     <p id="research">
                         Three threads run through that work: <span class="font-semibold text-purple-700 dark:text-purple-400">radiology</span>, where we build quantitative image analysis
-                        across MRI and CT; <span class="font-semibold text-purple-700 dark:text-purple-400">computational pathology</span>, applying deep learning to whole-slide images to characterize
-                        tumor and immune phenotypes; and <span class="font-semibold text-purple-700 dark:text-purple-400">therapeutic discovery</span>, where AI systems link imaging with omics to
+                        across MRI and CT; <span class="font-semibold text-accent-pink">computational pathology</span>, applying deep learning to whole-slide images to characterize
+                        tumor and immune phenotypes; and <span class="font-semibold text-accent-orange">therapeutic discovery</span>, where AI systems link imaging with omics to
                         uncover new targets.
                     </p>
                     <p>
@@ -250,7 +251,7 @@
 
             <!-- brand tint, dark theme only -->
             <div
-                class="absolute inset-0 dark:bg-gradient-to-tr dark:from-purple-900/30 dark:via-transparent dark:to-teal-900/25 mix-blend-screen">
+                class="pub-tint absolute inset-0 mix-blend-screen">
             </div>
         </div>
 
@@ -321,7 +322,7 @@
                             <div class="relative flex-1 overflow-hidden px-6 pt-6">
                                 <div class="flex items-start justify-between gap-3">
                                     <span></span>
-                                    <span class="mt-1 h-2.5 w-5 flex-none rounded-sm bg-purple-700/80"></span>
+                                    <span class="mt-1 h-2.5 w-5 flex-none rounded-sm bg-accent-pink"></span>
                                 </div>
                                 <div class="mt-3 h-px w-full bg-slate-300"></div>
                                 <p class="paper-serif mt-3 text-[11px] italic leading-snug text-slate-500">J Imaging Inform Med. 2026 Jul 7:10.1007/s10278-026-02082-z.</p>
@@ -353,7 +354,7 @@
                             <div class="relative flex-1 overflow-hidden px-6 pt-6">
                                 <div class="flex items-start justify-between gap-3">
                                     <span></span>
-                                    <span class="mt-1 h-2.5 w-5 flex-none rounded-sm bg-purple-700/80"></span>
+                                    <span class="mt-1 h-2.5 w-5 flex-none rounded-sm bg-accent-orange"></span>
                                 </div>
                                 <div class="mt-3 h-px w-full bg-slate-300"></div>
                                 <p class="paper-serif mt-3 text-[11px] italic leading-snug text-slate-500">Neurooncol Adv. 2026 Jan-Dec;8(1):vdag137.</p>
@@ -384,7 +385,7 @@
                             <!-- Simulated cover built from the PubMed metadata -->
                             <div class="relative flex-1 overflow-hidden px-6 pt-6">
                                 <div class="flex items-start justify-between gap-3">
-                                    <span class="rounded-sm bg-amber-100 px-1.5 py-0.5 font-mono text-[8.5px] uppercase tracking-[0.16em] text-amber-700">Preprint · not peer reviewed</span>
+                                    <span class="rounded-sm badge-preprint px-1.5 py-0.5 font-mono text-[8.5px] uppercase tracking-[0.16em]">Preprint · not peer reviewed</span>
                                     <span class="mt-1 h-2.5 w-5 flex-none rounded-sm bg-purple-700/80"></span>
                                 </div>
                                 <div class="mt-3 h-px w-full bg-slate-300"></div>
@@ -417,7 +418,7 @@
                             <div class="relative flex-1 overflow-hidden px-6 pt-6">
                                 <div class="flex items-start justify-between gap-3">
                                     <span></span>
-                                    <span class="mt-1 h-2.5 w-5 flex-none rounded-sm bg-purple-700/80"></span>
+                                    <span class="mt-1 h-2.5 w-5 flex-none rounded-sm bg-accent-pink"></span>
                                 </div>
                                 <div class="mt-3 h-px w-full bg-slate-300"></div>
                                 <p class="paper-serif mt-3 text-[11px] italic leading-snug text-slate-500">Radiology. 2024 Oct;313(1):e241139.</p>
@@ -449,7 +450,7 @@
                             <div class="relative flex-1 overflow-hidden px-6 pt-6">
                                 <div class="flex items-start justify-between gap-3">
                                     <span></span>
-                                    <span class="mt-1 h-2.5 w-5 flex-none rounded-sm bg-purple-700/80"></span>
+                                    <span class="mt-1 h-2.5 w-5 flex-none rounded-sm bg-accent-orange"></span>
                                 </div>
                                 <div class="mt-3 h-px w-full bg-slate-300"></div>
                                 <p class="paper-serif mt-3 text-[11px] italic leading-snug text-slate-500">Neuro Oncol. 2024 May 3;26(5):965-974.</p>
@@ -525,7 +526,7 @@
 					class="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-[1.03]">
 			</div>
 				<div class="flex flex-1 flex-col p-6">
-			<p class="font-mono text-[10px] uppercase tracking-[0.18em] text-purple-700 dark:text-purple-400">
+			<p class="font-mono text-[10px] uppercase tracking-[0.18em] text-accent-pink">
 				Neuro-oncology · Clinical trial</p>
 			<h3
 				class="mt-3 text-lg font-bold leading-snug text-slate-900 dark:text-white group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors">
@@ -549,7 +550,7 @@
 					class="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-[1.03]">
 			</div>
 				<div class="flex flex-1 flex-col p-6">
-			<p class="font-mono text-[10px] uppercase tracking-[0.18em] text-purple-700 dark:text-purple-400">
+			<p class="font-mono text-[10px] uppercase tracking-[0.18em] text-accent-orange">
 				Infrastructure · Open source</p>
 			<h3
 				class="mt-3 text-lg font-bold leading-snug text-slate-900 dark:text-white group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors">
@@ -774,7 +775,7 @@
 					<p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed flex-1">
 						Self-supervised foundation model for digital breast tomosynthesis, pretrained with DINOv2 on more than 25 million sections from 487,975 DBT volumes.</p>
 					<div class="flex items-center gap-2">
-						<span class="w-2 h-2 rounded-full bg-blue-500"></span>
+						<span class="w-2 h-2 rounded-full bg-accent-pink"></span>
 						<span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Python · Radiology 2026</span>
 					</div>
 				</a>
@@ -795,7 +796,7 @@
 					<p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed flex-1">
 						3D U-Net for automatic segmentation of brain metastases on contrast-enhanced T1 MRI, trained on 1,546 scans from eight sources and evaluated on 885.</p>
 					<div class="flex items-center gap-2">
-						<span class="w-2 h-2 rounded-full bg-teal-500"></span>
+						<span class="w-2 h-2 rounded-full bg-accent-orange"></span>
 						<span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Python · Neuro-oncology</span>
 					</div>
 				</a>
@@ -816,7 +817,7 @@
 					<p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed flex-1">
 						Multiple-instance learning models that predict breast cancer tumor and immune phenotypes from whole-slide histopathology images.</p>
 					<div class="flex items-center gap-2">
-						<span class="w-2 h-2 rounded-full bg-green-500"></span>
+						<span class="w-2 h-2 rounded-full bg-purple-500"></span>
 						<span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Python · Computational pathology</span>
 					</div>
 				</a>

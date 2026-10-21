@@ -1,0 +1,80 @@
+/* Warm accents next to the brand purple, and the light hero. Loaded after main.css. */
+
+:root {
+    --accent-orange: #f97316;
+    --accent-pink: #ec4899;
+    --accent-orange-ink: #c2410c;
+    --accent-pink-ink: #be185d;
+}
+
+.dark {
+    --accent-orange-ink: #fdba74;
+    --accent-pink-ink: #f9a8d4;
+}
+
+h2.font-bold,
+h3.font-bold {
+    font-weight: 600;
+}
+
+.text-accent-orange { color: var(--accent-orange-ink); }
+.text-accent-pink { color: var(--accent-pink-ink); }
+.bg-accent-orange { background-color: var(--accent-orange); }
+.bg-accent-pink { background-color: var(--accent-pink); }
+
+.badge-preprint {
+    background-color: #fce7f3;
+    color: #be185d;
+}
+
+/* Hero: light by default, the original dark look in dark mode */
+.hero {
+    background-color: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+}
+.dark .hero {
+    background-color: #020617;
+    border-bottom-color: #0f172a;
+}
+
+.hero-glow { display: none; }
+.dark .hero-glow { display: block; }
+
+.hero .lockup { color: #0f172a; }
+.dark .hero .lockup { color: #ffffff; }
+
+.hero .tagline,
+.hero-lead { color: #475569; }
+.dark .hero .tagline,
+.dark .hero-lead { color: #cbd5e1; }
+
+.hero-eyebrow {
+    color: var(--accent-orange-ink);
+    background-color: #ffffff;
+    border: 1px solid #fed7aa;
+}
+.dark .hero-eyebrow {
+    background-color: transparent;
+    border-color: rgba(194, 65, 12, 0.6);
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    border-color: #cbd5e1;
+    color: #0f172a;
+}
+.btn-secondary:hover { border-color: #94a3b8; }
+.dark .btn-secondary {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+.dark .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Publications backdrop: purple to pink tint in dark mode */
+.dark .pub-tint {
+    background-image: linear-gradient(to top right, rgba(88, 28, 135, 0.3), transparent, rgba(131, 24, 67, 0.25));
+}
