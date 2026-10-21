@@ -1,45 +1,45 @@
 # premis-lab.github.io
 
-Sitio web del laboratorio PREMIS (PREcision Medicine with Intelligent Systems), Martinos Center, MGH.
-Publicado con GitHub Pages en https://premis-lab.github.io
+Website of the PREMIS lab (PREcision Medicine with Intelligent Systems), Martinos Center, MGH.
+Published with GitHub Pages at https://premis-lab.github.io
 
-Es HTML estático, sin build: GitHub Pages sirve los archivos tal cual (`.nojekyll` desactiva Jekyll).
+Plain static HTML with no build step: GitHub Pages serves the files as they are (`.nojekyll` turns off Jekyll).
 
-## Estructura
+## Layout
 
 ```
-index.html                 portada: hero, about, publicaciones, noticias, equipo, software, contacto
-news/index.html            todas las noticias
-news/<slug>/index.html     una página por noticia
-404.html                   página de error
-assets/css/main.css        estilos (Tailwind compilado)
-assets/js/site.js          tema claro/oscuro, menú móvil y carrusel de publicaciones
-assets/img/                logos y fondos
-assets/uploads/            fotos del equipo y figuras de las noticias
-tools/wp_to_static.py      script que generó el sitio desde el WordPress de pruebas
+index.html                 home page: hero, about, publications, news, team, software, contact
+news/index.html            all news
+news/<slug>/index.html     one page per news item
+404.html                   error page
+assets/css/main.css        styles (compiled Tailwind)
+assets/js/site.js          light/dark theme, mobile menu and publications carousel
+assets/img/                logos and backgrounds
+assets/uploads/            team photos and news figures
+tools/wp_to_static.py      script that generated the site from the WordPress test install
 ```
 
-## Editar contenido
+## Editing content
 
-- **Publicaciones**: se cargan solas desde PubMed en el navegador, no hay nada que editar.
-- **Equipo y software**: editar las tarjetas en `index.html`, secciones `#team` y `#software`.
-- **Noticias**: copiar una carpeta de `news/<slug>/`, cambiar el texto y la figura, y añadir su
-  tarjeta en `news/index.html` y en la sección `#news` de `index.html` (la portada muestra las 3 más recientes).
+- **Publications** load automatically from PubMed in the browser, so there is nothing to edit.
+- **Team and software** are cards in `index.html`, under the `#team` and `#software` sections.
+- **News**: copy a folder under `news/<slug>/`, change the text and figure, then add its card to
+  `news/index.html` and to the `#news` section of `index.html` (the home page shows the 3 most recent).
 
-Las clases de Tailwind ya compiladas están en `main.css`. Si se usa una clase nueva que no aparece
-en el sitio, hay que recompilar el CSS o usar un estilo en línea.
+`main.css` only contains the Tailwind classes the site already uses. A new class that appears nowhere
+else on the site needs a CSS rebuild or an inline style.
 
-## Probar en local
+## Local preview
 
 ```bash
 python3 -m http.server 8000   # http://localhost:8000
 ```
 
-Las rutas son absolutas desde la raíz (`/assets/...`), así que abrir los archivos con doble clic no funciona;
-hay que usar un servidor.
+Paths are root-relative (`/assets/...`), so opening the files directly from disk does not work.
+Use a local server instead.
 
-## Origen
+## Origin
 
-Convertido desde la instalación de WordPress en `/autofs/space/crater_001/projects/premis-wp`.
-Para regenerarlo: arrancar ese WordPress, descargar las páginas renderizadas y ejecutar
-`python3 tools/wp_to_static.py <carpeta_html> <este_repo> <carpeta_wordpress>`.
+Converted from the WordPress install at `/autofs/space/crater_001/projects/premis-wp`.
+To regenerate it, start that WordPress, download the rendered pages and run
+`python3 tools/wp_to_static.py <html_folder> <this_repo> <wordpress_folder>`.
