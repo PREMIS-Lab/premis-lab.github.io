@@ -29,16 +29,21 @@ h3.font-bold {
 
 /* Hero: light by default, the original dark look in dark mode */
 .hero {
-    background-color: #f8fafc;
+    background-color: #ffffff;
     border-bottom: 1px solid #e2e8f0;
 }
 .dark .hero {
     background-color: #020617;
-    border-bottom-color: #0f172a;
+    border-bottom-color: #1e293b;
 }
 
-.hero-glow { display: none; }
-.dark .hero-glow { display: block; }
+/* Fades each backdrop image fully into the page by its edges, so no box outline shows */
+.hero-fade {
+    background-image: radial-gradient(closest-side, transparent 35%, #ffffff 100%);
+}
+.dark .hero-fade {
+    background-image: radial-gradient(closest-side, transparent 35%, #020617 100%);
+}
 
 .hero-inner {
     padding-top: 5.5rem;

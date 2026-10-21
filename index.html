@@ -122,36 +122,24 @@
     </header>
     <!-- HERO SECTION -->
     <section id="hero" class="hero relative overflow-hidden">
-        <!-- Background Effects (Abstract), dark theme only -->
-        <div class="hero-glow absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
-            <!-- Deep atmospheric base -->
-            <div
-                class="absolute top-[-50%] left-[-20%] w-[150%] h-[150%] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-900/50 via-slate-950 to-black z-0">
+        <!-- Background texture, same as Recent Publications: two modalities on a diagonal, dissolved with a curved fade -->
+        <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+            <!-- radiology, top right -->
+            <div class="absolute right-0 top-0 h-3/4 w-1/2">
+                <img src="/assets/img/decor/xray-chest.jpg" alt=""
+                    class="h-full w-full object-cover grayscale contrast-125 opacity-[0.21] dark:opacity-[0.25]">
+                <div class="hero-fade absolute inset-0"></div>
             </div>
 
-            <!-- Major Gradient Orbs (Darkened) -->
-            <div
-                class="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] bg-purple-950/20 rounded-full blur-[120px] mix-blend-screen animate-pulse duration-[8000ms]">
-            </div>
-            <div
-                class="absolute bottom-[-10%] left-[-10%] w-[900px] h-[900px] bg-slate-950/40 rounded-full blur-[130px] mix-blend-screen">
-            </div>
-
-            <!-- Vibrant Accents (Subtle) -->
-            <div
-                class="absolute top-[20%] left-[10%] w-[600px] h-[600px] bg-fuchsia-950/10 rounded-full blur-[100px] mix-blend-screen animate-pulse duration-[12000ms]">
-            </div>
-            <div
-                class="absolute bottom-[20%] right-[20%] w-[500px] h-[500px] bg-indigo-950/20 rounded-full blur-[90px] mix-blend-screen">
+            <!-- pathology, bottom left -->
+            <div class="absolute bottom-0 left-0 h-3/4 w-1/2">
+                <img src="/assets/img/decor/pathology-2.jpg" alt=""
+                    class="h-full w-full object-cover grayscale contrast-125 opacity-[0.23] dark:opacity-[0.27]">
+                <div class="hero-fade absolute inset-0"></div>
             </div>
 
-            <!-- Dynamic Light Streaks (Very Faint) -->
-            <div
-                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[400px] bg-purple-900/5 rotate-[-15deg] blur-[80px] mix-blend-screen">
-            </div>
-            <div
-                class="absolute top-[30%] right-[10%] w-[300px] h-[300px] bg-pink-950/5 rounded-full blur-[60px] mix-blend-overlay">
-            </div>
+            <!-- brand tint, dark theme only -->
+            <div class="pub-tint absolute inset-0 mix-blend-screen"></div>
         </div>
 
         <div class="hero-inner relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
