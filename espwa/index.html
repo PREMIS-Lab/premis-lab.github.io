@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ESPWA · SABCS 2026 · AR demo</title>
+<title>ESPWA · SABCS 2026 · AR prototype</title>
 <meta name="robots" content="noindex, nofollow">
 <style>
   :root { --purple: #6a1b9a; --espwa: #800080; --ink: #1b1530; --muted: #5b5670; --tint: #f5eef9;
@@ -30,11 +30,9 @@
   .row.on { opacity: 1; }
   .row .lab { font-size: 24px; line-height: 1.15; }
   .track { position: relative; height: 40px; background: #eee9f2; border-radius: 8px; overflow: hidden; }
-  .chance { position: absolute; top: 0; bottom: 0; width: 3px; background: #9a93a8; left: 0%; }
   .bar { position: absolute; top: 0; bottom: 0; left: 0; width: 0; border-radius: 8px; transition: width 1.2s cubic-bezier(.2,.8,.2,1); }
   .val { font-weight: 700; font-size: 30px; text-align: right; }
   .note { margin-top: 16px; min-height: 76px; padding: 14px 18px; border-radius: 12px; background: var(--tint); font-size: 25px; line-height: 1.25; }
-  .scale { display: flex; justify-content: space-between; margin: 2px 108px 0 346px; font-size: 18px; color: var(--muted); }
 
   /* Same panel in the page when the camera is not used */
   #flat .panel { width: 100%; height: auto; padding: 18px; font-size: 16px; box-shadow: none; border: 1px solid #e6dcef; }
@@ -42,7 +40,6 @@
   #flat .row { grid-template-columns: 1fr 64px; row-gap: 4px; }
   #flat .row .lab { grid-column: 1 / span 2; font-size: 15px; }
   #flat .val { font-size: 18px; } #flat .track { height: 22px; } #flat .note { font-size: 15px; min-height: 0; }
-  #flat .scale { display: none; }
 </style>
 <script type="importmap">
 { "imports": {
@@ -55,10 +52,10 @@
 
 <div id="intro">
   <h1>ESPWA · interactive poster</h1>
-  <p>Point your phone at the <b>title of the poster</b>. An interactive panel will appear on top of it.</p>
+  <p>Point your phone at <b>Figure 2</b> of the poster to see how a model trained on US slides compares with ESPWA on Haitian slides.</p>
   <button class="btn primary" id="start">Start camera</button>
   <button class="btn ghost" id="noCam">View without camera</button>
-  <p class="fine">Demo for SABCS 2026, poster P3-3-16. The values shown are examples, not study results. The camera image stays on your phone.</p>
+  <p class="fine">Prototype for SABCS 2026, poster P3-3-16. The camera image stays on your phone.</p>
 </div>
 
 <button class="btn ghost" id="close">Close</button>
@@ -67,14 +64,13 @@
 
 <template id="panelTpl">
   <div class="panel">
-    <h2>Demo: an interactive figure</h2>
-    <p class="sub">Example values, not study results</p>
-    <div class="row" data-step="0"><div class="lab">Example A</div><div class="track"><div class="chance"></div><div class="bar" style="background:var(--tcga)" data-v="0.85"></div></div><div class="val" style="color:var(--tcga)">0.85</div></div>
-    <div class="row" data-step="1"><div class="lab">Example B</div><div class="track"><div class="chance"></div><div class="bar" style="background:var(--tcgazl)" data-v="0.65"></div></div><div class="val" style="color:var(--tcgazl)">0.65</div></div>
-    <div class="row" data-step="2"><div class="lab">Example C</div><div class="track"><div class="chance"></div><div class="bar" style="background:var(--espwa)" data-v="0.75"></div></div><div class="val" style="color:var(--espwa)">0.75</div></div>
-    <div class="row" data-step="3"><div class="lab">Example D</div><div class="track"><div class="chance"></div><div class="bar" style="background:var(--bwh)" data-v="0.80"></div></div><div class="val" style="color:var(--bwh)">0.80</div></div>
-    <div class="row" data-step="3"><div class="lab">Example E</div><div class="track"><div class="chance"></div><div class="bar" style="background:var(--mir)" data-v="0.80"></div></div><div class="val" style="color:var(--mir)">0.80</div></div>
-    <div class="scale"><span>0.5</span><span>0.75</span><span>1.0</span></div>
+    <h2>Does a model trained on US slides work in Haiti?</h2>
+    <p class="sub">AUROC for ER status (bars start at 0.5 = chance; 1.0 = perfect)</p>
+    <div class="row" data-step="0"><div class="lab">TCGA model,<br>tested on TCGA (US)</div><div class="track"><div class="bar" style="background:var(--tcga)" data-v="0.846"></div></div><div class="val" style="color:var(--tcga)">0.846</div></div>
+    <div class="row" data-step="1"><div class="lab">Same model,<br>Haitian slides (ZL)</div><div class="track"><div class="bar" style="background:var(--tcgazl)" data-v="0.671"></div></div><div class="val" style="color:var(--tcgazl)">0.671</div></div>
+    <div class="row" data-step="2"><div class="lab">ESPWA, trained on<br>Haitian slides</div><div class="track"><div class="bar" style="background:var(--espwa)" data-v="0.790"></div></div><div class="val" style="color:var(--espwa)">0.790</div></div>
+    <div class="row" data-step="3"><div class="lab">ESPWA, same patients,<br>slides made at BWH</div><div class="track"><div class="bar" style="background:var(--bwh)" data-v="0.794"></div></div><div class="val" style="color:var(--bwh)">0.794</div></div>
+    <div class="row" data-step="3"><div class="lab">ESPWA, same patients,<br>slides made in Haiti</div><div class="track"><div class="bar" style="background:var(--mir)" data-v="0.805"></div></div><div class="val" style="color:var(--mir)">0.805</div></div>
     <div class="note"></div>
   </div>
 </template>
@@ -85,10 +81,10 @@ import { CSS3DObject } from "three/addons/renderers/CSS3DRenderer.js";
 import { MindARThree } from "./vendor/mindar-image-three.prod.js";
 
 const NOTES = [
-  "Each bar appears in turn, with a short explanation of what it shows.",
-  "In the real version, each figure of the poster opens its own panel.",
-  "Panels can hold animations, high-resolution images or short audio.",
-  "Example values only: the study results appear after the SABCS embargo."
+  "A model trained on TCGA slides from the US reaches an AUROC of 0.846 on held-out TCGA slides.",
+  "On slides from Zanmi Lasante, Haiti, the same model drops to 0.671: tissue processing and tumor biology differ.",
+  "ESPWA, trained on 3,448 Haitian slides, reaches 0.790 on the same cohort (p = 0.005).",
+  "On 134 patients whose slides were made both at BWH and in Haiti, ESPWA reaches 0.794 and 0.805 (p = 0.753)."
 ];
 
 function makePanel() {
@@ -137,7 +133,7 @@ document.getElementById("start").onclick = async () => {
 
   // Purple frame around the detected figure (WebGL, 1 unit = figure width).
   const anchor = mindar.addAnchor(0);
-  const aspect = 113 / 1000;
+  const aspect = 667 / 1000;
   const frame = new THREE.LineSegments(
     new THREE.EdgesGeometry(new THREE.PlaneGeometry(1.02, aspect + 0.02)),
     new THREE.LineBasicMaterial({ color: 0x7e22ce })
@@ -148,7 +144,7 @@ document.getElementById("start").onclick = async () => {
   const cssAnchor = mindar.addCSSAnchor(0);
   const panel = makePanel();
   const obj = new CSS3DObject(panel);
-  obj.position.set(0, -(113 / 2 + 30 + 667 / 2), 40);
+  obj.position.set(0, 0, 60);
   cssAnchor.group.add(obj);
   cssAnchor.onTargetFound = () => play(panel);
 
@@ -157,7 +153,6 @@ document.getElementById("start").onclick = async () => {
     renderer.render(scene, camera);
     cssRenderer.render(cssScene, camera);
   });
-  window.__mindar = mindar;
 
   document.getElementById("close").onclick = () => {
     mindar.stop(); renderer.setAnimationLoop(null); location.reload();
