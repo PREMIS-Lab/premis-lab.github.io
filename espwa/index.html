@@ -20,6 +20,11 @@
   #ar { position: fixed; inset: 0; display: none; }
   #flat { display: none; padding: 20px; }
   #close { position: fixed; top: 14px; right: 14px; z-index: 20; display: none; }
+  .aim { margin: 0; } .aim img { width: 100%; border: 3px solid var(--purple); border-radius: 10px; }
+  .aim figcaption { margin-top: 6px; font-size: 14px; color: var(--muted); }
+  #hint { position: fixed; left: 12px; right: 12px; bottom: 16px; z-index: 20; display: none; align-items: center; gap: 12px;
+          padding: 10px 12px; border-radius: 12px; background: rgba(255,255,255,0.92); font-size: 15px; font-weight: 600; color: var(--purple); }
+  #hint img { width: 96px; border: 2px solid var(--purple); border-radius: 6px; }
 
   /* Panel anchored on Figure 2: 1000 px = width of the printed figure */
   .panel { width: 1000px; height: 667px; padding: 34px 44px; border-radius: 22px; background: rgba(255,255,255,0.94);
@@ -53,12 +58,14 @@
 <div id="intro">
   <h1>ESPWA · interactive poster</h1>
   <p>Point your phone at <b>Figure 2</b> of the poster to see how a model trained on US slides compares with ESPWA on Haitian slides.</p>
+  <figure class="aim"><img src="targets/fig2.png" alt="Figure 2 of the poster"><figcaption>Aim at this figure. It should fill most of the camera view (about 30–40 cm away).</figcaption></figure>
   <button class="btn primary" id="start">Start camera</button>
   <button class="btn ghost" id="noCam">View without camera</button>
   <p class="fine">Prototype for SABCS 2026, poster P3-3-16. The camera image stays on your phone.</p>
 </div>
 
 <button class="btn ghost" id="close">Close</button>
+<div id="hint"><img src="targets/fig2.png" alt=""><span>Fill the screen with Figure 2 and hold still</span></div>
 <div id="ar"></div>
 <div id="flat"></div>
 
@@ -127,8 +134,10 @@ document.getElementById("start").onclick = async () => {
   const container = document.getElementById("ar");
   container.style.display = "block";
   document.getElementById("close").style.display = "block";
+  const hint = document.getElementById("hint");
+  hint.style.display = "flex";
 
-  const mindar = new MindARThree({ container, imageTargetSrc: "./targets/targets.mind", filterMinCF: 0.0005, filterBeta: 0.01 });
+  const mindar = new MindARThree({ container, imageTargetSrc: "./targets/targets.mind", filterMinCF: 0.0005, filterBeta: 0.01, uiScanning: "no" });
   const { renderer, cssRenderer, scene, cssScene, camera } = mindar;
 
   // Purple frame around the detected figure (WebGL, 1 unit = figure width).
@@ -146,7 +155,8 @@ document.getElementById("start").onclick = async () => {
   const obj = new CSS3DObject(panel);
   obj.position.set(0, 0, 60);
   cssAnchor.group.add(obj);
-  cssAnchor.onTargetFound = () => play(panel);
+  cssAnchor.onTargetFound = () => { hint.style.display = "none"; play(panel); };
+  cssAnchor.onTargetLost = () => { hint.style.display = "flex"; };
 
   await mindar.start();
   renderer.setAnimationLoop(() => {
