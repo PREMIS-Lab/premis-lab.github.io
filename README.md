@@ -3,43 +3,69 @@
 Website of the PREMIS lab (PREcision Medicine with Intelligent Systems), Martinos Center, MGH.
 Published with GitHub Pages at https://premis-lab.github.io
 
-Plain static HTML with no build step: GitHub Pages serves the files as they are (`.nojekyll` turns off Jekyll).
+Built with Jekyll, which GitHub Pages runs on every push to `main`: the design lives in a few
+templates and the content in plain text files, so most edits never touch HTML.
+
+## Editing content
+
+Three ways, all ending in a commit to `main` that republishes the site in a minute or two:
+
+1. **Forms in the browser (Pages CMS).** Sign in with GitHub at https://app.pagescms.org, open this
+   repository and pick News, Principal Investigators, Research Team, Alumni or Software. The forms
+   come from `.pages.yml`. Images go to `assets/uploads/`.
+2. **GitHub's web editor.** Open one of the files below, click the pencil, edit and commit.
+3. **Locally**, with any text editor.
+
+| What | File |
+| --- | --- |
+| News stories | `_posts/YYYY-MM-DD-slug.md`, one per story |
+| Principal investigators | `_data/principal_investigators.yml` |
+| Research team | `_data/research_team.yml` |
+| Alumni | `_data/alumni.yml` |
+| Software | `_data/software.yml` |
+| Hero, About and section intros | `index.html` |
+
+- **Publications** load automatically from PubMed in the browser, so there is nothing to edit.
+- **People and software** show in the order they appear in their file. A person without `photo`
+  gets a circle with their initials.
+- **News**: a story is published at `/news/<slug>/`, taken from its file name. The home page shows
+  the 3 most recent. The front matter holds the card and page fields (`title`, `date`, `category`,
+  `color`: purple, pink or orange, `summary`, `image`, `image_caption`, `image_credit`, `abstract`,
+  `paper`); any Markdown below the front matter shows as text under the figure.
 
 ## Layout
 
 ```
+_config.yml                site settings and the /news/<slug>/ address of stories
+_layouts/default.html      page shell: head, header, footer
+_layouts/post.html         a news story
+_includes/                 header, footer, news card, team and software sections
+_data/                     people and software
+_posts/                    news stories
 index.html                 home page: hero, about, publications, news, team, software, contact
 news/index.html            all news
-news/<slug>/index.html     one page per news item
 404.html                   error page
+espwa/                     AR demo for the ESPWA poster (static, not processed by Jekyll)
 assets/css/main.css        styles (compiled Tailwind)
-assets/js/site.js          light/dark theme, mobile menu and publications carousel
-assets/img/                logos and backgrounds
+assets/css/theme.css       hero, accent colors and news text styles
+assets/js/site.js          light/dark theme, mobile menu, publications carousel and PubMed refresh
 assets/uploads/            team photos and news figures
-tools/wp_to_static.py      script that generated the site from the WordPress test install
+.pages.yml                 Pages CMS forms
 ```
 
-## Editing content
-
-- **Publications** load automatically from PubMed in the browser, so there is nothing to edit.
-- **Team and software** are cards in `index.html`, under the `#team` and `#software` sections.
-- **News**: copy a folder under `news/<slug>/`, change the text and figure, then add its card to
-  `news/index.html` and to the `#news` section of `index.html` (the home page shows the 3 most recent).
-
 `main.css` only contains the Tailwind classes the site already uses. A new class that appears nowhere
-else on the site needs a CSS rebuild or an inline style.
+else on the site needs a CSS rebuild or a rule in `theme.css`.
 
 ## Local preview
 
-```bash
-python3 -m http.server 8000   # http://localhost:8000
-```
+With Ruby installed:
 
-Paths are root-relative (`/assets/...`), so opening the files directly from disk does not work.
-Use a local server instead.
+```bash
+gem install github-pages webrick
+jekyll serve        # http://localhost:4000
+```
 
 ## Origin
 
-Converted from the WordPress install at `/autofs/space/crater_001/projects/premis-wp`.
-To regenerate it, start that WordPress, download the rendered pages and run
-`python3 tools/wp_to_static.py <html_folder> <this_repo> <wordpress_folder>`.
+First converted from a WordPress test install with `tools/wp_to_static.py`, then moved to Jekyll.
+The script writes the old static layout, so it is kept only for reference.

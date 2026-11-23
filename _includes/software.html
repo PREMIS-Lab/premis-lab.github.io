@@ -1,0 +1,49 @@
+{%- comment -%} Projects come from _data/software.yml {%- endcomment -%}
+<section id="software" class="py-24 bg-white dark:bg-slate-950">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+			<div>
+				<h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">Open Source Software</h2>
+				<p class="text-slate-600 dark:text-slate-400">Public code behind our recent papers.</p>
+			</div>
+			<a href="https://github.com/QTIM-Lab" target="_blank" rel="noreferrer"
+				class="px-5 py-2.5 bg-slate-900 dark:bg-slate-800 text-white rounded-lg hover:bg-slate-800 dark:hover:bg-slate-700 transition-colors text-sm font-medium flex items-center shadow-lg shadow-slate-900/20">
+				<svg class="w-4 h-4 mr-2" fill="currentColor" aria-hidden="true">
+					<use href="#icon-github"></use>
+				</svg>
+				GitHub Organization
+			</a>
+		</div>
+
+		<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+			{%- for project in site.data.software %}
+			{%- case project.color -%}
+				{%- when "pink" -%}{%- assign dot = "bg-accent-pink" -%}
+				{%- when "orange" -%}{%- assign dot = "bg-accent-orange" -%}
+				{%- else -%}{%- assign dot = "bg-purple-500" -%}
+			{%- endcase %}
+			<a href="{{ project.url }}" target="_blank" rel="noreferrer"
+				class="group flex flex-col border border-slate-200 dark:border-slate-800 p-7 rounded-2xl hover:border-purple-400 dark:hover:border-purple-500 hover:shadow-lg transition-all bg-white dark:bg-slate-900">
+				<div class="flex items-start justify-between">
+					<div
+						class="w-10 h-10 bg-purple-50 dark:bg-purple-900/30 rounded-lg flex items-center justify-center group-hover:bg-purple-600 transition-colors">
+						<i data-lucide="{{ project.icon | default: 'code' }}"
+							class="w-5 h-5 text-purple-700 dark:text-purple-400 group-hover:text-white"></i>
+					</div>
+					<i data-lucide="arrow-up-right"
+						class="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors"></i>
+				</div>
+				<h3
+					class="font-bold text-slate-900 dark:text-white mt-6 mb-3 text-lg group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors">
+					{{ project.name | escape }}</h3>
+				<p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed flex-1">
+					{{ project.description | escape }}</p>
+				<div class="flex items-center gap-2">
+					<span class="w-2 h-2 rounded-full {{ dot }}"></span>
+					<span class="text-xs font-semibold text-slate-500 dark:text-slate-400">{{ project.tag | escape }}</span>
+				</div>
+			</a>
+			{%- endfor %}
+		</div>
+	</div>
+</section>

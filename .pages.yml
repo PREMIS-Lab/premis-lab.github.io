@@ -1,0 +1,210 @@
+# Pages CMS (https://pagescms.org): turns the site's content into forms you can edit in the browser.
+# Each entry below is one menu item. Saving a form commits the change and GitHub Pages republishes the site.
+
+media:
+  input: assets/uploads
+  output: /assets/uploads
+
+content:
+  - name: news
+    label: News
+    description: Stories shown on the home page (newest three) and on /news/.
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date, category]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: category
+        label: Category
+        description: Short label above the title, e.g. "Radiology · AI at scale".
+        type: string
+      - name: color
+        label: Category color
+        type: select
+        default: purple
+        options:
+          values:
+            - { value: purple, label: Purple }
+            - { value: pink, label: Pink }
+            - { value: orange, label: Orange }
+      - name: summary
+        label: Summary
+        description: One or two sentences, shown on the news card and under the title.
+        type: text
+      - name: image
+        label: Figure
+        type: image
+      - name: card_image
+        label: Card image (optional)
+        description: A smaller copy of the figure for the news cards. Leave empty to use the figure.
+        type: image
+      - name: image_caption
+        label: Figure caption
+        type: text
+      - name: image_credit
+        label: Figure credit
+        description: Shown after the caption, e.g. "from the paper, Radiology."
+        type: string
+      - name: body
+        label: Text (optional)
+        description: Free text shown below the figure.
+        type: rich-text
+      - name: abstract
+        label: Abstract
+        description: One entry per paragraph. The label (e.g. Background, Results) is optional.
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Label
+            type: string
+          - name: text
+            label: Paragraph
+            type: text
+      - name: paper
+        label: The paper
+        type: object
+        fields:
+          - name: title
+            label: Paper title
+            type: string
+          - name: citation
+            label: Citation
+            description: e.g. "Radiology. 2021 Feb;298(2):319-329."
+            type: string
+          - name: lab_authors
+            label: Lab authors
+            description: e.g. "Kim AE, Bridge CP"
+            type: string
+          - name: pubmed
+            label: PubMed link
+            type: string
+          - name: doi
+            label: DOI
+            description: Only the identifier, e.g. 10.1148/radiol.2020201640
+            type: string
+
+  - name: principal_investigators
+    label: Principal Investigators
+    type: file
+    path: _data/principal_investigators.yml
+    list: true
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: photo
+        label: Photo
+        description: Square photo, about 300 × 300 pixels.
+        type: image
+      - name: role
+        label: Role in the lab
+        type: string
+      - name: position
+        label: Position
+        type: string
+      - name: bio
+        label: Bio
+        type: text
+      - name: credentials
+        label: Training and awards
+        type: text
+      - name: email
+        label: Email
+        type: string
+      - name: profile
+        label: Profile link
+        type: string
+
+  - name: research_team
+    label: Research Team
+    type: file
+    path: _data/research_team.yml
+    list: true
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: photo
+        label: Photo
+        description: Square photo, about 300 × 300 pixels. Without one, the person's initials are shown.
+        type: image
+      - name: role
+        label: Role
+        type: string
+      - name: bio
+        label: Bio
+        type: text
+
+  - name: alumni
+    label: Alumni
+    type: file
+    path: _data/alumni.yml
+    list: true
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: photo
+        label: Photo
+        description: Square photo, about 300 × 300 pixels. Without one, the person's initials are shown.
+        type: image
+      - name: role
+        label: Role
+        type: string
+      - name: bio
+        label: What they worked on
+        type: text
+
+  - name: software
+    label: Software
+    type: file
+    path: _data/software.yml
+    list: true
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: url
+        label: Link
+        type: string
+      - name: icon
+        label: Icon
+        description: An icon name from lucide.dev/icons, e.g. brain, microscope, database.
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: tag
+        label: Tag line
+        description: e.g. "Python · Radiology 2026"
+        type: string
+      - name: color
+        label: Dot color
+        type: select
+        default: purple
+        options:
+          values:
+            - { value: purple, label: Purple }
+            - { value: pink, label: Pink }
+            - { value: orange, label: Orange }

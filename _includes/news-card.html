@@ -1,0 +1,31 @@
+{%- comment -%} One news card, used on the home page and on /news/. Pass post=… {%- endcomment -%}
+{%- assign post = include.post -%}
+{%- case post.color -%}
+  {%- when "pink" -%}{%- assign label_class = "text-accent-pink" -%}
+  {%- when "orange" -%}{%- assign label_class = "text-accent-orange" -%}
+  {%- else -%}{%- assign label_class = "text-purple-700 dark:text-purple-400" -%}
+{%- endcase -%}
+	<a href="{{ post.url }}"
+		class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-purple-400 dark:hover:border-purple-500 hover:shadow-lg transition-all">
+		<div class="aspect-[16/9] overflow-hidden bg-white border-b border-slate-100 dark:border-slate-800">
+			<img src="{{ post.card_image | default: post.image }}" alt="" loading="lazy"
+				class="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-[1.03]">
+		</div>
+		<div class="flex flex-1 flex-col p-6">
+			<p class="font-mono text-[10px] uppercase tracking-[0.18em] {{ label_class }}">
+				{{ post.category | escape }}</p>
+			<h3
+				class="mt-3 text-lg font-bold leading-snug text-slate-900 dark:text-white group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors">
+				{{ post.title | escape }}</h3>
+			<p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+				{{ post.summary | escape }}</p>
+			<div
+				class="mt-5 flex items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
+				<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+				<span
+					class="inline-flex items-center gap-1.5 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+					Read <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+				</span>
+			</div>
+		</div>
+	</a>

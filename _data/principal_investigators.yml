@@ -1,0 +1,30 @@
+- name: Albert E. Kim, MD
+  photo: /assets/uploads/2026/09/albert-kim-300x300.jpg
+  role: Co-Director
+  position: Instructor in Neurology, Harvard Medical School · MGH Cancer Center
+  bio: >-
+    Dr. Kim is a physician-scientist and neuro-oncologist at the Mass General Cancer Center
+    and the MGH Brain Tumor Research Center. He combines omics-based techniques (single-cell
+    genomics, transcriptomics, cell-free DNA) with medical imaging and machine learning to
+    define and target the genomic and metabolic vulnerabilities of central nervous system
+    metastases, and to uncover the mechanisms behind therapeutic resistance.
+  credentials: >-
+    MD, Medical College of Georgia · Neurology residency, Washington University · Fellowship,
+    MGH and Dana-Farber Cancer Institute · Damon Runyon William G. Kaelin, Jr., MD Physician-Scientist
+    Award.
+  email: akim46@mgh.harvard.edu
+  profile: https://www.martinos.org/faculty/kim-albert/
+- name: Christopher P. Bridge, DPhil
+  photo: /assets/uploads/2026/09/chris-bridge.jpg
+  role: Co-Director
+  position: Assistant Professor of Radiology, Harvard Medical School
+  bio: >-
+    Dr. Bridge works on machine learning for cancer imaging biomarkers across radiology, pathology
+    and ophthalmology, and on the infrastructure required to move those models into clinical
+    practice. He is the lead developer of highdicom and a contributor to the NCI Imaging Data
+    Commons, with a long-standing focus on DICOM standards and interoperability for AI.
+  credentials: >-
+    MEng, University of Cambridge · DPhil in Biomedical Engineering, University of Oxford
+    · Formerly Director of Machine Learning at Mass General Brigham AI (2017–2022).
+  email: cbridge@mgh.harvard.edu
+  profile: https://chrisbridge.science/

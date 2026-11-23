@@ -1,0 +1,25 @@
+- name: Diana Mindroc, PhD
+  photo: /assets/uploads/2026/09/diana-mindroc-300x300.jpg
+  role: Postdoctoral Researcher
+  bio: >-
+    Diana focuses on advanced medical imaging technologies for the early detection and diagnosis
+    of breast cancer. Her current projects span two primary domains: developing computational
+    models for breast cancer risk prediction using digital breast tomosynthesis data, and
+    advancing image reconstruction algorithms for diffuse optical tomography.
+- name: Mason C. Cleveland, BS
+  photo: /assets/uploads/2026/09/mason-cleveland-300x300.jpg
+  role: Software Engineer
+  bio: >-
+    Builds and maintains the lab’s deep learning pipelines and clinical tooling. Lead author
+    of an algorithm for fully automated volumetric measurement of meningioma burden, and a
+    contributor to work on digital pathology prediction of breast cancer tumor and immune
+    phenotypes. BS, University of Michigan.
+- name: Dagoberto Pulido-Arias, PhD
+  photo: /assets/uploads/2026/09/dagoberto-pulido-300x300.jpg
+  role: Research Scientist
+  bio: >-
+    Studies the robustness and generalization of deep learning models in medical imaging,
+    including domain generalization methods that mitigate scanner-induced domain shift. Also
+    develops computational pathology tools, such as deep learning models for precision-based
+    use of endocrine therapy in resource-limited settings. Background in computer vision,
+    remote sensing and quantitative image analysis.

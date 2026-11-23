@@ -1,0 +1,88 @@
+{% if page.url == "/" %}{% assign nav = "" %}{% else %}{% assign nav = "/" %}{% endif %}
+    <!-- HEADER -->
+    <header
+        class="border-b border-purple-100 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 backdrop-blur-sm sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <a href="{{ nav }}#home" class="flex items-center gap-3">
+                    <span class="lockup text-slate-900 dark:text-white">
+                    <svg viewBox="0 0 854.000000 842.000000" class="mark h-10 md:h-12" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g transform="translate(0.000000,842.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none"> <path d="M0 4210 l0 -4210 4270 0 4270 0 0 4210 0 4210 -4270 0 -4270 0 0 -4210z m8260 0 l0 -3930 -3990 0 -3990 0 0 3930 0 3930 3990 0 3990 0 0 -3930z M1400 7330 l0 -290 -300 0 -300 0 0 -3120 0 -3120 300 0 300 0 0 1766 0 1765 14 15 15 14 645 0 646 0 0 290 0 290 290 0 290 0 0 1340 0 1340 -950 0 -950 0 0 -290z m1300 -1340 l0 -1030 -650 0 -650 0 0 1030 0 1030 650 0 650 0 0 -1030z M4220 7330 l0 -290 -300 0 -300 0 0 -1340 0 -1340 300 0 300 0 0 690 0 690 420 0 420 0 0 -690 0 -690 300 0 300 0 0 690 0 690 -290 0 -290 0 0 290 0 290 290 0 290 0 0 650 0 650 -720 0 -720 0 0 -290z m840 -650 l0 -340 -420 0 -420 0 0 340 0 340 420 0 420 0 0 -340z M6140 6280 l0 -1340 300 0 300 0 0 -290 0 -290 500 0 500 0 0 300 0 300 -500 0 -500 0 0 360 0 360 500 0 500 0 0 300 0 300 -500 0 -500 0 0 370 0 370 500 0 500 0 0 300 0 300 -800 0 -800 0 0 -1340z M1680 2390 l0 -1590 290 0 290 0 0 946 0 945 14 15 15 14 271 0 271 0 15 -14 14 -15 0 -335 0 -336 300 0 300 0 0 350 0 350 290 0 290 0 0 -960 0 -960 300 0 300 0 0 1590 0 1590 -300 0 -300 0 0 -280 0 -280 -890 0 -890 0 0 280 0 280 -290 0 -290 0 0 -1590z M4900 2390 l0 -1590 300 0 300 0 0 1590 0 1590 -300 0 -300 0 0 -1590z M6280 3680 l0 -300 -300 0 -300 0 0 -650 0 -650 730 0 730 0 0 -340 0 -340 -730 0 -730 0 0 -300 0 -300 1030 0 1030 0 0 940 0 940 -716 0 -715 0 -15 14 -14 15 0 335 0 336 730 0 730 0 0 300 0 300 -730 0 -730 0 0 -300z"/> </g></svg>
+                    <span class="tagline text-[8.5px] leading-[1.7] tracking-[0.14em] text-slate-500 dark:text-slate-400 hidden sm:block">
+                        <span class="hl">PRE</span>cision<br>
+                        <span class="hl">M</span>edicine with<br>
+                        <span class="hl">I</span>ntelligent <span class="hl">S</span>ystems
+                    </span>
+                </span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-5 lg:space-x-8 items-center">
+                    <a href="{{ nav }}#home"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Home</a>
+                    <a href="{{ nav }}#about"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">About</a>
+                    <a href="{{ nav }}#research"
+                        class="hidden lg:inline text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Research</a>
+                    <a href="{{ nav }}#news"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">News</a>
+                    <a href="{{ nav }}#publications"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Papers</a>
+                    <a href="{{ nav }}#team"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Team</a>
+                    <a href="{{ nav }}#software"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Software</a>
+                    <a href="{{ nav }}#contact"
+                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Contact</a>
+
+                    <a href="https://github.com/QTIM-Lab" target="_blank" rel="noreferrer"
+                        class="text-slate-400 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-400 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" aria-hidden="true"><use href="#icon-github"></use></svg>
+                    </a>
+
+                    <!-- Dark Mode Toggle (Desktop) -->
+                    <button id="theme-toggle"
+                        class="text-slate-400 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-400 transition-colors focus:outline-none">
+                        <i id="theme-toggle-icon" data-lucide="moon" class="w-5 h-5"></i>
+                    </button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-4">
+                    <!-- Dark Mode Toggle (Mobile) -->
+                    <button id="theme-toggle-mobile"
+                        class="text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 focus:outline-none">
+                        <i id="theme-toggle-icon-mobile" data-lucide="moon" class="w-5 h-5"></i>
+                    </button>
+
+                    <button id="mobile-menu-btn"
+                        class="text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 focus:outline-none p-2">
+                        <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown (Hidden by default) -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-b border-purple-100 shadow-lg absolute w-full left-0">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="{{ nav }}#home"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Home</a>
+                <a href="{{ nav }}#about"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">About</a>
+                <a href="{{ nav }}#research"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Research</a>
+                <a href="{{ nav }}#news"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">News</a>
+                <a href="{{ nav }}#publications"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Papers</a>
+                <a href="{{ nav }}#team"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Team</a>
+                <a href="{{ nav }}#software"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Software</a>
+                <a href="{{ nav }}#contact"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>

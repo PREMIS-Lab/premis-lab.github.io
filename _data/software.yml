@@ -1,0 +1,32 @@
+- name: highdicom
+  url: https://github.com/QTIM-Lab
+  icon: database
+  description: >-
+    High-level DICOM abstractions for Python. Encodes image annotations and machine learning
+    outputs as standard DICOM objects, so models interoperate with clinical systems.
+  tag: Python · J Digit Imaging 2022
+  color: purple
+- name: DBT-DINO
+  url: https://github.com/QTIM-Lab/DBT-DINO
+  icon: scan
+  description: >-
+    Self-supervised foundation model for digital breast tomosynthesis, pretrained with DINOv2
+    on more than 25 million sections from 487,975 DBT volumes.
+  tag: Python · Radiology 2026
+  color: pink
+- name: Brain-Mets-Seg
+  url: https://github.com/QTIM-Lab/Brain-Mets-Seg
+  icon: brain
+  description: >-
+    3D U-Net for automatic segmentation of brain metastases on contrast-enhanced T1 MRI, trained
+    on 1,546 scans from eight sources and evaluated on 885.
+  tag: Python · Neuro-oncology
+  color: orange
+- name: tme-wsi
+  url: https://github.com/QTIM-Lab/tme-wsi
+  icon: microscope
+  description: >-
+    Multiple-instance learning models that predict breast cancer tumor and immune phenotypes
+    from whole-slide histopathology images.
+  tag: Python · Computational pathology
+  color: purple

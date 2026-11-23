@@ -118,3 +118,36 @@ h3.font-bold {
 .dark .pub-tint {
     background-image: linear-gradient(to top right, rgba(88, 28, 135, 0.3), transparent, rgba(131, 24, 67, 0.25));
 }
+
+/* Free text written in the body of a news story (Markdown) */
+.post-body > * + * { margin-top: 1.25rem; }
+.post-body h2 {
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    font-weight: 600;
+    color: #0f172a;
+}
+.dark .post-body h2 { color: #ffffff; }
+.post-body h3 {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+.dark .post-body h3 { color: #ffffff; }
+.post-body a {
+    color: #7e22ce;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.dark .post-body a { color: #c084fc; }
+.post-body ul { list-style: disc; padding-left: 1.5rem; }
+.post-body ol { list-style: decimal; padding-left: 1.5rem; }
+.post-body li + li { margin-top: 0.5rem; }
+.post-body img { border-radius: 0.75rem; }
+.post-body blockquote {
+    border-left: 3px solid #e2e8f0;
+    padding-left: 1rem;
+    font-style: italic;
+}

@@ -1,0 +1,21 @@
+- name: Jay B. Patel
+  photo: /assets/uploads/2026/09/jay-patel-300x300.jpg
+  role: Senior Data Scientist
+  bio: >-
+    Worked on the reliability of deep learning in neuro-imaging: the trustworthiness of saliency
+    maps for localizing abnormalities, radiomics repeatability in scan–rescan glioblastoma
+    MRI, and automated tumor burden assessment in pediatric high-grade glioma.
+- name: Felix J. Dorfner
+  photo: /assets/uploads/2026/09/felix-dorfner-300x300.jpg
+  role: Medical Student
+  bio: >-
+    Led the lab’s work on language models in radiology, benchmarking commercial and open-source
+    LLMs for labeling chest radiograph reports and evaluating biomedical fine-tuning. First
+    author of DBT-DINO, a foundation model for digital breast tomosynthesis.
+- name: Melisa S. Güelen
+  photo: /assets/uploads/2026/09/melisa-guelen-300x300.jpg
+  role: MD-PhD Student
+  bio: >-
+    Studied intracranial hemorrhage in patients with brain tumors, first-authoring work on
+    outcomes and risk factors of hemorrhage after resection of brain metastases. Now at the
+    Department of Neurosurgery, Charité – Universitätsmedizin Berlin.

@@ -1,0 +1,22 @@
+# Site settings for Jekyll, which GitHub Pages runs on every push to main.
+title: PREMIS lab
+url: https://premis-lab.github.io
+baseurl: ""
+timezone: UTC
+
+# News stories live in _posts/ and are published at /news/<file-name-without-date>/
+permalink: /news/:title/
+defaults:
+  - scope:
+      type: posts
+    values:
+      layout: post
+
+markdown: kramdown
+
+exclude:
+  - README.md
+  - tools
+  - Gemfile
+  - Gemfile.lock
+  - vendor

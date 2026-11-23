@@ -1,0 +1,8 @@
+{%- comment -%} Round photo, or the person's initials when there is no photo {%- endcomment -%}
+{%- assign person = include.person -%}
+{%- if person.photo -%}
+<img src="{{ person.photo }}" alt="{{ person.name | escape }}" loading="lazy" class="{{ include.size }} rounded-full object-cover {{ include.border }} shadow-sm">
+{%- else -%}
+{%- assign words = person.name | split: "," | first | split: " " -%}
+<div class="{{ include.size }} bg-gradient-to-br from-slate-100 to-purple-50 rounded-full flex items-center justify-center text-lg text-purple-400 font-bold {{ include.border }} shadow-sm">{{ words.first | slice: 0 }}{{ words.last | slice: 0 }}</div>
+{%- endif -%}
