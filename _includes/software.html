@@ -1,22 +1,25 @@
-{%- comment -%} Projects come from _data/software.yml {%- endcomment -%}
+{%- comment -%} Texts and projects come from _data/software.yml {%- endcomment -%}
+{%- assign software = site.data.software -%}
 <section id="software" class="py-24 bg-white dark:bg-slate-950">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
 			<div>
-				<h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">Open Source Software</h2>
-				<p class="text-slate-600 dark:text-slate-400">Public code behind our recent papers.</p>
+				<h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">{{ software.title | escape }}</h2>
+				<p class="text-slate-600 dark:text-slate-400">{{ software.intro | escape }}</p>
 			</div>
-			<a href="https://github.com/QTIM-Lab" target="_blank" rel="noreferrer"
+			{%- if software.button_link %}
+			<a href="{{ software.button_link }}" target="_blank" rel="noreferrer"
 				class="px-5 py-2.5 bg-slate-900 dark:bg-slate-800 text-white rounded-lg hover:bg-slate-800 dark:hover:bg-slate-700 transition-colors text-sm font-medium flex items-center shadow-lg shadow-slate-900/20">
 				<svg class="w-4 h-4 mr-2" fill="currentColor" aria-hidden="true">
 					<use href="#icon-github"></use>
 				</svg>
-				GitHub Organization
+				{{ software.button | escape }}
 			</a>
+			{%- endif %}
 		</div>
 
 		<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-			{%- for project in site.data.software %}
+			{%- for project in software.projects %}
 			{%- case project.color -%}
 				{%- when "pink" -%}{%- assign dot = "bg-accent-pink" -%}
 				{%- when "orange" -%}{%- assign dot = "bg-accent-orange" -%}

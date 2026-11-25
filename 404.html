@@ -6,10 +6,10 @@ permalink: /404.html
 ---
 <section class="py-24">
 	<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-		<p class="font-mono text-[11px] uppercase tracking-[0.2em] text-purple-700 dark:text-purple-400">404</p>
-		<h1 class="mt-4 text-3xl font-bold text-slate-900 dark:text-white">Page not found</h1>
+		<p class="font-mono text-[11px] uppercase tracking-[0.2em] text-purple-700 dark:text-purple-400">{{ site.data.site.not_found.eyebrow | escape }}</p>
+		<h1 class="mt-4 text-3xl font-bold text-slate-900 dark:text-white">{{ site.data.site.not_found.title | escape }}</h1>
 		<a href="/"
 			class="mt-8 inline-flex items-center gap-2 rounded-lg bg-purple-700 px-5 py-2.5 text-sm font-semibold text-white hover:bg-purple-600 transition-colors">
-			Back to the lab</a>
+			{{ site.data.site.not_found.button | escape }}</a>
 	</div>
 </section>

@@ -4,12 +4,10 @@ title: News
 ---
 <section class="py-16 md:py-24">
 	<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-		<p class="font-mono text-[11px] uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">From the lab</p>
-		<h1 class="mt-4 text-4xl font-bold text-slate-900 dark:text-white">News</h1>
+		<p class="font-mono text-[11px] uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">{{ site.data.site.news_page.eyebrow | escape }}</p>
+		<h1 class="mt-4 text-4xl font-bold text-slate-900 dark:text-white">{{ site.data.site.news_page.title | escape }}</h1>
 		<p class="mt-5 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
-			The publications list on the home page is pulled live from PubMed and shows what is newest. These are
-			the papers, datasets and tools we keep coming back to, each with its abstract and a figure from the
-			paper itself.
+			{{ site.data.site.news_page.intro | escape }}
 		</p>
 
 		<div class="mt-14 grid gap-6 sm:grid-cols-2">

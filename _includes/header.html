@@ -18,22 +18,11 @@
 
                 <!-- Desktop Nav -->
                 <nav class="hidden md:flex space-x-5 lg:space-x-8 items-center">
-                    <a href="{{ nav }}#home"
-                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Home</a>
-                    <a href="{{ nav }}#about"
-                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">About</a>
-                    <a href="{{ nav }}#research"
-                        class="hidden lg:inline text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Research</a>
-                    <a href="{{ nav }}#news"
-                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">News</a>
-                    <a href="{{ nav }}#publications"
-                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Papers</a>
-                    <a href="{{ nav }}#team"
-                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Team</a>
-                    <a href="{{ nav }}#software"
-                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Software</a>
-                    <a href="{{ nav }}#contact"
-                        class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">Contact</a>
+                    {%- for item in site.data.site.menu %}
+                    {%- assign first = item.link | slice: 0 %}
+                    <a href="{% if first == "#" %}{{ nav }}{% endif %}{{ item.link }}"
+                        class="{% if item.large_screens_only %}hidden lg:inline {% endif %}text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors uppercase tracking-wider">{{ item.label | escape }}</a>
+                    {%- endfor %}
 
                     <a href="https://github.com/QTIM-Lab" target="_blank" rel="noreferrer"
                         class="text-slate-400 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-400 transition-colors">
@@ -67,22 +56,11 @@
         <div id="mobile-menu"
             class="hidden md:hidden bg-white border-b border-purple-100 shadow-lg absolute w-full left-0">
             <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="{{ nav }}#home"
-                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Home</a>
-                <a href="{{ nav }}#about"
-                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">About</a>
-                <a href="{{ nav }}#research"
-                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Research</a>
-                <a href="{{ nav }}#news"
-                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">News</a>
-                <a href="{{ nav }}#publications"
-                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Papers</a>
-                <a href="{{ nav }}#team"
-                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Team</a>
-                <a href="{{ nav }}#software"
-                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Software</a>
-                <a href="{{ nav }}#contact"
-                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">Contact</a>
+                {%- for item in site.data.site.menu %}
+                {%- assign first = item.link | slice: 0 %}
+                <a href="{% if first == "#" %}{{ nav }}{% endif %}{{ item.link }}"
+                    class="mobile-link block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-colors">{{ item.label | escape }}</a>
+                {%- endfor %}
             </div>
         </div>
     </header>

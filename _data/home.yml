@@ -1,0 +1,26 @@
+# Texts of the home page. In "title" and "text", words in *italics* are shown highlighted in color
+# and **bold** stays bold. Team and Software have their own files.
+hero:
+  eyebrow: Martinos Center · MGH · Harvard Medical School
+  title: Computational tools that turn medical images into *clinical evidence*.
+  text: >-
+    We develop quantitative imaging and machine learning tools to decode complex medical data
+    and improve clinical decision-making in oncology.
+  button: Explore Research
+  second_button: Contact Lab
+about:
+  title: About the Laboratory
+  text: |
+    The **PREMIS lab** is dedicated to the development and clinical translation of computational tools for medical imaging. We operate at the intersection of computer science, radiology and oncology.
+
+    Three threads run through that work: *radiology*, where we build quantitative image analysis across MRI and CT; *computational pathology*, applying deep learning to whole-slide images to characterize tumor and immune phenotypes; and *therapeutic discovery*, where AI systems link imaging with omics to uncover new targets.
+
+    Across all three, we extract quantitative biomarkers from standard-of-care imaging to predict patient outcomes, monitor treatment response and stratify patients for clinical trials. By integrating these imaging features with genomic data, we aim to advance the field of precision medicine.
+publications:
+  title: Recent Publications
+  intro: Selected work with two or more lab members as co-authors, newest first.
+  button: All on PubMed
+news:
+  title: News
+  intro: Longer reads on the papers, datasets and tools that shaped the lab.
+  button: All news

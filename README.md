@@ -11,23 +11,25 @@ templates and the content in plain text files, so most edits never touch HTML.
 Three ways, all ending in a commit to `main` that republishes the site in a minute or two:
 
 1. **Forms in the browser (Pages CMS).** Sign in with GitHub at https://app.pagescms.org, open this
-   repository and pick News, Principal Investigators, Research Team, Alumni or Software. The forms
+   repository and pick Home page, Team, News, Software or "Menu, footer and other pages". The forms
    come from `.pages.yml`. Images go to `assets/uploads/`.
 2. **GitHub's web editor.** Open one of the files below, click the pencil, edit and commit.
 3. **Locally**, with any text editor.
 
 | What | File |
 | --- | --- |
+| Banner, About, and the titles of Publications and News | `_data/home.yml` |
+| Team: the three groups, their titles and their people | `_data/team.yml` |
+| Software: section texts and projects | `_data/software.yml` |
+| Menu, footer, News page and error page | `_data/site.yml` |
 | News stories | `_posts/YYYY-MM-DD-slug.md`, one per story |
-| Principal investigators | `_data/principal_investigators.yml` |
-| Research team | `_data/research_team.yml` |
-| Alumni | `_data/alumni.yml` |
-| Software | `_data/software.yml` |
-| Hero, About and section intros | `index.html` |
 
 - **Publications** load automatically from PubMed in the browser, so there is nothing to edit.
+- **Highlighted words**: in the banner title and the About text, words in `*italics*` show in color
+  (purple in the title; purple, pink, orange in turn in About). `**Bold**` stays bold. The "Research"
+  links land on the second paragraph of About.
 - **People and software** show in the order they appear in their file. A person without `photo`
-  gets a circle with their initials.
+  gets a circle with their initials. A group intro left empty is not shown.
 - **News**: a story is published at `/news/<slug>/`, taken from its file name. The home page shows
   the 3 most recent. The front matter holds the card and page fields (`title`, `date`, `category`,
   `color`: purple, pink or orange, `summary`, `image`, `image_caption`, `image_credit`, `abstract`,
@@ -40,7 +42,7 @@ _config.yml                site settings and the /news/<slug>/ address of storie
 _layouts/default.html      page shell: head, header, footer
 _layouts/post.html         a news story
 _includes/                 header, footer, news card, team and software sections
-_data/                     people and software
+_data/                     page texts, people and software
 _posts/                    news stories
 index.html                 home page: hero, about, publications, news, team, software, contact
 news/index.html            all news

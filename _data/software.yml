@@ -1,3 +1,9 @@
+# The Software section of the home page.
+title: Open Source Software
+intro: Public code behind our recent papers.
+button: GitHub Organization
+button_link: https://github.com/QTIM-Lab
+projects:
 - name: highdicom
   url: https://github.com/QTIM-Lab
   icon: database

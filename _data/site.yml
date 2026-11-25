@@ -1,0 +1,42 @@
+# Texts shared by every page: menu, footer, the News page and the error page.
+menu:
+- label: Home
+  link: '#home'
+- label: About
+  link: '#about'
+- label: Research
+  link: '#research'
+  large_screens_only: true
+- label: News
+  link: '#news'
+- label: Papers
+  link: '#publications'
+- label: Team
+  link: '#team'
+- label: Software
+  link: '#software'
+- label: Contact
+  link: '#contact'
+footer:
+  address: |-
+    Martinos Center for Biomedical Imaging
+    149 13th Street, Charlestown, MA 02129
+  email: contact@premis-lab.org
+  affiliations_title: Affiliations
+  connect_title: Connect
+  linkedin: ''
+  github: ''
+  instagram: ''
+  copyright: PREMIS lab. All rights reserved.
+  credit: 'Imaging: histopathology and chest radiograph, CC0, via Wikimedia Commons.'
+news_page:
+  eyebrow: From the lab
+  title: News
+  intro: >-
+    The publications list on the home page is pulled live from PubMed and shows what is newest.
+    These are the papers, datasets and tools we keep coming back to, each with its abstract
+    and a figure from the paper itself.
+not_found:
+  eyebrow: '404'
+  title: Page not found
+  button: Back to the lab

@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+{%- assign home = site.data.home -%}
     <!-- HERO SECTION -->
     <section id="hero" class="hero relative overflow-hidden">
         <!-- Background texture, same as Recent Publications: two modalities on a diagonal, dissolved with a curved fade -->
@@ -24,23 +25,22 @@ layout: default
         </div>
 
         <div class="hero-inner relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="hero-eyebrow font-mono">Martinos Center · MGH · Harvard Medical School</p>
+            <p class="hero-eyebrow font-mono">{{ home.hero.eyebrow | escape }}</p>
 
             <div class="hero-statement">
-                <h1 class="hero-title">Computational tools that turn medical images into <span class="hero-title-accent">clinical evidence</span>.</h1>
+                <h1 class="hero-title">{{ home.hero.title | markdownify | remove: "<p>" | remove: "</p>" | strip }}</h1>
                 <div class="hero-side">
                     <p class="hero-lead">
-                        We develop quantitative imaging and machine learning tools to decode complex medical data and
-                        improve clinical decision-making in oncology.
+                        {{ home.hero.text | escape }}
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="#research"
                             class="px-8 py-3 bg-purple-700 text-white font-semibold rounded-lg hover:bg-purple-600 transition-all shadow-lg shadow-purple-900/20 text-center border border-transparent">
-                            Explore Research
+                            {{ home.hero.button | escape }}
                         </a>
                         <a href="#contact"
                             class="btn-secondary px-8 py-3 backdrop-blur-sm border font-semibold rounded-lg transition-all text-center">
-                            Contact Lab
+                            {{ home.hero.second_button | escape }}
                         </a>
                     </div>
                 </div>
@@ -51,25 +51,11 @@ layout: default
     <section id="about" class="py-24 bg-white dark:bg-slate-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl">
-                <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-6">About the Laboratory</h2>
-                <div class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed space-y-6">
-                    <p>
-                        The <span class="font-semibold">PREMIS lab</span> is dedicated to the development and clinical
-                        translation of computational tools for medical imaging. We operate at the intersection of
-                        computer science, radiology and oncology.
-                    </p>
-                    <p id="research">
-                        Three threads run through that work: <span class="font-semibold text-purple-700 dark:text-purple-400">radiology</span>, where we build quantitative image analysis
-                        across MRI and CT; <span class="font-semibold text-accent-pink">computational pathology</span>, applying deep learning to whole-slide images to characterize
-                        tumor and immune phenotypes; and <span class="font-semibold text-accent-orange">therapeutic discovery</span>, where AI systems link imaging with omics to
-                        uncover new targets.
-                    </p>
-                    <p>
-                        Across all three, we extract quantitative biomarkers from standard-of-care imaging to predict
-                        patient outcomes, monitor treatment response and stratify patients for clinical trials. By
-                        integrating these imaging features with genomic data, we aim to advance the field of precision
-                        medicine.
-                    </p>
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-6">{{ home.about.title | escape }}</h2>
+                {%- comment -%} The "Research" links point at the second paragraph, the one about the research threads {%- endcomment -%}
+                {%- assign paragraphs = home.about.text | markdownify | split: "<p>" %}
+                <div class="about-text text-lg text-slate-600 dark:text-slate-300 leading-relaxed space-y-6"{% if paragraphs.size < 3 %} id="research"{% endif %}>
+                    {% for part in paragraphs %}{% if forloop.index == 3 %}<p id="research">{% elsif forloop.index > 1 %}<p>{% endif %}{{ part }}{% endfor %}
                 </div>
             </div>
         </div>
@@ -103,9 +89,8 @@ layout: default
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
                 <div>
-                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">Recent Publications</h2>
-                    <p class="text-slate-600 dark:text-slate-400">Selected work with two or more lab members as
-                        co-authors, newest first.</p>
+                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">{{ home.publications.title | escape }}</h2>
+                    <p class="text-slate-600 dark:text-slate-400">{{ home.publications.intro | escape }}</p>
                 </div>
                 <div class="flex items-center gap-2">
                     <button id="pub-prev" type="button" aria-label="Previous publications"
@@ -119,7 +104,7 @@ layout: default
                     <a href="https://pubmed.ncbi.nlm.nih.gov/?term=%28Kim%20AE%5Bau%5D%20AND%20Bridge%20CP%5Bau%5D%29%20OR%20%28Kim%20AE%5Bau%5D%20AND%20Cleveland%20MC%5Bau%5D%29%20OR%20%28Kim%20AE%5Bau%5D%20AND%20Pulido-Arias%20D%5Bau%5D%29%20OR%20%28Kim%20AE%5Bau%5D%20AND%20Mindroc-Filimon%20D%5Bau%5D%29%20OR%20%28Bridge%20CP%5Bau%5D%20AND%20Cleveland%20MC%5Bau%5D%29%20OR%20%28Bridge%20CP%5Bau%5D%20AND%20Pulido-Arias%20D%5Bau%5D%29%20OR%20%28Bridge%20CP%5Bau%5D%20AND%20Mindroc-Filimon%20D%5Bau%5D%29%20OR%20%28Cleveland%20MC%5Bau%5D%20AND%20Pulido-Arias%20D%5Bau%5D%29%20OR%20%28Cleveland%20MC%5Bau%5D%20AND%20Mindroc-Filimon%20D%5Bau%5D%29%20OR%20%28Pulido-Arias%20D%5Bau%5D%20AND%20Mindroc-Filimon%20D%5Bau%5D%29" target="_blank" rel="noreferrer"
                         class="ml-2 px-5 py-2.5 bg-slate-900 dark:bg-slate-800 text-white rounded-lg hover:bg-slate-800 dark:hover:bg-slate-700 transition-colors text-sm font-medium flex items-center shadow-lg shadow-slate-900/20">
                         <i data-lucide="search" class="w-4 h-4 mr-2"></i>
-                        All on PubMed
+                        {{ home.publications.button | escape }}
                     </a>
                 </div>
             </div>
@@ -328,14 +313,13 @@ layout: default
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
                 <div>
-                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">News</h2>
-                    <p class="text-slate-600 dark:text-slate-400">Longer reads on the papers, datasets and tools that
-                        shaped the lab.</p>
+                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">{{ home.news.title | escape }}</h2>
+                    <p class="text-slate-600 dark:text-slate-400">{{ home.news.intro | escape }}</p>
                 </div>
                 <a href="/news/"
                     class="px-5 py-2.5 bg-slate-900 dark:bg-slate-800 text-white rounded-lg hover:bg-slate-800 dark:hover:bg-slate-700 transition-colors text-sm font-medium flex items-center shadow-lg shadow-slate-900/20">
                     <i data-lucide="newspaper" class="w-4 h-4 mr-2"></i>
-                    All news
+                    {{ home.news.button | escape }}
                 </a>
             </div>
 

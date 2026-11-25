@@ -1,0 +1,91 @@
+# The Team section of the home page: three groups, each with its own people.
+# People show in the order listed here. Without a photo, a circle with their initials is shown.
+principal_investigators:
+  title: Principal Investigators
+  intro: Leading multidisciplinary teams to solve the hardest problems in cancer imaging.
+  people:
+  - name: Albert E. Kim, MD
+    photo: /assets/uploads/2026/09/albert-kim-300x300.jpg
+    role: Co-Director
+    position: Instructor in Neurology, Harvard Medical School · MGH Cancer Center
+    bio: >-
+      Dr. Kim is a physician-scientist and neuro-oncologist at the Mass General Cancer Center
+      and the MGH Brain Tumor Research Center. He combines omics-based techniques (single-cell
+      genomics, transcriptomics, cell-free DNA) with medical imaging and machine learning
+      to define and target the genomic and metabolic vulnerabilities of central nervous system
+      metastases, and to uncover the mechanisms behind therapeutic resistance.
+    credentials: >-
+      MD, Medical College of Georgia · Neurology residency, Washington University · Fellowship,
+      MGH and Dana-Farber Cancer Institute · Damon Runyon William G. Kaelin, Jr., MD Physician-Scientist
+      Award.
+    email: akim46@mgh.harvard.edu
+    profile: https://www.martinos.org/faculty/kim-albert/
+  - name: Christopher P. Bridge, DPhil
+    photo: /assets/uploads/2026/09/chris-bridge.jpg
+    role: Co-Director
+    position: Assistant Professor of Radiology, Harvard Medical School
+    bio: >-
+      Dr. Bridge works on machine learning for cancer imaging biomarkers across radiology,
+      pathology and ophthalmology, and on the infrastructure required to move those models
+      into clinical practice. He is the lead developer of highdicom and a contributor to the
+      NCI Imaging Data Commons, with a long-standing focus on DICOM standards and interoperability
+      for AI.
+    credentials: >-
+      MEng, University of Cambridge · DPhil in Biomedical Engineering, University of Oxford
+      · Formerly Director of Machine Learning at Mass General Brigham AI (2017–2022).
+    email: cbridge@mgh.harvard.edu
+    profile: https://chrisbridge.science/
+research_team:
+  title: Research Team
+  intro: ''
+  people:
+  - name: Diana Mindroc, PhD
+    photo: /assets/uploads/2026/09/diana-mindroc-300x300.jpg
+    role: Postdoctoral Researcher
+    bio: >-
+      Diana focuses on advanced medical imaging technologies for the early detection and diagnosis
+      of breast cancer. Her current projects span two primary domains: developing computational
+      models for breast cancer risk prediction using digital breast tomosynthesis data, and
+      advancing image reconstruction algorithms for diffuse optical tomography.
+  - name: Mason C. Cleveland, BS
+    photo: /assets/uploads/2026/09/mason-cleveland-300x300.jpg
+    role: Software Engineer
+    bio: >-
+      Builds and maintains the lab’s deep learning pipelines and clinical tooling. Lead author
+      of an algorithm for fully automated volumetric measurement of meningioma burden, and
+      a contributor to work on digital pathology prediction of breast cancer tumor and immune
+      phenotypes. BS, University of Michigan.
+  - name: Dagoberto Pulido-Arias, PhD
+    photo: /assets/uploads/2026/09/dagoberto-pulido-300x300.jpg
+    role: Research Scientistttttt
+    bio: >-
+      Studies the robustness and generalization of deep learning models in medical imaging,
+      including domain generalization methods that mitigate scanner-induced domain shift.
+      Also develops computational pathology tools, such as deep learning models for precision-based
+      use of endocrine therapy in resource-limited settings. Background in computer vision,
+      remote sensing and quantitative image analysis..
+alumni:
+  title: Alumni
+  intro: People who built part of this work and have moved on.
+  people:
+  - name: Jay B. Patel
+    photo: /assets/uploads/2026/09/jay-patel-300x300.jpg
+    role: Senior Data Scientist
+    bio: >-
+      Worked on the reliability of deep learning in neuro-imaging: the trustworthiness of
+      saliency maps for localizing abnormalities, radiomics repeatability in scan–rescan glioblastoma
+      MRI, and automated tumor burden assessment in pediatric high-grade glioma.
+  - name: Felix J. Dorfner
+    photo: /assets/uploads/2026/09/felix-dorfner-300x300.jpg
+    role: Medical Student
+    bio: >-
+      Led the lab’s work on language models in radiology, benchmarking commercial and open-source
+      LLMs for labeling chest radiograph reports and evaluating biomedical fine-tuning. First
+      author of DBT-DINO, a foundation model for digital breast tomosynthesis.
+  - name: Melisa S. Güelen
+    photo: /assets/uploads/2026/09/melisa-guelen-300x300.jpg
+    role: MD-PhD Student
+    bio: >-
+      Studied intracranial hemorrhage in patients with brain tumors, first-authoring work
+      on outcomes and risk factors of hemorrhage after resection of brain metastases. Now
+      at the Department of Neurosurgery, Charité – Universitätsmedizin Berlin.

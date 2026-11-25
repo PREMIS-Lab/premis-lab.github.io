@@ -82,8 +82,12 @@ h3.font-bold {
 }
 .dark .hero-title { color: #ffffff; }
 
-.hero-title-accent { color: #7e22ce; }
-.dark .hero-title-accent { color: #c084fc; }
+/* Words in *italics* in the hero title are shown in purple instead */
+.hero-title em {
+    font-style: normal;
+    color: #7e22ce;
+}
+.dark .hero-title em { color: #c084fc; }
 
 .hero-side {
     flex: 2 1 340px;
@@ -97,6 +101,17 @@ h3.font-bold {
     color: #475569;
 }
 .dark .hero-lead { color: #cbd5e1; }
+
+/* About text: **bold** stays bold, words in *italics* are highlighted purple, pink, orange in turn */
+.about-text strong { font-weight: 600; }
+.about-text em {
+    font-style: normal;
+    font-weight: 600;
+    color: #7e22ce;
+}
+.dark .about-text em { color: #c084fc; }
+.about-text em:nth-of-type(3n+2) { color: var(--accent-pink-ink); }
+.about-text em:nth-of-type(3n) { color: var(--accent-orange-ink); }
 
 .btn-secondary {
     background-color: #ffffff;

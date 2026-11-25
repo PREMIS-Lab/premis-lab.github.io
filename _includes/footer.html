@@ -1,3 +1,4 @@
+{%- assign footer = site.data.site.footer -%}
     <!-- FOOTER -->
     <footer id="contact" class="on-dark bg-[#020617] text-slate-400 py-16 text-sm border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -9,17 +10,18 @@
                 </span>
                     </div>
                     <p class="mb-6 leading-relaxed max-w-sm">
-                        Martinos Center for Biomedical Imaging<br />
-                        149 13th Street, Charlestown, MA 02129
+                        {{ footer.address | escape | newline_to_br }}
                     </p>
-                    <a href="mailto:contact@premis-lab.org"
+                    {%- if footer.email %}
+                    <a href="mailto:{{ footer.email }}"
                         class="text-purple-400 hover:text-purple-300 font-medium flex items-center gap-2">
-                        <i data-lucide="mail" class="w-4 h-4"></i> contact@premis-lab.org
+                        <i data-lucide="mail" class="w-4 h-4"></i> {{ footer.email }}
                     </a>
+                    {%- endif %}
                 </div>
 
                 <div>
-                    <h3 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Affiliations</h3>
+                    <h3 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">{{ footer.affiliations_title | escape }}</h3>
                     <ul class="space-y-6">
                         <li>
                             <a href="https://www.massgeneral.org" target="_blank" rel="noreferrer"
@@ -47,17 +49,17 @@
                 </div>
 
                 <div>
-                    <h3 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Connect</h3>
+                    <h3 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">{{ footer.connect_title | escape }}</h3>
                     <div class="flex gap-4">
-                        <a href="#" aria-label="PREMIS lab on LinkedIn"
+                        <a href="{{ footer.linkedin | default: "#" }}"{% if footer.linkedin != "" and footer.linkedin %} target="_blank" rel="noreferrer"{% endif %} aria-label="PREMIS lab on LinkedIn"
                             class="bg-slate-800 p-2 rounded-full hover:bg-purple-600 hover:text-white transition-all">
                             <svg class="w-4 h-4" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"></use></svg>
                         </a>
-                        <a href="#" aria-label="PREMIS lab on GitHub"
+                        <a href="{{ footer.github | default: "#" }}"{% if footer.github != "" and footer.github %} target="_blank" rel="noreferrer"{% endif %} aria-label="PREMIS lab on GitHub"
                             class="bg-slate-800 p-2 rounded-full hover:bg-purple-600 hover:text-white transition-all">
                             <svg class="w-4 h-4" fill="currentColor" aria-hidden="true"><use href="#icon-github"></use></svg>
                         </a>
-                        <a href="#" aria-label="PREMIS lab on Instagram"
+                        <a href="{{ footer.instagram | default: "#" }}"{% if footer.instagram != "" and footer.instagram %} target="_blank" rel="noreferrer"{% endif %} aria-label="PREMIS lab on Instagram"
                             class="bg-slate-800 p-2 rounded-full hover:bg-purple-600 hover:text-white transition-all">
                             <svg class="w-4 h-4" fill="currentColor" aria-hidden="true"><use href="#icon-instagram"></use></svg>
                         </a>
@@ -66,10 +68,9 @@
             </div>
             <div class="border-t border-slate-800 mt-16 pt-8 text-center text-slate-600 text-xs">
                 &copy;
-                <script>document.write(new Date().getFullYear())</script> PREMIS lab. All rights reserved.
+                <script>document.write(new Date().getFullYear())</script> {{ footer.copyright | escape }}
                 <br class="hidden sm:block">
-                <span class="text-slate-700">Imaging: histopathology and chest radiograph, CC0, via Wikimedia
-                    Commons.</span>
+                <span class="text-slate-700">{{ footer.credit | escape }}</span>
             </div>
         </div>
     </footer>
