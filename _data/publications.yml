@@ -1,5 +1,3 @@
-# Rules for the Recent Publications carousel, which is refreshed live from PubMed.
-# Authors are written as PubMed lists them: surname and initials, e.g. "Kim AE".
 authors:
   - name: Kim AE
   - name: Bridge CP
@@ -10,14 +8,7 @@ authors:
   - name: Mindroc-Filimon D
     also:
       - Mindroc D
-# A paper is shown only if at least this many of the authors above wrote it
 min_lab_authors: 2
-# How many papers the carousel shows
 max_items: 6
-# newest: newest first. lab_authors: papers with more lab authors first, then newest
-order: newest
-# Only papers from this year on (leave empty for no limit)
-since_year:
+order: lab_authors
 include_preprints: true
-# PubMed IDs (PMID) of papers never to show, e.g. a namesake's paper
-exclude: []
