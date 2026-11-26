@@ -32,8 +32,10 @@
 /*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
 </style>
 <link rel='stylesheet' id='premis-fonts-css' href='https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&#038;family=Inter:wght@400;500;600;700&#038;family=IBM+Plex+Mono:wght@400;500&#038;display=swap' media='all' />
-<link rel='stylesheet' id='premis-main-css' href='/assets/css/main.css' media='all' />
-<link rel='stylesheet' id='premis-theme-css' href='/assets/css/theme.css' media='all' />
+{%- comment -%} ?v= changes on every build, so browsers fetch the new styles instead of a cached copy {%- endcomment -%}
+{%- assign version = site.time | date: "%Y%m%d%H%M%S" %}
+<link rel='stylesheet' id='premis-main-css' href='/assets/css/main.css?v={{ version }}' media='all' />
+<link rel='stylesheet' id='premis-theme-css' href='/assets/css/theme.css?v={{ version }}' media='all' />
 {% unless page.canonical == false %}<link rel="canonical" href="{{ page.url | absolute_url }}" />{% endunless %}
 </head>
 
