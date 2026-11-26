@@ -411,6 +411,10 @@ content:
     type: file
     path: _data/site.yml
     fields:
+      - name: description
+        label: Description for Google and link previews
+        description: One or two sentences shown under the site's name in search results. News stories use their own summary.
+        type: text
       - name: default_theme
         label: Default theme
         description: What a first-time visitor sees. Each visitor can still switch with the moon button.

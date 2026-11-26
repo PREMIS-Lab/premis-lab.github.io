@@ -11,8 +11,17 @@ defaults:
       type: posts
     values:
       layout: post
+  # Google Search Console's ownership file stays out of the sitemap
+  - scope:
+      path: google38276e39ce5844dc.html
+    values:
+      sitemap: false
 
 markdown: kramdown
+
+# Builds /sitemap.xml (and a robots.txt pointing to it) for search engines
+plugins:
+  - jekyll-sitemap
 
 exclude:
   - README.md

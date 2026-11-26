@@ -1,6 +1,11 @@
 # Texts shared by every page: menu, footer, the News page and the error page.
 # Theme a first-time visitor sees: light, dark, or system (follows their device).
 default_theme: light
+# Shown under the site's name in Google results and in link previews (news stories use their summary)
+description: >-
+  PREMIS lab (Precision Medicine with Intelligent Systems) develops quantitative imaging and
+  machine learning tools to decode complex medical data and improve clinical decision-making
+  in oncology. Martinos Center, Massachusetts General Hospital and Harvard Medical School.
 menu:
 - label: Home
   link: '#home'
