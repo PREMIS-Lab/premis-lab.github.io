@@ -1,29 +1,33 @@
-# Texts shared by every page: menu, footer, the News page and the error page.
-# Theme a first-time visitor sees: light, dark, or system (follows their device).
-default_theme: light
-# Shown under the site's name in Google results and in link previews (news stories use their summary)
-description: >-
-  PREMIS lab (Precision Medicine with Intelligent Systems) develops quantitative imaging and
-  machine learning tools to decode complex medical data and improve clinical decision-making
-  in oncology. Martinos Center, Massachusetts General Hospital and Harvard Medical School.
+description: PREMIS lab (Precision Medicine with Intelligent Systems) develops
+  quantitative imaging and machine learning tools to decode complex medical data
+  and improve clinical decision-making in oncology. Martinos Center,
+  Massachusetts General Hospital and Harvard Medical School.
+default_theme: system
 menu:
-- label: Home
-  link: '#home'
-- label: About
-  link: '#about'
-- label: Research
-  link: '#research'
-  large_screens_only: true
-- label: News
-  link: '#news'
-- label: Papers
-  link: '#publications'
-- label: Team
-  link: '#team'
-- label: Software
-  link: '#software'
-- label: Contact
-  link: '#contact'
+  - label: Home
+    link: "#home"
+    large_screens_only: false
+  - label: About
+    link: "#about"
+    large_screens_only: false
+  - label: Research
+    link: "#research"
+    large_screens_only: true
+  - label: News
+    link: "#news"
+    large_screens_only: false
+  - label: Papers
+    link: "#publications"
+    large_screens_only: false
+  - label: Team
+    link: "#team"
+    large_screens_only: false
+  - label: Software
+    link: "#software"
+    large_screens_only: false
+  - label: Contact
+    link: "#contact"
+    large_screens_only: false
 footer:
   address: |-
     Martinos Center for Biomedical Imaging
@@ -31,19 +35,15 @@ footer:
   email: contact@premis-lab.org
   affiliations_title: Affiliations
   connect_title: Connect
-  linkedin: ''
-  github: ''
-  instagram: ''
   copyright: PREMIS lab. All rights reserved.
-  credit: 'Imaging: histopathology and chest radiograph, CC0, via Wikimedia Commons.'
+  credit: "Imaging: histopathology and chest radiograph, CC0, via Wikimedia Commons."
 news_page:
   eyebrow: From the lab
   title: News
-  intro: >-
-    The publications list on the home page is pulled live from PubMed and shows what is newest.
-    These are the papers, datasets and tools we keep coming back to, each with its abstract
-    and a figure from the paper itself.
+  intro: The publications list on the home page is pulled live from PubMed and
+    shows what is newest. These are the papers, datasets and tools we keep
+    coming back to, each with its abstract and a figure from the paper itself.
 not_found:
-  eyebrow: '404'
+  eyebrow: "404"
   title: Page not found
   button: Back to the lab
