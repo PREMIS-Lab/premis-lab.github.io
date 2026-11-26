@@ -56,14 +56,16 @@ research_team:
       a contributor to work on digital pathology prediction of breast cancer tumor and immune
       phenotypes. BS, University of Michigan.
   - name: Dagoberto Pulido-Arias, PhD
-    photo: /assets/uploads/2026/09/dagoberto-pulido-300x300.jpg
-    role: Research Scientistttttt
+    photo: /assets/uploads/2026/09/dagoberto-pulido-arias-300x300.jpg
+    role: Research Scientist
     bio: >-
-      Studies the robustness and generalization of deep learning models in medical imaging,
-      including domain generalization methods that mitigate scanner-induced domain shift.
-      Also develops computational pathology tools, such as deep learning models for precision-based
-      use of endocrine therapy in resource-limited settings. Background in computer vision,
-      remote sensing and quantitative image analysis..
+      Dagoberto Pulido Arias, PhD, is a Research Scientist at Massachusetts General Hospital.
+      He received his PhD in Advanced Technology from the Instituto Politécnico Nacional (IPN)
+      in Mexico. His work focuses on artificial intelligence for medical imaging, with experience
+      in microscopic pathology image analysis, including whole-slide images, and in developing
+      AI models for MRI. His research interests include domain generalization, efficient multiple
+      instance learning models, and interpretability mechanisms that make model predictions
+      easier for clinicians to understand and trust.
 alumni:
   title: Alumni
   intro: People who built part of this work and have moved on.
