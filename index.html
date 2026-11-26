@@ -49,7 +49,7 @@ layout: default
     </section>
     <!-- ABOUT SECTION -->
     <section id="about" class="py-24 bg-white dark:bg-slate-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 about-layout{% if home.about.image %} has-photo{% endif %}">
             <div class="max-w-3xl">
                 <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-6">{{ home.about.title | escape }}</h2>
                 {%- comment -%} The "Research" links point at the second paragraph, the one about the research threads {%- endcomment -%}
@@ -58,6 +58,14 @@ layout: default
                     {% for part in paragraphs %}{% if forloop.index == 3 %}<p id="research">{% elsif forloop.index > 1 %}<p>{% endif %}{{ part }}{% endfor %}
                 </div>
             </div>
+            {%- if home.about.image %}
+            <figure class="about-photo">
+                <img src="{{ home.about.image }}" alt="{{ home.about.image_alt | default: home.about.image_caption | escape }}" loading="lazy">
+                {%- if home.about.image_caption %}
+                <figcaption class="font-mono">{{ home.about.image_caption | escape }}</figcaption>
+                {%- endif %}
+            </figure>
+            {%- endif %}
         </div>
     </section>
     <!-- PUBLICATIONS SECTION -->

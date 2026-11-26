@@ -49,6 +49,17 @@ content:
             label: Text
             description: Words in italics are highlighted in color (purple, pink, orange, in that order). The second paragraph is where the Research links land.
             type: rich-text
+          - name: image
+            label: Photo
+            description: Shown next to the text (below it on phones), cropped to a square. Leave empty for text only.
+            type: image
+          - name: image_caption
+            label: Photo caption
+            type: string
+          - name: image_alt
+            label: Photo description for screen readers (optional)
+            description: Defaults to the caption.
+            type: string
       - name: publications
         label: Publications section
         description: The papers themselves load automatically from PubMed.
