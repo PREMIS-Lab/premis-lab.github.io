@@ -11,8 +11,9 @@ templates and the content in plain text files, so most edits never touch HTML.
 Three ways, all ending in a commit to `main` that republishes the site in a minute or two:
 
 1. **Forms in the browser (Pages CMS).** Sign in with GitHub at https://app.pagescms.org, open this
-   repository and pick Home page, Team, News, Software or "Menu, footer and other pages". The forms
-   come from `.pages.yml`. Images go to `assets/uploads/`.
+   repository and pick Home page, Team, News, Publications (PubMed), Software or "Menu, footer and
+   other pages". The forms come from `.pages.yml`. Images go to `assets/uploads/`. Each commit made
+   there carries the name and email of the person who saved it.
 2. **GitHub's web editor.** Open one of the files below, click the pencil, edit and commit.
 3. **Locally**, with any text editor.
 
@@ -21,10 +22,14 @@ Three ways, all ending in a commit to `main` that republishes the site in a minu
 | Banner, About, and the titles of Publications and News | `_data/home.yml` |
 | Team: the three groups, their titles and their people | `_data/team.yml` |
 | Software: section texts and projects | `_data/software.yml` |
-| Menu, footer, News page and error page | `_data/site.yml` |
+| Publications: lab authors searched in PubMed and the rules for which papers show | `_data/publications.yml` |
+| Default theme (light, dark or the visitor's device), menu, footer, News page and error page | `_data/site.yml` |
 | News stories | `_posts/YYYY-MM-DD-slug.md`, one per story |
 
-- **Publications** load automatically from PubMed in the browser, so there is nothing to edit.
+- **Publications** load live from PubMed in the browser. `_data/publications.yml` sets who is searched
+  (as PubMed writes the name, e.g. `Kim AE`, plus other spellings), how many lab authors a paper needs,
+  how many papers show, the order (newest, or most lab authors first), a starting year, whether
+  preprints count, and PMIDs to hide. The "All on PubMed" button runs the same search.
 - **Highlighted words**: in the banner title and the About text, words in `*italics*` show in color
   (purple in the title; purple, pink, orange in turn in About). `**Bold**` stays bold. The "Research"
   links land on the second paragraph of About.

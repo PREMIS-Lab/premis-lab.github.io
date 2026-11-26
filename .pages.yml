@@ -2,6 +2,11 @@
 # Each entry below is one menu item; together they cover every text on the site.
 # Saving a form commits the change and GitHub Pages republishes the site.
 
+# Commits made from Pages CMS carry the name and email of the person who saved them
+settings:
+  commit:
+    identity: user
+
 media:
   input: assets/uploads
   output: /assets/uploads
@@ -288,6 +293,63 @@ content:
             description: Only the identifier, e.g. 10.1148/radiol.2020201640
             type: string
 
+  - name: publications
+    label: Publications (PubMed)
+    description: Rules for the Recent Publications carousel, which loads the papers live from PubMed.
+    type: file
+    path: _data/publications.yml
+    fields:
+      - name: authors
+        label: Lab authors to search
+        description: Written as PubMed lists them, surname and initials, e.g. "Kim AE".
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.name}"
+        fields:
+          - name: name
+            label: Name in PubMed
+            type: string
+            required: true
+          - name: also
+            label: Other spellings
+            description: Other ways the same person appears in author lists, e.g. "Pulido D".
+            type: string
+            list: true
+      - name: min_lab_authors
+        label: Minimum lab authors per paper
+        description: 1 shows every paper by anyone above; 2 only papers where two or more of them are authors.
+        type: number
+        options:
+          min: 1
+      - name: max_items
+        label: Number of papers shown
+        type: number
+        options:
+          min: 1
+      - name: order
+        label: Order
+        type: select
+        default: newest
+        options:
+          values:
+            - { value: newest, label: Newest first }
+            - { value: lab_authors, label: Most lab authors first, then newest }
+      - name: since_year
+        label: Only papers from this year on
+        description: Leave empty for no limit.
+        type: number
+      - name: include_preprints
+        label: Include preprints (bioRxiv, medRxiv, arXiv)
+        type: boolean
+        default: true
+      - name: exclude
+        label: Papers to hide (PMID)
+        description: The number at the end of the paper's PubMed address, e.g. 42550018.
+        type: string
+        list: true
+
   - name: software
     label: Software
     type: file
@@ -345,10 +407,20 @@ content:
 
   - name: site
     label: Menu, footer and other pages
-    description: Texts shared by every page, the News page and the error page.
+    description: Default theme, texts shared by every page, the News page and the error page.
     type: file
     path: _data/site.yml
     fields:
+      - name: default_theme
+        label: Default theme
+        description: What a first-time visitor sees. Each visitor can still switch with the moon button.
+        type: select
+        default: light
+        options:
+          values:
+            - { value: light, label: Light }
+            - { value: dark, label: Dark }
+            - { value: system, label: Follow the visitor's device }
       - name: menu
         label: Menu
         description: Links in the top menu. A link starting with # goes to a section of the home page (#about, #research, #news, #publications, #team, #software, #contact).

@@ -90,53 +90,85 @@
 
         // --- Featured publications: auto-refresh from PubMed ---
         // The HTML list is the hand-checked baseline. If PubMed answers, it is
-        // replaced by the live result (papers with two or more lab members).
+        // replaced by the live result, chosen by the rules in _data/publications.yml.
         (function () {
             const list = document.getElementById('publication-list');
             const status = document.getElementById('publication-status');
             if (!list || !window.fetch) return;
 
-            const LAB = [
-                { surnames: ['Kim'], initial: 'A', label: 'A. Kim' },
-                { surnames: ['Bridge'], initial: 'C', label: 'C. Bridge' },
-                { surnames: ['Cleveland'], initial: 'M', label: 'M. Cleveland' },
-                { surnames: ['Pulido-Arias', 'Pulido'], initial: 'D', label: 'D. Pulido-Arias' },
-                { surnames: ['Mindroc-Filimon', 'Mindroc'], initial: 'D', label: 'D. Mindroc' }
-            ];
-            const TERMS = ['Kim AE', 'Bridge CP', 'Cleveland MC', 'Pulido-Arias D', 'Mindroc-Filimon D'];
+            // Rules from _data/publications.yml, written into the page by Jekyll
+            const RULES = (function () {
+                const defaults = {
+                    authors: [], min_lab_authors: 2, max_items: 6, order: 'newest',
+                    since_year: null, include_preprints: true, exclude: []
+                };
+                try {
+                    const el = document.getElementById('publication-rules');
+                    const rules = el ? JSON.parse(el.textContent) : {};
+                    Object.keys(rules).forEach(k => { if (rules[k] !== null && rules[k] !== '') defaults[k] = rules[k]; });
+                } catch (e) { /* unreadable rules: keep the defaults */ }
+                return defaults;
+            })();
+            const AUTHORS = (RULES.authors || []).filter(a => a && a.name)
+                .map(a => [a.name].concat(a.also || []).map(n => String(n).trim()).filter(Boolean));
+            const MIN_MEMBERS = Math.max(1, parseInt(RULES.min_lab_authors, 10) || 1);
+            const MAX_ITEMS = Math.max(1, parseInt(RULES.max_items, 10) || 6);
+            const SINCE = parseInt(RULES.since_year, 10) || 0;
+            const EXCLUDE = (RULES.exclude || []).map(x => String(x).trim());
             const EUTILS = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/';
             const TOOL = '&tool=premis-lab-website';
             const PREPRINTS = ['biorxiv', 'medrxiv', 'arxiv', 'research square'];
-            const MAX_ITEMS = 6;
-            const CACHE_KEY = 'premis-publications-v2';
+            // A change to the rules starts a fresh cache instead of waiting a day
+            const CACHE_KEY = 'premis-publications-v3-' + Array.from(JSON.stringify(RULES))
+                .reduce((h, c) => (h * 31 + c.charCodeAt(0)) | 0, 7).toString(36);
             const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 h
 
-            // (A[au] AND B[au]) OR ... for every pair of members
-            function pairQuery() {
-                const pairs = [];
-                for (let i = 0; i < TERMS.length; i++) {
-                    for (let j = i + 1; j < TERMS.length; j++) {
-                        pairs.push('(' + TERMS[i] + '[au] AND ' + TERMS[j] + '[au])');
+            // "Kim AE" -> surname "Kim" and first initial "A"
+            function nameParts(name) {
+                const parts = name.split(/\s+/);
+                const initials = parts.length > 1 ? parts.pop() : '';
+                return { surname: parts.join(' '), initial: initials.charAt(0) };
+            }
+
+            // PubMed search: papers by any lab author, or by at least two of them
+            // ((A[au] AND B[au]) OR ... for every pair); the exact minimum is checked afterwards
+            function searchQuery() {
+                const groups = AUTHORS.map(names => names.length > 1
+                    ? '(' + names.map(n => n + '[au]').join(' OR ') + ')'
+                    : names[0] + '[au]');
+                let q;
+                if (MIN_MEMBERS <= 1 || groups.length < 2) {
+                    q = groups.join(' OR ');
+                } else {
+                    const pairs = [];
+                    for (let i = 0; i < groups.length; i++) {
+                        for (let j = i + 1; j < groups.length; j++) {
+                            pairs.push('(' + groups[i] + ' AND ' + groups[j] + ')');
+                        }
                     }
+                    q = pairs.join(' OR ');
                 }
-                return pairs.join(' OR ');
+                return SINCE ? '(' + q + ') AND ' + SINCE + ':3000[dp]' : q;
             }
 
             // Positions of the lab members within the author list
             function memberIndex(authors) {
                 const idx = [];
-                LAB.forEach(m => {
+                AUTHORS.forEach(names => {
+                    const variants = names.map(nameParts);
                     for (let i = 0; i < authors.length; i++) {
-                        const parts = authors[i].split(' ');
-                        if (parts.length < 2) continue;
-                        const initials = parts.pop();
-                        if (m.surnames.indexOf(parts.join(' ')) !== -1 && initials.charAt(0) === m.initial) {
+                        const a = nameParts(authors[i]);
+                        if (variants.some(v => v.surname === a.surname && (!v.initial || v.initial === a.initial))) {
                             idx.push(i); break;
                         }
                     }
                 });
                 return idx.sort((a, b) => a - b);
             }
+
+            const NUMBERS = ['', 'one', 'two', 'three', 'four', 'five'];
+            const RULE_TEXT = MIN_MEMBERS === 1 ? 'with a lab author'
+                : 'with ' + (NUMBERS[MIN_MEMBERS] || MIN_MEMBERS) + ' or more lab authors';
 
             const isPreprint = s => PREPRINTS.some(p => String(s || '').toLowerCase().indexOf(p) === 0);
             const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -242,27 +274,32 @@
                 pubCarousel.sync();
                 if (status) {
                     status.textContent = 'Auto-updated from PubMed · ' + items.length +
-                        ' papers with two or more lab authors · ' +
+                        (items.length === 1 ? ' paper ' : ' papers ') + RULE_TEXT + ' · ' +
                         new Date(when).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
                 }
             }
 
             // Deduplicate by normalised title (prefer the published version over the
-            // preprint) and sort by date, newest first
+            // preprint) and sort: newest first, or by number of lab authors and then newest
             function rank(items) {
                 const seen = {};
                 items.forEach(it => {
                     const k = it.title.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().slice(0, 90);
                     if (!seen[k] || (isPreprint(seen[k].source) && !isPreprint(it.source))) seen[k] = it;
                 });
+                const newest = (a, b) => String(b.date || '').localeCompare(String(a.date || ''));
+                const byRule = RULES.order === 'lab_authors'
+                    ? (a, b) => (b.members.length - a.members.length) || newest(a, b)
+                    : newest;
                 return Object.keys(seen).map(k => seen[k])
-                    .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')))
+                    .sort(byRule)
                     .slice(0, MAX_ITEMS);
             }
 
             function fromPubMed() {
+                if (!AUTHORS.length) return Promise.resolve([]);
                 return getJSON(EUTILS + 'esearch.fcgi?db=pubmed&retmode=json&retmax=60&sort=date' + TOOL +
-                    '&term=' + encodeURIComponent(pairQuery()))
+                    '&term=' + encodeURIComponent(searchQuery()))
                     .then(d => {
                         const ids = (d.esearchresult && d.esearchresult.idlist) || [];
                         if (!ids.length) throw new Error('sin resultados');
@@ -276,7 +313,10 @@
                             if (!d || d.error) return;
                             const authors = (d.authors || []).filter(a => a.authtype === 'Author').map(a => a.name);
                             const members = memberIndex(authors);
-                            if (members.length < 2) return; // rule: at least two lab members
+                            if (members.length < MIN_MEMBERS) return;
+                            if (EXCLUDE.indexOf(String(id)) !== -1) return;
+                            if (!RULES.include_preprints && isPreprint(d.source)) return;
+                            if (SINCE && parseInt((d.pubdate || '').slice(0, 4), 10) < SINCE) return;
                             const doi = (d.articleids || []).filter(x => x.idtype === 'doi').map(x => x.value)[0] || '';
                             items.push({
                                 pmid: id, title: (d.title || '').replace(/\.$/, ''), source: d.source || '',

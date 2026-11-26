@@ -1,4 +1,6 @@
 # Texts shared by every page: menu, footer, the News page and the error page.
+# Theme a first-time visitor sees: light, dark, or system (follows their device).
+default_theme: light
 menu:
 - label: Home
   link: '#home'
